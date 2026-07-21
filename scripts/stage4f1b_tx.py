@@ -571,14 +571,6 @@ def validate_checkpoint(bundle: Path, run_id: str, expected_model: str) -> list[
     return errors
 
 
-def validate_complete_written_last(bundle: Path) -> list[str]:
-    complete = bundle / "COMPLETE.json"
-    if not complete.is_file():
-        return ["missing COMPLETE.json"]
-    complete_time = complete.stat().st_mtime_ns
-    return [f"COMPLETE.json is older than {p.name}" for p in bundle.iterdir() if p.is_file() and p.name != "COMPLETE.json" and p.stat().st_mtime_ns > complete_time]
-
-
 def _compare_identity(actual: dict[str, Any], expected: dict[str, Any], prefix: str) -> list[str]:
     errors = []
     for key in ("campaign_id", "protocol_hash", "run_id", "boundary", "delta", "c6", "model", "seed", "lane", "n_sites", "expected_history_rows"):
@@ -691,7 +683,6 @@ def validate_run_bundle_semantic(
     model = str((expected_spec or run_manifest).get("model", ""))
     errors.extend(validate_checkpoint(bundle, run_id, model))
     errors.extend(validate_artifact_manifest(bundle))
-    errors.extend(validate_complete_written_last(bundle))
     return not errors, errors
 
 

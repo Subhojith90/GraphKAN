@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import shutil
 import time
 from pathlib import Path
@@ -75,6 +76,21 @@ def test_semantic_validator_rejects_adversarial_corruptions(tmp_path):
     for case in cases:
         ok, errors = validate_run_bundle_semantic(case, run.run_id)
         assert not ok, f"{case.name} incorrectly accepted"
+
+
+def test_semantic_validator_is_portable_across_git_checkout_mtimes(tmp_path):
+    """Git does not preserve mtimes, so integrity must rely on durable hashes."""
+    cfg, _ = local_cfg(tmp_path)
+    run = expected_runs(cfg)[0]
+    valid = write_valid_synthetic_bundle(tmp_path, run)
+
+    os.utime(valid / "COMPLETE.json", ns=(1_000_000_000, 1_000_000_000))
+    for path in valid.iterdir():
+        if path.is_file() and path.name != "COMPLETE.json":
+            os.utime(path, ns=(2_000_000_000, 2_000_000_000))
+
+    ok, errors = validate_run_bundle_semantic(valid, run.run_id)
+    assert ok, errors
 
 
 def test_protocol_mutation_is_rejected(tmp_path):
