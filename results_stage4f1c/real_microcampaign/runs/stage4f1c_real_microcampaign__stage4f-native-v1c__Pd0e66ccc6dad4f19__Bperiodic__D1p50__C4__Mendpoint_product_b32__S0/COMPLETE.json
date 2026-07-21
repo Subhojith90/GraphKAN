@@ -1,0 +1,8 @@
+{
+  "artifact_manifest_sha256": "739df77edc5df77fa89b8b1f977ed950df885a96baf08603080601f2e753c4df",
+  "artifact_validation": "PASS",
+  "attempt_id": "7d9d2225327c4b8e910e070a93020487",
+  "completed_utc": "2026-07-14T07:23:16+00:00",
+  "run_id": "stage4f1c_real_microcampaign__stage4f-native-v1c__Pd0e66ccc6dad4f19__Bperiodic__D1p50__C4__Mendpoint_product_b32__S0",
+  "schema_version": "stage4f-native-v1c"
+}

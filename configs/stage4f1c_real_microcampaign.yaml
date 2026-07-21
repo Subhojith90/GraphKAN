@@ -1,0 +1,36 @@
+campaign:
+  name: stage4f1c_real_microcampaign
+  schema_version: stage4f-native-v1c
+  output_root: results_stage4f1c/real_microcampaign
+  claim_boundary: 16-run real transactional kill/restart gate only; not Stage 4F-R science
+
+physics:
+  n_sites: 10
+  omega: 1.0
+  deltas: ["1.50", "2.00"]
+  c6_values: ["4"]
+  boundaries: ["open", "periodic"]
+  seeds: [0]
+  samples: 4096
+  sr_shift: 0.1
+
+models:
+  rbf_radial_b32: {lane: core}
+  endpoint_product_b32: {lane: core}
+  mlp_endpoint_large: {lane: core}
+  rbm_h32: {lane: control}
+
+base_configs:
+  open: configs/netket_stage4f_boundary_patch_open.yaml
+  periodic: configs/netket_stage4f_boundary_patch_periodic.yaml
+
+scheduler:
+  lease_seconds: 30
+  max_attempts: 3
+  backoff_seconds: 10
+
+completion_requirements:
+  checkpoint_format: jax-tree-leaves-npz-v1
+  require_complete_manifest_coverage: true
+  require_registry_filesystem_reconciliation: true
+  require_fenced_publication: true

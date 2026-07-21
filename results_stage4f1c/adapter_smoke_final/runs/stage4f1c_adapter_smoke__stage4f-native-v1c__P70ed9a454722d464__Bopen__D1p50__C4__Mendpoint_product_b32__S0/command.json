@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/anaconda3/bin/python",
+    "scripts/run_stage4e.py",
+    "--config",
+    "/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate/results_stage4f1c/adapter_smoke_final/attempts/stage4f1c_adapter_smoke__stage4f-native-v1c__P70ed9a454722d464__Bopen__D1p50__C4__Mendpoint_product_b32__S0/bdebc9c71b7e43dc9ca93836e10966e2__20amoc61/_runner_config.yaml",
+    "--overwrite"
+  ],
+  "attempt_id": "bdebc9c71b7e43dc9ca93836e10966e2",
+  "cwd": "/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate",
+  "run_id": "stage4f1c_adapter_smoke__stage4f-native-v1c__P70ed9a454722d464__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "started_utc": "2026-07-14T06:38:36+00:00",
+  "worker_id": "final-core-smoke"
+}

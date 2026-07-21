@@ -1,0 +1,2 @@
+flagged stage4f1c__stage4f1c_adapter_smoke__stage4f-native-v1c__P70ed9a454722d464__Bperiodic__D1p50__C4__Mrbm_h32__S0:ryd_periodic_chain_N10_D1.5_C64_481f3024aa18fddd:rbm_h32:samples256:shift0.1:seed0: sample|E-E0|=5.886, exact|E-E0|=5.6, exact_flags=LARGE_EXACT_ED_ERROR;LARGE_EXACT_CORRELATION_ERROR, sample_flags=LARGE_ED_ERROR;LARGE_CORRELATION_ERROR
+Stage 4E complete: exact_valid=0/1, sample_valid=0/1

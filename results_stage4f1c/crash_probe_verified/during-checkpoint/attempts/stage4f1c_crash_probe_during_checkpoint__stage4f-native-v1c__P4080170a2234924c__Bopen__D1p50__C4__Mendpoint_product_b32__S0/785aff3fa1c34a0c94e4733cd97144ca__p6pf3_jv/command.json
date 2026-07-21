@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/anaconda3/bin/python",
+    "scripts/run_stage4e.py",
+    "--config",
+    "/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate/results_stage4f1c/crash_probe_verified/during-checkpoint/attempts/stage4f1c_crash_probe_during_checkpoint__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0/785aff3fa1c34a0c94e4733cd97144ca__p6pf3_jv/_runner_config.yaml",
+    "--overwrite"
+  ],
+  "attempt_id": "785aff3fa1c34a0c94e4733cd97144ca",
+  "cwd": "/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate",
+  "run_id": "stage4f1c_crash_probe_during_checkpoint__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "started_utc": "2026-07-14T06:35:04+00:00",
+  "worker_id": "fault-during-checkpoint"
+}

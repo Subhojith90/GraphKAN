@@ -1,0 +1,48 @@
+profile: stage4d_n10_rbm_only_smoke
+stage: 4D
+output_root: results_stage4d/n10_rbm_only_smoke
+netket:
+  inverted_ordering: false
+chains:
+  n_sites:
+  - 10
+  spacing: 1.0
+parameters:
+  omega:
+  - 1.0
+  delta:
+  - 1.5
+  c6:
+  - 4.0
+training:
+  seeds:
+  - 0
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  n_basis: 12
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+exact_health_gate:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+model_specs:
+  rbm_h8:
+    kind: rbm
+    basis_family: rbf
+    n_basis: 1
+    hidden: 8
+    save_checkpoint: true
+requires_smoke_gate: true
+smoke_gate_path: results_stage4d/fullbudget_smoke/stage4d_smoke_gate.json

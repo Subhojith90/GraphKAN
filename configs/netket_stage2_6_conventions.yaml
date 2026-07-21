@@ -1,0 +1,12 @@
+profile: netket_stage2_6_convention_check
+output_root: results_stage2_6
+netket:
+  inverted_ordering: false
+chains:
+  n_sites: [2, 6]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0]
+  c6: [1.0]
+  sign_rule: parity

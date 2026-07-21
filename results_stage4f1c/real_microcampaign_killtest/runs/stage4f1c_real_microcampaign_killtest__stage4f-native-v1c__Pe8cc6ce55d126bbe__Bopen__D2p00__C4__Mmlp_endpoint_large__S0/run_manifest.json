@@ -1,0 +1,20 @@
+{
+  "attempt_id": "0ff2d16ca2384273ac61535523ba3a4a",
+  "boundary": "open",
+  "c6": "4",
+  "campaign_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe",
+  "claim_token_hash": "86af51cefe5c8d18fbdd8e3020c275e8702601047bc9c0d1977b0b90a8787d5a",
+  "created_utc": "2026-07-14T08:11:53+00:00",
+  "delta": "2.00",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "e30f64f3e8a6bd9b237eb730eae5a41c95f6f7ee5e6eac2fa22fc7687b687589",
+  "lane": "core",
+  "model": "mlp_endpoint_large",
+  "n_sites": 10,
+  "priority": 6,
+  "protocol_hash": "e8cc6ce55d126bbe23dff531a1fefcb477d9fb3458513b79c050e005c69131ae",
+  "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mmlp_endpoint_large__S0",
+  "runner_run_id": "stage4f1c__stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mmlp_endpoint_large__S0:ryd_chain_N10_D2_C64_2e22dcaf96dee0ce:mlp_endpoint_large:samples4096:shift0.1:seed0",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 0
+}

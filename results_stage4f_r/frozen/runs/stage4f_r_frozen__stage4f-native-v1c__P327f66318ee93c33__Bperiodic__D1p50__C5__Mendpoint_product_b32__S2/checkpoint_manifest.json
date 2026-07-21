@@ -1,0 +1,16 @@
+{
+  "array_count": 2,
+  "arrays": {
+    "leaf_0000": [
+      32
+    ],
+    "leaf_0001": [
+      10
+    ]
+  },
+  "checkpoint": "checkpoint.npz",
+  "model": "endpoint_product_b32",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p50__C5__Mendpoint_product_b32__S2",
+  "schema_version": "jax-tree-leaves-npz-v1",
+  "sha256": "cc6f2ef0fdd8d6fef99255b18f02a3866e7789d40d2867f7bc3d13e73877d519"
+}

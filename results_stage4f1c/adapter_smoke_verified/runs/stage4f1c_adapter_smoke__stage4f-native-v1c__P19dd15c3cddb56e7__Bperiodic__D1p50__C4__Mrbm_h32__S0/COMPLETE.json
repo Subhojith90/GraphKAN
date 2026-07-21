@@ -1,0 +1,8 @@
+{
+  "artifact_manifest_sha256": "0b7df3e6b61c2a2a669f4bf0d8269e72ea06713c9be22e58da74f73f8a56815f",
+  "artifact_validation": "PASS",
+  "attempt_id": "1b20af2f4a15428ca8ce14353d698540",
+  "completed_utc": "2026-07-14T06:32:18+00:00",
+  "run_id": "stage4f1c_adapter_smoke__stage4f-native-v1c__P19dd15c3cddb56e7__Bperiodic__D1p50__C4__Mrbm_h32__S0",
+  "schema_version": "stage4f-native-v1c"
+}

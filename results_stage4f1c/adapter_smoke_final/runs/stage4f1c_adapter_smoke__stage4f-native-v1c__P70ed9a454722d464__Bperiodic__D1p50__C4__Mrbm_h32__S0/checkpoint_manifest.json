@@ -1,0 +1,20 @@
+{
+  "array_count": 3,
+  "arrays": {
+    "leaf_0000": [
+      32
+    ],
+    "leaf_0001": [
+      10
+    ],
+    "leaf_0002": [
+      10,
+      32
+    ]
+  },
+  "checkpoint": "checkpoint.npz",
+  "model": "rbm_h32",
+  "run_id": "stage4f1c_adapter_smoke__stage4f-native-v1c__P70ed9a454722d464__Bperiodic__D1p50__C4__Mrbm_h32__S0",
+  "schema_version": "jax-tree-leaves-npz-v1",
+  "sha256": "ab97b68c77d561b3aa47d5f9c2b428bec16c2d9c6a3b5d22b77ff40cf3869e18"
+}

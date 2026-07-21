@@ -1,0 +1,46 @@
+=== Stage 4D VMC batch ===
+UTC: 2026-07-04T04:41:13Z
+Command: PYTHONPATH=src python scripts/run_stage4d.py --config configs/netket_stage4d_low_detuning_autopsy_fullbudget.yaml --resume
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.4559, exact|E-E0|=0.411, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.4428, exact|E-E0|=0.4345, exact_flags=none, sample_flags=LARGE_DENSITY_ERROR
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.44, exact|E-E0|=0.4157, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1455, exact|E-E0|=0.1318, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1086, exact|E-E0|=0.1346, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1192, exact|E-E0|=0.1313, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1505, exact|E-E0|=0.1549, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1263, exact|E-E0|=0.1621, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1356, exact|E-E0|=0.1566, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed0: sample|E-E0|=0.1477, exact|E-E0|=0.1382, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed1: sample|E-E0|=0.1134, exact|E-E0|=0.1405, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed2: sample|E-E0|=0.1237, exact|E-E0|=0.1367, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_full_23p:samples4096:shift0.1:seed0: sample|E-E0|=0.1367, exact|E-E0|=0.1338, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_full_23p:samples4096:shift0.1:seed1: sample|E-E0|=0.1162, exact|E-E0|=0.1387, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_full_23p:samples4096:shift0.1:seed2: sample|E-E0|=0.122, exact|E-E0|=0.1333, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02205, exact|E-E0|=0.03152, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.02852, exact|E-E0|=0.03218, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.0268, exact|E-E0|=0.02992, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02024, exact|E-E0|=0.03428, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03161, exact|E-E0|=0.0377, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.02981, exact|E-E0|=0.03522, exact_flags=none, sample_flags=none
+flagged stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.5413, exact|E-E0|=0.5671, exact_flags=LARGE_EXACT_ED_ERROR;LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_ED_ERROR;LARGE_DENSITY_ERROR
+flagged stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.5794, exact|E-E0|=0.5902, exact_flags=LARGE_EXACT_ED_ERROR;LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_ED_ERROR;LARGE_DENSITY_ERROR
+flagged stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.6298, exact|E-E0|=0.5731, exact_flags=LARGE_EXACT_ED_ERROR;LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_ED_ERROR;LARGE_DENSITY_ERROR
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1831, exact|E-E0|=0.1683, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1768, exact|E-E0|=0.1723, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1504, exact|E-E0|=0.1696, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.2096, exact|E-E0|=0.2106, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1917, exact|E-E0|=0.216, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.198, exact|E-E0|=0.2124, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed0: sample|E-E0|=0.1926, exact|E-E0|=0.169, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed1: sample|E-E0|=0.1752, exact|E-E0|=0.171, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed2: sample|E-E0|=0.1561, exact|E-E0|=0.1675, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_full_23p:samples4096:shift0.1:seed0: sample|E-E0|=0.1866, exact|E-E0|=0.1674, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_full_23p:samples4096:shift0.1:seed1: sample|E-E0|=0.1728, exact|E-E0|=0.1702, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:rbf_endpoint_full_23p:samples4096:shift0.1:seed2: sample|E-E0|=0.1593, exact|E-E0|=0.1683, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02507, exact|E-E0|=0.03287, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03215, exact|E-E0|=0.03328, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.02852, exact|E-E0|=0.03093, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02963, exact|E-E0|=0.03517, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03106, exact|E-E0|=0.03888, exact_flags=none, sample_flags=none
+valid stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C65_ff631f945bd01060:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03241, exact|E-E0|=0.03625, exact_flags=none, sample_flags=none
+Stage 4D complete: exact_valid=39/42, sample_valid=38/42

@@ -1,0 +1,20 @@
+{
+  "attempt_id": "24aea4a3e7ab43708ca26a4acc9f2b58",
+  "boundary": "periodic",
+  "c6": "3",
+  "campaign_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33",
+  "claim_token_hash": "080641a8db155c757d1a294b16ddded0216cf18b99f1d7fcca057bf32526afb0",
+  "created_utc": "2026-07-16T14:30:02+00:00",
+  "delta": "1.25",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "1ead8e18745146f929cf54c2e925b032d19786495ce418615351d7dfcaddfd25",
+  "lane": "control",
+  "model": "rbm_h32",
+  "n_sites": 10,
+  "priority": 487,
+  "protocol_hash": "327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p25__C3__Mrbm_h32__S2",
+  "runner_run_id": "stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p25__C3__Mrbm_h32__S2:ryd_periodic_chain_N10_D1.25_C63_1e65c7610783e8df:rbm_h32:samples4096:shift0.1:seed2",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 2
+}

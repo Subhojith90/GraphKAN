@@ -1,0 +1,15 @@
+{
+  "blocking_errors": [],
+  "campaign": "results_stage4f1c/crash_probe_verified/after-promotion",
+  "complete_bundles_checked": 1,
+  "registry_filesystem_errors": [],
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 1
+    },
+    "total_expected": 1
+  },
+  "schema_version": "stage4f-native-v1c",
+  "validation": "PASS"
+}

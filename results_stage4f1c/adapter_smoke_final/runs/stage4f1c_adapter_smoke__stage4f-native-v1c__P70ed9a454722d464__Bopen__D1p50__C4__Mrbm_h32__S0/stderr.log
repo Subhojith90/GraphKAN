@@ -1,0 +1,25 @@
+WARNING: The directory '/Users/subhojithalder/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+/opt/anaconda3/lib/python3.12/site-packages/netket/utils/struct/pytree.py:62: InsufficientSamplesForSRWarning: 
+The number of samples (256) is less than or equal to the number of parameters (362).
+
+In this regime, the standard QGT-based SR formulation is inefficient and potentially unstable.
+You should switch to the kernel/minSR formulation by using:
+
+    nk.driver.VMC_SR(hamiltonian, optimizer, diag_shift=0.01, variational_state=your_state)
+
+instead of:
+
+    nk.driver.VMC(hamiltonian, optimizer, preconditioner=nk.optimizer.SR())
+
+VMC_SR automatically chooses the optimal implementation and is always recommended when using SR.
+This provides the same mathematical result but with much better performance and numerical stability.
+
+
+-------------------------------------------------------
+For more detailed informations, visit the following link:
+	 https://netket.readthedocs.io/en/latest/api/_generated/errors/netket.errors.InsufficientSamplesForSRWarning.html
+or the list of all common errors and warnings at
+	 https://netket.readthedocs.io/en/latest/api/errors.html
+-------------------------------------------------------
+
+  obj.__init__(*args, **kwargs)

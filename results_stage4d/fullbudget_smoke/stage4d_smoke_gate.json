@@ -1,0 +1,9 @@
+{
+  "completed_rows": 6,
+  "failed_rows": 0,
+  "key_models_dual_valid": true,
+  "missing_models": [],
+  "rows": 6,
+  "schema": "stage4d-smoke-gate-v1",
+  "status": "PASS"
+}

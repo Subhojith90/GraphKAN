@@ -1,0 +1,203 @@
+{
+  "campaign_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33",
+  "claim_boundary": "frozen 960-run confirmatory Stage 4F-R science campaign; initialise only after kill-test and independent-replay approval",
+  "config_name": "stage4f_r_frozen.yaml",
+  "config_sha256": "a51bad8bff4f078ac61cd545a74b1331a4959e0816197ed0d23e68b36d2a9bb4",
+  "created_utc": "2026-07-14T08:47:21+00:00",
+  "expected_runs": 960,
+  "protocol_hash": "327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9",
+  "protocol_identity": {
+    "base_configs": {
+      "open": {
+        "relative_path": "configs/netket_stage4f_boundary_patch_open.yaml",
+        "sha256": "5d654b8078e2c252b8dd8efb4735a381e680b27f9f89301601ea83b7af1e6b63"
+      },
+      "periodic": {
+        "relative_path": "configs/netket_stage4f_boundary_patch_periodic.yaml",
+        "sha256": "2b67d1e07e287288c95c9da46445100aa66973da36583de030a0859e16d2ea3d"
+      }
+    },
+    "completion_requirements": {
+      "checkpoint_format": "jax-tree-leaves-npz-v1",
+      "preregistered_outcomes": [
+        "exact energy",
+        "site density",
+        "connected correlation"
+      ],
+      "prerequisite_independent_replay_validation": "results_stage4f1c/independent_replay/stage4f1c_validation_summary.json",
+      "prerequisite_killtest_summary": "results_stage4f1c/real_microcampaign_killtest/kill_microcampaign_summary.json",
+      "require_complete_manifest_coverage": true,
+      "require_fenced_publication": true,
+      "require_registry_filesystem_reconciliation": true
+    },
+    "models": {
+      "endpoint_full_b32": {
+        "lane": "core"
+      },
+      "endpoint_hybrid_b32": {
+        "lane": "core"
+      },
+      "endpoint_product_b32": {
+        "lane": "core"
+      },
+      "endpoint_sum_b32": {
+        "lane": "core"
+      },
+      "mlp_endpoint_large": {
+        "lane": "core"
+      },
+      "mlp_endpoint_medium": {
+        "lane": "core"
+      },
+      "rbf_radial_b32": {
+        "lane": "core"
+      },
+      "rbm_h32": {
+        "lane": "control"
+      }
+    },
+    "physics": {
+      "boundaries": [
+        "open",
+        "periodic"
+      ],
+      "c6_values": [
+        "3",
+        "4",
+        "5"
+      ],
+      "deltas": [
+        "1.25",
+        "1.50",
+        "1.75",
+        "2.00"
+      ],
+      "n_sites": 10,
+      "omega": 1.0,
+      "samples": 4096,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "sr_shift": 0.1
+    },
+    "runner_overrides": {},
+    "scheduler": {
+      "backoff_seconds": 10,
+      "lease_seconds": 60,
+      "max_attempts": 3
+    },
+    "schema_version": "stage4f-native-v1c",
+    "source_ledger": {
+      "pyproject.toml": "84a5c0002a0a28beb775446e22a8bedbbf057f1cdfa8175702ae6027d030958a",
+      "reproducibility/environment_stage4f_portable.yml": "0272c82329cbfa3f6d8416f67e1c8d17cdccc3a9e1a18518865ad0e9c67e9a90",
+      "scripts/run_stage4e.py": "b099129deb96f6b5ee280cca84d7c393d79153eaaad4ebdd927469bd77d971a3",
+      "scripts/stage4f1b_campaign.py": "c65bdb5e392a6718589977128e811883664b336a80961efb75b29e590a341120",
+      "scripts/stage4f1b_tx.py": "c17b2a4b90f5969332933d0b83558b5d10e40316e347c71c0a2520edd7af43d2",
+      "scripts/stage4f1b_worker.py": "dc026bf9219568e0868af464174645ccc5559b5afe10659b60cb75a3342fc735",
+      "scripts/stage4f1c_campaign.py": "51b5fd34dce3d7480111a6bca96dcae429ed8988fffd2c25e152af63caed2357",
+      "scripts/stage4f1c_crash_probe.py": "2733cb51ed17f82408a6806ed43c9d6498eedae364f52c1ca8d4d1947a38b42d",
+      "scripts/stage4f1c_tx.py": "8daaafaf9e02aa7100795094ffdb69498602fd8486d253a73d192776aab63176",
+      "scripts/stage4f1c_worker.py": "8974bd540fabc6f00e576df14a6ccee373191d69e721474534a75493ca7a8982",
+      "src/graphkan_amo_nqs/__init__.py": "4edb624f00920c4877ce5f2b9bc3eb56ad5d8110f758f1e7cdeab2f285a0eecf",
+      "src/graphkan_amo_nqs/baselines/__init__.py": "6609ebb926cb54d23fa3b75bde514e31f11e6d3afd4d9294dd1d575e96e36d88",
+      "src/graphkan_amo_nqs/baselines/baseline_registry.py": "647dbd78807cc85dc688d0540564e136acd122e99f6b500beb4744b833dc5dc1",
+      "src/graphkan_amo_nqs/baselines/compute_matching.py": "62bd204ea6f17c787e04c608876c8adbd3794dd61989d3948d04be7b7f88f19b",
+      "src/graphkan_amo_nqs/baselines/fairness.py": "c7dd5c91073eb79ccb08513f7c210a606a0d80067e5f3723eee7df0b1ff3dc06",
+      "src/graphkan_amo_nqs/baselines/parameter_matching.py": "db375596876f1cf8c10bc761f600ea5412005a3bd5b3a4cddbe25c6a77289c43",
+      "src/graphkan_amo_nqs/cli.py": "f4bc753ca26e7b21229ed8fe6ee81aebd93cd285452126b165419fddf1760c81",
+      "src/graphkan_amo_nqs/config.py": "487720f379ecc360eaacf3e666e23cbcd45a98970a4d25f2ffb9527b3a484960",
+      "src/graphkan_amo_nqs/environment.py": "cdd04bfb6b6dc7147105cc9263233eb5d2e8ca70115ac76ece28d0ce1be06727",
+      "src/graphkan_amo_nqs/exceptions.py": "4dea4603efec9628454132256cbff792b8b952f1a2a4e0270843658669dac5e0",
+      "src/graphkan_amo_nqs/geometry/__init__.py": "feecb7af84dd8cc062e2c74d5355d26d5cf3fcdf8c84ea137f941a2ec70123d6",
+      "src/graphkan_amo_nqs/geometry/base.py": "b430317cf7bb782d540b2a74103778461cc128f9f9ffa2ddbf4585c45d9d09d8",
+      "src/graphkan_amo_nqs/geometry/chains.py": "9e94eed8767fb7748a4c0e07e6be8eae577da45e354d18d55ceefe785378f37f",
+      "src/graphkan_amo_nqs/geometry/distances.py": "4fb9b3a705853aeb267acde354cd1fe0bdb0ca11e221fecf121dfde36565dab5",
+      "src/graphkan_amo_nqs/geometry/grids.py": "4a57a945bfc386fce5813d647abc52ec8042661cd64ae19dcf2ee4e4bc6742be",
+      "src/graphkan_amo_nqs/geometry/hashing.py": "cf216d067e5fc38bb61835bcd0dc9850a0b90fbbbb71b8503122e04016ee0ebf",
+      "src/graphkan_amo_nqs/geometry/irregular.py": "c01d98f01e284f2ddc90a8e9df50ec9b40dc09c2e57ebda02087030159c0ee5e",
+      "src/graphkan_amo_nqs/geometry/kagome.py": "26471a6e51dc3a82ed84d74edeeab4a7b1fbc7b18552f9334a7e46527566b222",
+      "src/graphkan_amo_nqs/geometry/ladders.py": "42cd87e52ecb0351a226106582ccf18dd040b4b9cb08817f9846dfda47336c5e",
+      "src/graphkan_amo_nqs/geometry/splitters.py": "42a2ec3717966dcc8cd515a1c5bdf1567e2c743fc97ec6e1ab77d239efff0dd7",
+      "src/graphkan_amo_nqs/geometry/triangular.py": "a2fc3be7c71d492d6625978bab335da5c02acc24e039a4e07512806be5edfe5d",
+      "src/graphkan_amo_nqs/hamiltonians/__init__.py": "134f9007db14658b3ab3034349f3295685f124ca9e36c7f20557c6424efc0fde",
+      "src/graphkan_amo_nqs/hamiltonians/basis.py": "c71ca16c20155a8a0cc0a7421cddae72c8b79ebd194f76e2f2d16ea039be428b",
+      "src/graphkan_amo_nqs/hamiltonians/bose_hubbard.py": "6ea6696b4f8af1dc65834103782a3511ce7ffffe94e73a68f8af515aa7542bc5",
+      "src/graphkan_amo_nqs/hamiltonians/exact_diag.py": "14e98ea290b9f7cad83832d35ad5009496e338fbc2e24a07e65341b7c09b4f70",
+      "src/graphkan_amo_nqs/hamiltonians/netket_builders.py": "1addb6c2eadbb1f1f66344a31655355187125aa1cbf21cb905e0b4d7c520de56",
+      "src/graphkan_amo_nqs/hamiltonians/quspin_builders.py": "b00ac33fd78510528c3129bf586aadc98f93efc43c3c3f2b38f9d64ffd84a3ee",
+      "src/graphkan_amo_nqs/hamiltonians/rydberg.py": "30399fd06755c16cb038288ce368344e1b120be2e058cf7616f6d0e3ac805346",
+      "src/graphkan_amo_nqs/hamiltonians/sparse_builders.py": "f4eeedda80ec0b6d5db93fb808b1813e886326b06b7b0c5cfc69b0b5123b8012",
+      "src/graphkan_amo_nqs/hamiltonians/tenpy_references.py": "1a9bbdc88aa415e653a0635f72470e98afa54a95d3bed8a8a0ce88d677f56907",
+      "src/graphkan_amo_nqs/hamiltonians/validation_limits.py": "3c2a71c7d19198f823eaa1dc810b14fadb6a067b709324968318b360e7aa72ae",
+      "src/graphkan_amo_nqs/ibm_optional/__init__.py": "441384c5eee37fadb30196cef383f66e3b42e24cda8200a92481eaac7351dd56",
+      "src/graphkan_amo_nqs/ibm_optional/hardware_decision.py": "ccf157920f25e94aa2e1bf41b3abb1e90407d0fe9fbd0b7b62d4d74d41cb9afc",
+      "src/graphkan_amo_nqs/ibm_optional/qiskit_toy_mapping.py": "9eae2f4e2b4fb73e6d2613decc317d4996a2bf8623e63173da1aef6f672329cb",
+      "src/graphkan_amo_nqs/interpretability/__init__.py": "90392549607b2b9db814960391a90a9453071a5c68ce88818a10c3a32386ffe6",
+      "src/graphkan_amo_nqs/interpretability/correlation_matching.py": "bf301350fc72e1a14b24182936e8fe331a6f4bc4d6a8a78352c51070a8280dbe",
+      "src/graphkan_amo_nqs/interpretability/extract_functions.py": "e29045156fbb2a3383677d55bd0ff171db7eb2f6acf93373af0b0000cf287e88",
+      "src/graphkan_amo_nqs/interpretability/function_distillation.py": "939dab68546a6594816f1b595dd5707a60d182001a9668eb19ce74dd8a1b6f4b",
+      "src/graphkan_amo_nqs/interpretability/gauge_fixing.py": "078547b2a5a433e83c8654e9a0f5772455622cd261c69540ae86c9f1999f1e30",
+      "src/graphkan_amo_nqs/interpretability/scale_collapse.py": "cb2b4719f7e30820287a095469951ed3ff080418cecb4d5c5d7e8bbf41641be2",
+      "src/graphkan_amo_nqs/interpretability/stability.py": "d3eeedf155882d2d9f4253b55b33410eda579ae3b4039b0479daa10ead813d2f",
+      "src/graphkan_amo_nqs/manifests.py": "94243c6022911cc14ce0a4d87da5f2efea468352d7b958f58851d21a879044e9",
+      "src/graphkan_amo_nqs/models/__init__.py": "2137b20d2110b31c2c0737e45006179ddf009f158080c3aa267f5880b7743287",
+      "src/graphkan_amo_nqs/models/base.py": "ea3ff4f00b390f6fd8f6bf85e5b79c3e874faad04d40e523e0ae743166cda4d6",
+      "src/graphkan_amo_nqs/models/flax_nqs.py": "bfdbcff4bc34b8b5609b2f58eb1e0e516059f431eea67302b42efa8bb2364acc",
+      "src/graphkan_amo_nqs/models/gauge.py": "54148bd8356035210b9dc95de7693b2a9e4af9da50365024744997bba63dcdb8",
+      "src/graphkan_amo_nqs/models/graph_kan.py": "97e1c0fda8e64afbe42ef2618a936443e86e39d2324325df66ff2465f7de6d0e",
+      "src/graphkan_amo_nqs/models/graph_mpnn.py": "5200b525b03640dbd2b4c65bfe7269961c9cfe17ac06e7a69a4983c0195cbd4c",
+      "src/graphkan_amo_nqs/models/kan_basis.py": "7afa80fe843f4a008db6c23906a14dd31eaaff04c74700a82304ef591b905911",
+      "src/graphkan_amo_nqs/models/kan_jastrow.py": "95333259e0b1ee0a7943ad8e84de1bd6327b65e68f6b3b3c34172d81098b3fcd",
+      "src/graphkan_amo_nqs/models/mlp_pair.py": "977c629bed378342a8b9b3ec77165a4e62c48b6f96a16bd66d44de5b0eb71044",
+      "src/graphkan_amo_nqs/models/product.py": "90060cbc5a4b83a911cc93d9de3e07de909d3253730b4340c7157a5ecf5f0e28",
+      "src/graphkan_amo_nqs/models/radial_jastrow.py": "e4dedaf60740fc2c74c0358ae4673114fa022755fc445c633cc5ebe19a5bfdc6",
+      "src/graphkan_amo_nqs/models/rbm_netket.py": "3fa1cf2b4cc3a537502582709c40162d63f15c45e32c039067efecb10fdc2c91",
+      "src/graphkan_amo_nqs/models/registry.py": "6a7c44151f908af20e1f646f5834a0ae04a01ccb0a00a1be7d8c4e49c7205a5e",
+      "src/graphkan_amo_nqs/models/rnn_optional.py": "c37711d6c5641a3a73142f4f5509695c9af1d91d6d6dd38163db04e8309c0580",
+      "src/graphkan_amo_nqs/models/sinekan_baseline.py": "7e8d66f52c6cf016335edc44c47a60b2486fad4d8b3d8f5d72f398abc7395962",
+      "src/graphkan_amo_nqs/models/smooth_jastrow.py": "1ece8f0e2340ecf84258d24fee4c995a06be4c1cc178c335b83afaedd54c3f60",
+      "src/graphkan_amo_nqs/models/transformer_optional.py": "5bd98b7ba4e0cc9d2899036831e787e9b94f378e8df6dab74766120a72330399",
+      "src/graphkan_amo_nqs/observables/__init__.py": "cb55907eb90bf8da072fa881ad0fac3e2b6164990c8c811a5fe473f4f98c8a46",
+      "src/graphkan_amo_nqs/observables/correlations.py": "a080532450296d147a526847098734363c92b9bc9cf7fe6654bc700db693b4dc",
+      "src/graphkan_amo_nqs/observables/density.py": "f6b0ac4e61a94ebc14fe7bc356acc719e0f144fb85ef1d0ccce91386cf7e1b61",
+      "src/graphkan_amo_nqs/observables/fidelity.py": "b1d39b89ac01d9340bab85264634f3fa37f5f30351cb994bd442807111facab5",
+      "src/graphkan_amo_nqs/observables/local_energy.py": "3b40a1a3cd4a3fbbd9bde318d938f334ea418dc4bca42def5bb54ee3ecc18f35",
+      "src/graphkan_amo_nqs/observables/sampler_diagnostics.py": "bd175b0d27338daeccdea5ff10dc07a29eb869982b10e2700bc827bf71eeaecb",
+      "src/graphkan_amo_nqs/observables/structure_factor.py": "92c96b97da1220e37eb863c509fcaceb84e25702223d8280bc7eed6d62df91de",
+      "src/graphkan_amo_nqs/plotting/__init__.py": "c64c883682a48106b198259cb648cbe135a3b02a85d54aa6c0074b568e177349",
+      "src/graphkan_amo_nqs/plotting/failure_maps.py": "7861283c2d345581fcf3ec11c8ea72a3a3334204408ed507009ca47ab9345863",
+      "src/graphkan_amo_nqs/plotting/interpretability_figures.py": "fb607a13a4e8cfdbfc6c416d54ad93e98f56071b8502a54a6419d23276d7c03a",
+      "src/graphkan_amo_nqs/plotting/main_figures.py": "099371b97b23c2e2931d62650f625eeefe3c9ad3c1a54697eb57d0ca5b8ee903",
+      "src/graphkan_amo_nqs/plotting/paper_style.py": "d4ecdab1c3259becba223a997ff509bff65b81cd69bbc1ce918ecbbb205ce159",
+      "src/graphkan_amo_nqs/plotting/report_figures.py": "5317e2f0bc88174347b65d797aad43a61ca199c35418f0f02825d6f1e2a6cb84",
+      "src/graphkan_amo_nqs/reporting/__init__.py": "32237f4f2b6c7f494d63d38fb9ac4928ed2bd860439c56d7741eef54baf7b6a1",
+      "src/graphkan_amo_nqs/reporting/claim_audit.py": "b8902fc5059a289ea752529b82cb80ad2ec97cebcdb8c85277f9289d8805d321",
+      "src/graphkan_amo_nqs/reporting/latex_report.py": "861dce04af8633ec563aefedffdf6e7708b0da474c03332bb1a428123f774af1",
+      "src/graphkan_amo_nqs/reporting/readiness.py": "e068a302cda64df9b51b886c95085a1a15ff1038bd50df0036d3ba8237888006",
+      "src/graphkan_amo_nqs/reporting/tables.py": "1be1b03491807515e8588a51bc2eba4ac726f53a0795113ce2eb093885cb30b1",
+      "src/graphkan_amo_nqs/schemas.py": "182afde7a0a94ee9466d6418284fa741d661df273a829cf838bdbec71cdaa6dc",
+      "src/graphkan_amo_nqs/seed.py": "c2d8e45593c9ee9489b1e206eb63cc20a743862fa3e7be992a72352c8c6f345e",
+      "src/graphkan_amo_nqs/stats/__init__.py": "4630cf642372dff7af78cbc8705a33118c351fcda995773e2c4acfbd0900f35c",
+      "src/graphkan_amo_nqs/stats/bootstrap.py": "111df48d24c23314fb376f4a24d7c4594618e0ee85b9ad86abc14e965bc1697b",
+      "src/graphkan_amo_nqs/stats/decision_gates.py": "42e35229c2ef387c68e8443b9fd3e05620ff36770769e782793768fefb4da036",
+      "src/graphkan_amo_nqs/stats/multiple_comparison.py": "e650f4dcfee07bf293aa3a115ba515f9bd6feb378b0ea8944723991a2b12e495",
+      "src/graphkan_amo_nqs/stats/paired_tests.py": "b4989635cb0831d0f8f3b58172980b864e55c8d08b3fdd88d9c7a49dd580c9a3",
+      "src/graphkan_amo_nqs/stats/uncertainty_tables.py": "61262a848c86fee536f5d37129254f4edd3113abeb755171031a3734cdf01586",
+      "src/graphkan_amo_nqs/training/__init__.py": "8d8664981432e981aa6b7ba9133111f502bf8a2d659b3d7200fe964d5d5031ad",
+      "src/graphkan_amo_nqs/training/exact_fullsum.py": "da69fb60382cc1b0f0de5610e9c28a0bce5e0179f4ddd82fa58bf61f1a49a602",
+      "src/graphkan_amo_nqs/training/failed_run_policy.py": "d331141d96bdf9f9d1c97af616fb43d07aa79b8b58f17d30115cece546acb268",
+      "src/graphkan_amo_nqs/training/hyperparameter_tuning.py": "c3372712b2818ea682b3ca06dd845ffce11da01d760e290dcab53b2e66a1c9f9",
+      "src/graphkan_amo_nqs/training/nqs_preflight.py": "097e9ddbb07d5e9bd9433bb8aa9665828e24830a0e89be94feceb89a4bad31b2",
+      "src/graphkan_amo_nqs/training/optimizers.py": "1935c5875f7f58dbf52dbc5da6506a9fd2404aaf6c94c7e0fa32e68ccea59676",
+      "src/graphkan_amo_nqs/training/run_manager.py": "073c0139fe7833ffd03c2788fa6901486da6da722946bd8246967dc7dae37fc6",
+      "src/graphkan_amo_nqs/training/samplers.py": "106ffae8831bbd20a30c4cdba6fa3bcd2b46d5a503d147c5b4ccedcc30097e85",
+      "src/graphkan_amo_nqs/training/vmc_fallback.py": "797916e5bf6dbbd7d3a997cecf81c6d9be6c951ff4be587337af3f4ba2c81e12",
+      "src/graphkan_amo_nqs/training/vmc_netket.py": "02d1a8a41f3f0673a390e1c25ba5644b678a2e38ccbb6d1b0813c0ce79a1696d"
+    }
+  },
+  "schema_version": "stage4f-native-v1c"
+}

@@ -1,0 +1,8 @@
+{
+  "schema": "stage4d-coefficient-export-v1",
+  "results_root": "results_stage4d/mechanism_mini",
+  "checkpoint_count": 36,
+  "coefficient_rows": 1416,
+  "long_csv": "results_stage4d/mechanism_mini/aggregated/stage4d_coefficients_long.csv",
+  "summary_csv": "results_stage4d/mechanism_mini/aggregated/stage4d_coefficients_summary.csv"
+}

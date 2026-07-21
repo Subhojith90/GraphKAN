@@ -1,0 +1,18 @@
+{
+  "schema": "stage4e-paired-pareto-gate-v1",
+  "source": "results_stage4e/n10_capacity/raw/stage4e_metrics.csv",
+  "candidate_models": [
+    "endpoint_sum_b16",
+    "endpoint_sum_b24",
+    "endpoint_sum_b32",
+    "endpoint_product_b16",
+    "endpoint_product_b24",
+    "endpoint_product_b32"
+  ],
+  "baseline_models": [
+    "mlp_endpoint_medium",
+    "mlp_endpoint_large"
+  ],
+  "valid_rows_used": 57,
+  "output_csv": "results_stage4e/n10_capacity/aggregated/stage4e_paired_pareto_gate.csv"
+}

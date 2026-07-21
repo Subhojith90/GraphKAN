@@ -1,0 +1,10 @@
+{
+  "boundary": "open",
+  "c6": "4",
+  "campaign_id": "stage4f1_fault_injection__stage4f-native-v1",
+  "delta": "1.50",
+  "lane": "core",
+  "model": "endpoint_product_b32",
+  "run_id": "stage4f1_fault_injection__stage4f-native-v1__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "seed": 0
+}

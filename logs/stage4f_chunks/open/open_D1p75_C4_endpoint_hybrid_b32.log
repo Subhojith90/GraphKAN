@@ -1,0 +1,9 @@
+RUN open D=1.75 C6=4 model=endpoint_hybrid_b32
+/opt/anaconda3/envs/graphkan-stage4b-py312/bin/python scripts/run_stage4e.py --config configs/_stage4f_chunks/open/stage4f_open_D1p75_C4_endpoint_hybrid_b32.yaml --resume
+
+valid stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:endpoint_hybrid_b32:samples4096:shift0.1:seed0: sample|E-E0|=0.07229, exact|E-E0|=0.0761, exact_flags=none, sample_flags=none
+valid stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:endpoint_hybrid_b32:samples4096:shift0.1:seed1: sample|E-E0|=0.0837, exact|E-E0|=0.0786, exact_flags=none, sample_flags=none
+valid stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:endpoint_hybrid_b32:samples4096:shift0.1:seed2: sample|E-E0|=0.07808, exact|E-E0|=0.07828, exact_flags=none, sample_flags=none
+valid stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:endpoint_hybrid_b32:samples4096:shift0.1:seed3: sample|E-E0|=0.07526, exact|E-E0|=0.0746, exact_flags=none, sample_flags=none
+valid stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:endpoint_hybrid_b32:samples4096:shift0.1:seed4: sample|E-E0|=0.0764, exact|E-E0|=0.07657, exact_flags=none, sample_flags=none
+Stage 4E complete: exact_valid=5/5, sample_valid=5/5

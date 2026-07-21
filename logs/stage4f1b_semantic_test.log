@@ -1,0 +1,63 @@
+{
+  "invalid_cases": {
+    "checkpoint_unreadable": {
+      "errors": [
+        "checkpoint_manifest readable is not true",
+        "hash mismatch: checkpoint_manifest.json",
+        "COMPLETE.json is older than checkpoint_manifest.json"
+      ],
+      "valid": false
+    },
+    "complete_not_last": {
+      "errors": [
+        "COMPLETE.json is older than metrics.csv"
+      ],
+      "valid": false
+    },
+    "corrupt_checkpoint_manifest": {
+      "errors": [
+        "checkpoint_manifest.json parse error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+        "hash mismatch: checkpoint_manifest.json",
+        "COMPLETE.json is older than checkpoint_manifest.json"
+      ],
+      "valid": false
+    },
+    "false_artifact_hash": {
+      "errors": [
+        "hash mismatch: metrics.csv",
+        "COMPLETE.json is older than artifact_manifest.json"
+      ],
+      "valid": false
+    },
+    "missing_checkpoint_payload": {
+      "errors": [
+        "checkpoint payload missing: checkpoint.npz",
+        "manifest file missing: checkpoint.npz"
+      ],
+      "valid": false
+    },
+    "tampered_metrics": {
+      "errors": [
+        "hash mismatch: metrics.csv",
+        "COMPLETE.json is older than metrics.csv"
+      ],
+      "valid": false
+    },
+    "wrong_complete_run_id": {
+      "errors": [
+        "COMPLETE.json run_id mismatch"
+      ],
+      "valid": false
+    },
+    "wrong_metrics_run_id": {
+      "errors": [
+        "metrics.csv: row 0 run_id mismatch",
+        "hash mismatch: metrics.csv",
+        "COMPLETE.json is older than metrics.csv"
+      ],
+      "valid": false
+    }
+  },
+  "semantic_validator": "PASS",
+  "valid_bundle": true
+}

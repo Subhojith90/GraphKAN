@@ -1,0 +1,17 @@
+profile: ed_reference
+output_root: results
+seed: 0
+instances:
+  chains:
+    n_sites: [4, 6, 8, 10, 12]
+    spacing: 1.0
+  squares:
+    shapes: [[2, 2]]
+  ladders:
+    shapes: [[2, 3]]
+parameters:
+  omega: [0.0, 1.0]
+  delta: [-1.0, 0.5, 1.5]
+  c6: [1.0, 4.0]
+  sign_rule: parity
+max_dense_n: 8

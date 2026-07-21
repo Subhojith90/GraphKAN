@@ -1,0 +1,8 @@
+{
+  "schema": "stage4d-coefficient-export-v1",
+  "results_root": "results_stage4d/low_detuning_autopsy_fullbudget",
+  "checkpoint_count": 42,
+  "coefficient_rows": 2184,
+  "long_csv": "results_stage4d/low_detuning_autopsy_fullbudget/aggregated/stage4d_coefficients_long.csv",
+  "summary_csv": "results_stage4d/low_detuning_autopsy_fullbudget/aggregated/stage4d_coefficients_summary.csv"
+}

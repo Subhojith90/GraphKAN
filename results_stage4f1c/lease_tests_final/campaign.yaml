@@ -1,0 +1,57 @@
+campaign:
+  name: stage4f1c_schema_fenced_runner
+  schema_version: stage4f-native-v1c
+  output_root: results_stage4f1c/lease_tests_final
+  claim_boundary: engineering hardening only; not Stage 4F-R science
+physics:
+  n_sites: 10
+  omega: 1.0
+  deltas:
+  - '1.25'
+  - '1.50'
+  - '1.75'
+  - '2.00'
+  c6_values:
+  - '3'
+  - '4'
+  - '5'
+  boundaries:
+  - open
+  - periodic
+  seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  samples: 4096
+  sr_shift: 0.1
+models:
+  rbf_radial_b32:
+    lane: core
+  endpoint_sum_b32:
+    lane: core
+  endpoint_product_b32:
+    lane: core
+  endpoint_hybrid_b32:
+    lane: core
+  endpoint_full_b32:
+    lane: core
+  mlp_endpoint_medium:
+    lane: core
+  mlp_endpoint_large:
+    lane: core
+  rbm_h32:
+    lane: control
+base_configs:
+  open: configs/netket_stage4f_boundary_patch_open.yaml
+  periodic: configs/netket_stage4f_boundary_patch_periodic.yaml
+scheduler:
+  lease_seconds: 300
+  max_attempts: 2
+  backoff_seconds: 10
+completion_requirements:
+  checkpoint_format: jax-tree-leaves-npz-v1
+  require_complete_manifest_coverage: true
+  require_registry_filesystem_reconciliation: true
+  require_fenced_publication: true

@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "d0d24d3a0cbd00682c2e1b4ff49e48dea03224b12ad02b9df6176a4cbcc6b699",
+  "leaf_count": 3,
+  "model_kind": "kan_endpoint_hybrid_jastrow",
+  "model_label": "rbf_endpoint_hybrid_22p",
+  "n_parameters": 22,
+  "profile": "stage4d_low_detuning_autopsy_fullbudget",
+  "run_id": "stage4d_low_detuning_autopsy_fullbudget:ryd_chain_N8_D1.5_C64_8d3224bcce0d6c03:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed2",
+  "seed": 2,
+  "stage": "4D",
+  "treedef_repr": "PyTreeDef({'endpoint_coeff': *, 'kan_coeff': *, 'site_bias': *})"
+}

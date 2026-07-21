@@ -1,0 +1,15 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+_________________ test_release_has_manifest_and_native_schema __________________
+
+    def test_release_has_manifest_and_native_schema():
+        root = Path(__file__).resolve().parents[1]
+        assert (root / "release_manifest.json").exists()
+>       assert (root / "results_stage4c").exists()
+E       AssertionError: assert False
+E        +  where False = <bound method Path.exists of PosixPath('/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate/results_stage4c')>()
+E        +    where <bound method Path.exists of PosixPath('/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate/results_stage4c')> = (PosixPath('/Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate') / 'results_stage4c').exists
+
+release_tests/test_release_stage4c.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED release_tests/test_release_stage4c.py::test_release_has_manifest_and_native_schema

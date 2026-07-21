@@ -1,0 +1,5 @@
+=== Stage 4D VMC batch ===
+UTC: 2026-07-04T12:54:55Z
+Command: PYTHONPATH=src python scripts/run_stage4d.py --config configs/netket_stage4d_n10_rbm_only_smoke.yaml --overwrite
+flagged stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0: sample|E-E0|=0.3531, exact|E-E0|=0.3418, exact_flags=LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_DENSITY_ERROR
+Stage 4D complete: exact_valid=0/1, sample_valid=0/1

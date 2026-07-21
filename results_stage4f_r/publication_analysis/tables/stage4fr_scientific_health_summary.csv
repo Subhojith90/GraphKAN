@@ -1,0 +1,17 @@
+boundary,model,runs,exact_valid,exact_flagged,sample_valid,sample_flagged,exact_valid_rate,sample_valid_rate
+open,endpoint_full_b32,60,60,0,60,0,1.0,1.0
+open,endpoint_hybrid_b32,60,60,0,60,0,1.0,1.0
+open,endpoint_product_b32,60,60,0,60,0,1.0,1.0
+open,endpoint_sum_b32,60,60,0,60,0,1.0,1.0
+open,mlp_endpoint_large,60,60,0,60,0,1.0,1.0
+open,mlp_endpoint_medium,60,60,0,60,0,1.0,1.0
+open,rbf_radial_b32,60,58,2,60,0,0.9666666666666667,1.0
+open,rbm_h32,60,0,60,0,60,0.0,0.0
+periodic,endpoint_full_b32,60,60,0,59,1,1.0,0.9833333333333333
+periodic,endpoint_hybrid_b32,60,60,0,59,1,1.0,0.9833333333333333
+periodic,endpoint_product_b32,60,60,0,59,1,1.0,0.9833333333333333
+periodic,endpoint_sum_b32,60,60,0,59,1,1.0,0.9833333333333333
+periodic,mlp_endpoint_large,60,54,6,51,9,0.9,0.85
+periodic,mlp_endpoint_medium,60,59,1,54,6,0.9833333333333333,0.9
+periodic,rbf_radial_b32,60,60,0,59,1,1.0,0.9833333333333333
+periodic,rbm_h32,60,0,60,0,60,0.0,0.0

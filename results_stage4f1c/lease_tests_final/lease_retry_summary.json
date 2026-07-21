@@ -1,0 +1,16 @@
+{
+  "first_attempt_id": "c69ed836aa99400ab8dd048ea39547a3",
+  "lease_retry": "PASS",
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "FAILED_RETRYABLE": 1,
+      "PENDING": 958,
+      "RUNNING": 1
+    },
+    "total_expected": 960
+  },
+  "second_attempt_id": "fc6c36fe30e04021b10db3f9ef7ee800",
+  "stale_completion_rejected": true,
+  "stale_heartbeat_rejected": true
+}

@@ -1,0 +1,8 @@
+{
+  "attempt_id": "be61f8f5c1404f6d95e42072fc63a560",
+  "ended_utc": "2026-07-14T06:35:04+00:00",
+  "exit_code": 0,
+  "run_id": "stage4f1c_crash_probe_during_training__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "status": "COMPLETED",
+  "wall_seconds": 16.50138750000042
+}

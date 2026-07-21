@@ -1,0 +1,8 @@
+profile_directory,classification,rows,completed,exact_valid,sample_valid,headline_excluded
+fullbudget_smoke,SUPPORTING_ENGINEERING,6,6,5,5,True
+low_detuning_autopsy_fullbudget,HEADLINE_EVIDENCE,42,42,39,38,False
+mechanism_mini,HEADLINE_EVIDENCE,36,36,33,32,False
+n10_fullbudget_smoke,SUPPORTING_ENGINEERING,7,7,5,6,True
+n10_fullbudget_smoke_pre_clean_rbm_metadata,QUARANTINED,7,7,5,6,True
+n10_primary_cell1_fiveseed,HEADLINE_EVIDENCE,25,25,25,25,False
+n10_rbm_only_smoke,QUARANTINED,1,1,0,0,True

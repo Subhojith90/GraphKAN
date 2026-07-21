@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "python": "3.12.7",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "packages": {
+    "jax": "0.7.1",
+    "jaxlib": "0.7.1",
+    "flax": "0.12.0",
+    "optax": "0.2.8",
+    "netket": "3.22.3",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1"
+  },
+  "jax_devices": [
+    "TFRT_CPU_0"
+  ],
+  "errors": [],
+  "warnings": [
+    "Recommended interpreter is Python 3.11; detected 3.12.7.",
+    "CPU-only JAX detected. Use the smoke profile before launching the registered VMC benchmark."
+  ]
+}

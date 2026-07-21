@@ -1,0 +1,20 @@
+{
+  "attempt_id": "8fd45a9a509c4f3eab9c5bbcb2ec88ea",
+  "boundary": "periodic",
+  "c6": "4",
+  "campaign_id": "stage4f1c_real_microcampaign__stage4f-native-v1c__Pd0e66ccc6dad4f19",
+  "claim_token_hash": "173f01c16e4f3c55aa62b804f52b5b6db6e0c410ec75c2ffbc7d28013b031ec4",
+  "created_utc": "2026-07-14T07:28:11+00:00",
+  "delta": "2.00",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "961608966335538d56f208f93adf7d44bf2c9e8aae2a353c2c0a18def34f6a7d",
+  "lane": "core",
+  "model": "mlp_endpoint_large",
+  "n_sites": 10,
+  "priority": 14,
+  "protocol_hash": "d0e66ccc6dad4f19258d0c74f6fcbb0d4a684f63b088747f03c7b81549c464cc",
+  "run_id": "stage4f1c_real_microcampaign__stage4f-native-v1c__Pd0e66ccc6dad4f19__Bperiodic__D2p00__C4__Mmlp_endpoint_large__S0",
+  "runner_run_id": "stage4f1c__stage4f1c_real_microcampaign__stage4f-native-v1c__Pd0e66ccc6dad4f19__Bperiodic__D2p00__C4__Mmlp_endpoint_large__S0:ryd_periodic_chain_N10_D2_C64_b3b7e442e7a8801c:mlp_endpoint_large:samples4096:shift0.1:seed0",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 0
+}
