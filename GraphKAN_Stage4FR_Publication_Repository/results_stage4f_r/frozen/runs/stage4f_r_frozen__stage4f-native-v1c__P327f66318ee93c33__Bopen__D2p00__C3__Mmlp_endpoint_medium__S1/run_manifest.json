@@ -1,0 +1,20 @@
+{
+  "attempt_id": "94380895f7f244c387080b01095cf53d",
+  "boundary": "open",
+  "c6": "3",
+  "campaign_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33",
+  "claim_token_hash": "465b183a25f45a2a9be0affd11d1d4f98d375d24c5fa7330de007a92c46717d9",
+  "created_utc": "2026-07-18T16:01:49+00:00",
+  "delta": "2.00",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "c11cd0aca5706cb0ca9fdf1836a65c68498c81f11c9d60d4c239cd41857000af",
+  "lane": "core",
+  "model": "mlp_endpoint_medium",
+  "n_sites": 10,
+  "priority": 269,
+  "protocol_hash": "327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D2p00__C3__Mmlp_endpoint_medium__S1",
+  "runner_run_id": "stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D2p00__C3__Mmlp_endpoint_medium__S1:ryd_chain_N10_D2_C63_9eb3df95db5bfe43:mlp_endpoint_medium:samples4096:shift0.1:seed1",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 1
+}

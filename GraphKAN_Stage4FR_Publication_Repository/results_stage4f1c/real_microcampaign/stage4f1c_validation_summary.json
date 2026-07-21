@@ -1,0 +1,15 @@
+{
+  "blocking_errors": [],
+  "campaign": "results_stage4f1c/real_microcampaign",
+  "complete_bundles_checked": 16,
+  "registry_filesystem_errors": [],
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 16
+    },
+    "total_expected": 16
+  },
+  "schema_version": "stage4f-native-v1c",
+  "validation": "PASS"
+}

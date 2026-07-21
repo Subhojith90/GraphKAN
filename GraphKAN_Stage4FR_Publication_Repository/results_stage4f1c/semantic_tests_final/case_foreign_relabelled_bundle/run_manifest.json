@@ -1,0 +1,19 @@
+{
+  "attempt_id": "synthetic-attempt",
+  "boundary": "open",
+  "c6": "3",
+  "campaign_id": "stage4f1c_schema_fenced_runner__stage4f-native-v1c__Pb6e16d590d1aca75",
+  "claim_token_hash": "8dcfd6d02ccf6899802de85ac08d84c1fe15f54d26cd8e8fecc7664d3efd14df",
+  "created_utc": "2026-07-14T06:45:02+00:00",
+  "delta": "1.25",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "21e7bbf44952643390651050f95d735a174bf1fdefa5226042a371dfb2f6be43",
+  "lane": "core",
+  "model": "rbf_radial_b32",
+  "n_sites": 10,
+  "priority": 0,
+  "protocol_hash": "b6e16d590d1aca7586a704a20c475e054ab94eaa8cabd6154b33c1617ee86768",
+  "run_id": "FOREIGN-RUN",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 0
+}

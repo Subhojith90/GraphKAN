@@ -1,0 +1,9 @@
+profile_directory,classification,headline_excluded,reason,allowed_use
+fullbudget_smoke,SUPPORTING_ENGINEERING,True,Smoke or engineering validation profile.,Engineering and dispatch evidence.
+low_detuning_autopsy_fullbudget,HEADLINE_EVIDENCE,False,Registered Stage 4D scientific evidence.,Scientific summary and paired analysis.
+mechanism_mini,HEADLINE_EVIDENCE,False,Registered Stage 4D scientific evidence.,Scientific summary and paired analysis.
+n10_fullbudget_smoke,SUPPORTING_ENGINEERING,True,Smoke or engineering validation profile.,Engineering and dispatch evidence.
+n10_fullbudget_smoke_pre_clean_rbm_metadata,QUARANTINED,True,Pre-clean RBM metadata version.,Historical provenance only; superseded by clean smoke.
+n10_primary_cell1_fiveseed,HEADLINE_EVIDENCE,False,Registered Stage 4D scientific evidence.,Scientific summary and paired analysis.
+n10_rbm_only_smoke,QUARANTINED,True,"RBM dispatch engineering smoke, not a replicated scientific baseline.",Dispatch validation only.
+quarantined_n10_smoke,QUARANTINED,True,Failed or incomplete N=10 smoke provenance.,Engineering provenance only.

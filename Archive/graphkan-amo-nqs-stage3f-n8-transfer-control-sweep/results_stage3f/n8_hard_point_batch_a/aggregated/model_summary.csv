@@ -1,0 +1,6 @@
+model_label,model_kind,basis_family,n_parameters,runs,valid,median_exact_model_abs_energy_error_to_ed,median_exact_model_density_mae_to_ed,median_exact_model_connected_correlation_mae_to_ed,median_wall_seconds,valid_rate
+rbf_endpoint_21p,kan_endpoint_jastrow,rbf,21,2,2,0.21592461617992859,0.0463047079515171,0.0293409201339764,19.594698353999775,1.0
+rbf_radial_21p,kan_jastrow,rbf,21,2,0,0.5313337805641787,0.08139113016074326,0.0270981486456411,19.526333896001233,0.0
+rbf_smooth_21p,smooth_jastrow,rbf,21,2,0,0.5313337805641787,0.08139113016074326,0.0270981486456411,19.53502943750027,0.0
+sine_endpoint_21p,kan_endpoint_jastrow,sine,21,2,1,0.08271551050232065,0.08122006648429256,0.0384676328717406,19.633410812501097,0.5
+sine_radial_21p,kan_jastrow,sine,21,2,0,0.09318656800983399,0.09277386364521234,0.04270052026835745,20.497241375000158,0.0

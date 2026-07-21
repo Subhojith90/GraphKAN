@@ -1,0 +1,16 @@
+fault_injection:
+  campaign_name: stage4f1_fault_injection
+  output_root: results_stage4f1/fault_injection
+  cases:
+    - kill_after_metrics
+    - kill_during_checkpoint
+    - kill_before_complete_marker
+    - duplicate_worker_claim
+    - corrupt_checkpoint
+    - missing_history
+    - valid_complete_bundle
+acceptance:
+  duplicate_run_ids: 0
+  complete_with_missing_artifacts: 0
+  skipped_incomplete_runs: 0
+  valid_complete_bundles: 1

@@ -1,0 +1,10 @@
+model,scientific_validity,runs
+kan_jastrow,FLAGGED,10
+kan_jastrow,VALID,110
+mlp_pair,VALID,120
+product,FLAGGED,70
+product,VALID,50
+rbm,FLAGGED,30
+rbm,VALID,90
+smooth_jastrow,FLAGGED,10
+smooth_jastrow,VALID,110

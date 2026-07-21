@@ -1,0 +1,3 @@
+candidate,control,pairs,candidate_exact_valid_all,candidate_not_worse_energy_all,candidate_not_worse_density_all,candidate_not_worse_corr_all,control_over_candidate_runtime_ratio_median,control_dominates_candidate_under_1_25x_compute,status,median_energy_delta,median_density_delta,median_corr_delta
+rbf_endpoint_sum_21p,mlp_endpoint_128p,1,False,False,True,False,1.1691990849723108,False,NOT_DOMINATED,0.9800315622302147,-0.005323794600399584,0.0017436941229447
+rbf_endpoint_sum_21p,rbf_radial_21p,1,False,True,True,False,1.4826416692241744,False,NOT_DOMINATED,-1.6066294742686473,-0.006663793992398109,0.0012550320468828965

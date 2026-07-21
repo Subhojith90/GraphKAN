@@ -1,0 +1,8 @@
+{
+  "attempt_id": "2b2fe2c0c78b40d6bceeef76c1a89600",
+  "ended_utc": "2026-07-14T06:35:31+00:00",
+  "exit_code": 0,
+  "run_id": "stage4f1c_crash_probe_during_checkpoint__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "status": "COMPLETED",
+  "wall_seconds": 11.373162291998597
+}

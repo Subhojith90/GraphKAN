@@ -1,0 +1,96 @@
+profile: stage4c_adjacent_hard_patch
+stage: 4C
+output_root: results_stage4c/hard_patch
+netket:
+  inverted_ordering: false
+chains:
+  n_sites:
+  - 6
+  - 8
+  spacing: 1.0
+parameters:
+  omega:
+  - 1.0
+  delta:
+  - 1.5
+  - 2.0
+  - 2.5
+  c6:
+  - 3.0
+  - 4.0
+  - 5.0
+training:
+  seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  n_basis: 12
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+exact_health_gate:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+stage4c_gate:
+  candidate: rbf_endpoint_sum_21p
+  min_candidate_exact_valid_rate: 0.9
+  min_non_dominated_cell_rate: 0.7
+  runtime_dominance_convention: control/candidate wall_seconds <= 1.25
+model_specs:
+  rbf_radial_21p:
+    kind: kan_jastrow
+    basis_family: rbf
+    n_basis: 13
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_sum_21p:
+    kind: kan_endpoint_sum_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_product_21p:
+    kind: kan_endpoint_product_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  mlp_radial_64p:
+    kind: mlp_pair
+    basis_family: rbf
+    n_basis: 9
+    hidden: 5
+    save_checkpoint: true
+  mlp_endpoint_64p:
+    kind: mlp_endpoint_pair
+    basis_family: rbf
+    n_basis: 6
+    hidden: 5
+    save_checkpoint: true
+  mlp_radial_128p:
+    kind: mlp_pair
+    basis_family: rbf
+    n_basis: 15
+    hidden: 7
+    save_checkpoint: true
+  mlp_endpoint_128p:
+    kind: mlp_endpoint_pair
+    basis_family: rbf
+    n_basis: 12
+    hidden: 7
+    save_checkpoint: true

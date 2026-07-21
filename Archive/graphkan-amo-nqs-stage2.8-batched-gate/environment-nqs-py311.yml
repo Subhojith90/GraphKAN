@@ -1,0 +1,8 @@
+name: graphkan-amo-nqs-py311
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -e .[nqs,dev]

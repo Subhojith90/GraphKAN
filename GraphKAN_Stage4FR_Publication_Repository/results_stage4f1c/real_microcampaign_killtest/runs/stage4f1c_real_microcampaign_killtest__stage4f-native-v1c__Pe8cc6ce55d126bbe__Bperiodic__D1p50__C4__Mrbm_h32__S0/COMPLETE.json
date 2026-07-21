@@ -1,0 +1,8 @@
+{
+  "artifact_manifest_sha256": "cee1bb67bb813bf8b8a20c520cb58f11f84d3d8c4c4f544a8aa4976c1dd39a65",
+  "artifact_validation": "PASS",
+  "attempt_id": "c4a0a74fdf0b4a9dab54ccc87bf9b6b5",
+  "completed_utc": "2026-07-14T08:25:43+00:00",
+  "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D1p50__C4__Mrbm_h32__S0",
+  "schema_version": "stage4f-native-v1c"
+}

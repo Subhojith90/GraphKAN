@@ -1,0 +1,4 @@
+batch,status,results,completed_rows
+n8_component_replay,SUMMARISED,results_stage4b/n8_component_replay,25
+n8_controls_core,SUMMARISED,results_stage4b/n8_controls_core,50
+n8_capacity_compute,SUMMARISED,results_stage4b/n8_capacity_compute,40

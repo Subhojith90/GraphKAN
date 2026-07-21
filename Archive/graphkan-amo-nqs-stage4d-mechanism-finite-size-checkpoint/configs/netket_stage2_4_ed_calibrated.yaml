@@ -1,0 +1,47 @@
+profile: netket_stage2_4_ed_calibrated
+output_root: results_stage2_4
+models: [product, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [6, 8]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0]
+  c6: [1.0]
+  sign_rule: parity
+training:
+  seeds: [0, 1, 2]
+  n_samples: 2048
+  n_chains: 32
+  n_discard_per_chain: 64
+  n_iter: 250
+  chunk_size: 25
+  learning_rate: 0.001
+  diag_shift: 0.1
+  grad_clip_norm: 5.0
+  n_basis: 8
+  hidden: 16
+model_overrides:
+  product:
+    learning_rate: 0.0005
+    diag_shift: 0.2
+  smooth_jastrow:
+    learning_rate: 0.0005
+    diag_shift: 0.2
+  mlp_pair:
+    learning_rate: 0.0005
+    diag_shift: 0.3
+    grad_clip_norm: 2.0
+  kan_jastrow:
+    learning_rate: 0.0005
+    diag_shift: 0.3
+    grad_clip_norm: 2.0
+health_gate:
+  min_energy_error: 1.0e-10
+  min_energy_variance: 1.0e-12
+  min_unique_states: 2
+  min_unique_state_fraction: 0.01
+  max_abs_energy_error_to_ed: 0.75
+fairness:
+  rule: "Stage 2.4 is a stabilisation diagnostic, not a final capacity-matched architecture benchmark. All profiles log model-specific conservative optimiser settings explicitly."
+notes: "ED-calibrated validation only. Do not aggregate or make architecture claims unless scientific_validity=VALID."

@@ -1,0 +1,4 @@
+profile: rydberg_pra_core
+output_root: results
+run_policy: not_run_by_default
+reason: "Requires NetKet/Flax and longer wall-clock budget; CPU artifact records command but does not fake results."

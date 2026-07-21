@@ -1,0 +1,22 @@
+profile: netket_smoke
+output_root: results
+models: [product, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [6]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [1.0]
+  c6: [1.0]
+  sign_rule: parity
+training:
+  seeds: [0]
+  n_samples: 256
+  n_chains: 8
+  n_iter: 20
+  chunk_size: 10
+  learning_rate: 0.01
+  diag_shift: 0.01
+  n_basis: 8
+  hidden: 16
+notes: "Smoke-only VMC validation. Do not use in paper aggregation."

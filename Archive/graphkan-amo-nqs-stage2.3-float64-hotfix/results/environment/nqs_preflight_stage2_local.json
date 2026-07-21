@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "python": "3.13.5",
+  "platform": "Linux-4.4.0-x86_64-with-glibc2.41",
+  "packages": {
+    "jax": "0.9.0.1",
+    "jaxlib": "0.9.0.1",
+    "flax": null,
+    "optax": null,
+    "netket": null,
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "jax_devices": [
+    "TFRT_CPU_0"
+  ],
+  "errors": [
+    "Missing NQS dependencies: flax, optax, netket. Install with `pip install -e '.[nqs]'`."
+  ],
+  "warnings": [
+    "Recommended interpreter is Python 3.11; detected 3.13.5.",
+    "CPU-only JAX detected. Use the smoke profile before launching the registered VMC benchmark."
+  ]
+}

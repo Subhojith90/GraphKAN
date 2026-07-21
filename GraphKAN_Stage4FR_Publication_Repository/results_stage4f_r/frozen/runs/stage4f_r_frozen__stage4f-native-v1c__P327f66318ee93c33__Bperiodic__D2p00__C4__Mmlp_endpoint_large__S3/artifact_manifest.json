@@ -1,0 +1,17 @@
+{
+  "files": {
+    "checkpoint.npz": "c7adee289d9e3da907f908adbafb464ee90dc3a7440da935af16191d5c0e0513",
+    "checkpoint_manifest.json": "eed7ea417c576bfd4350ef351a642ecbc4abf9443c4ff1b270f38e7ca8bd97e7",
+    "command.json": "0757f9bdcb5d4a0df2e8500f6349c9ad2428d6be4856d2744d6291988cf56893",
+    "corr_observables.csv": "5788b541916747a8820d2ccc46e58adb621a94fbfc4acab36cadd841d5299f78",
+    "exit_status.json": "0379b97990e152f122b5af841b5a4548180f9b9ac03624c6b264dc147ef05be3",
+    "history.csv": "5e2bdf17ecf3f8d5752f54c3c97b93b35f89bf0e6f2c8087c1a9b6d6e68ec2cf",
+    "metrics.csv": "108b4d748efedb50be57a4b82f513d8617a43d8ea42f19c6ddb957ea68797eda",
+    "resolved_config.yaml": "7fd49485565e97fd27e7c4684678b71d01c6b161ebf0dda41043e457c9bc4703",
+    "run_manifest.json": "8febaad0727f77a19b03236bde7e65fa0269b8bb7374efac6247249ebcd2b362",
+    "site_observables.csv": "4f5944b89367a6cf78253a4428119633d614a6e942ec3e895da170018f7825c5",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.log": "5498def3c7bbc64256f473fffbcfb797430fc2cd7ad4735833c10bd34535ed90"
+  },
+  "schema_version": "stage4f-native-v1c"
+}

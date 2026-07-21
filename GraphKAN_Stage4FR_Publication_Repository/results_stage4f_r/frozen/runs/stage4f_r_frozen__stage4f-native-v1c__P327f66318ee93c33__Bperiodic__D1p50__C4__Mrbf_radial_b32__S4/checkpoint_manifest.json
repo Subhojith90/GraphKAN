@@ -1,0 +1,16 @@
+{
+  "array_count": 2,
+  "arrays": {
+    "leaf_0000": [
+      32
+    ],
+    "leaf_0001": [
+      10
+    ]
+  },
+  "checkpoint": "checkpoint.npz",
+  "model": "rbf_radial_b32",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p50__C4__Mrbf_radial_b32__S4",
+  "schema_version": "jax-tree-leaves-npz-v1",
+  "sha256": "b9a06121e476b5be9049c56ae0fb49ab117ddab9d4fa5a62655ec7dff7887b11"
+}

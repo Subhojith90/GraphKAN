@@ -1,0 +1,6 @@
+{
+  "profile": "stage2_7_hard_regime",
+  "config_hash": "235e1bbd96b115164bb0e4db1f153a56588d5c511f5dde8dc01ad16a7dc0ff94",
+  "stage": "2.7",
+  "purpose": "hard-regime diagnostic and matched-fairness gate"
+}

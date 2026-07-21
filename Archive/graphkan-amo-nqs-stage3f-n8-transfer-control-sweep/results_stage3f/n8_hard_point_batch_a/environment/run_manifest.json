@@ -1,0 +1,6 @@
+{
+  "profile": "stage3f_n8_hard_point_batch_a",
+  "config_hash": "aac70dc7e888f9ec7428f5f8e4173a99ee23a0dba9d6cb786ccef8699e8ff693",
+  "stage": "3F",
+  "purpose": "taxonomy-locked, matched-parameter basis-by-endpoint fairness and five-seed replication gate"
+}

@@ -1,0 +1,8 @@
+candidate,control,pairs,candidate_exact_valid_all,candidate_not_worse_energy_all,candidate_not_worse_density_all,candidate_not_worse_corr_all,candidate_runtime_ratio_median,control_dominates_candidate_under_1_25x_compute,status,median_energy_delta,median_density_delta,median_corr_delta
+rbf_endpoint_sum_b12_21p,rbf_endpoint_sum_b16_25p,5,True,True,True,True,0.48125482426796656,False,NOT_DOMINATED,-0.0017282927877761978,-0.0321595135184539,-0.0010041406630640001
+rbf_endpoint_sum_b12_21p,rbf_endpoint_sum_b24_33p,5,True,False,True,False,0.43922461252873607,False,NOT_DOMINATED,0.0728027830433948,-0.012219486627497299,0.008446482948877199
+rbf_endpoint_sum_b12_21p,rbf_endpoint_sum_b8_17p,5,True,True,True,True,0.991535559415996,False,NOT_DOMINATED,-0.06690711277200909,-0.03945223294000771,-0.015066519203253002
+rbf_endpoint_sum_b12_21p,rbf_radial_b12_20p,5,True,True,True,False,1.0095513559983134,False,NOT_DOMINATED,-0.36112719727776194,-0.0319978011087516,0.0077530342232533
+rbf_endpoint_sum_b12_21p,rbf_radial_b16_24p,5,True,True,True,True,0.7682443303626444,False,NOT_DOMINATED,-0.42067635934726694,-0.0771055764268456,-0.011407292421833502
+rbf_endpoint_sum_b12_21p,rbf_radial_b24_32p,5,True,True,True,True,0.445732593423418,False,NOT_DOMINATED,-0.1955576754954596,-0.060629780704277,-0.0036358360050591995
+rbf_endpoint_sum_b12_21p,rbf_radial_b8_16p,5,True,True,True,True,1.0043236529064286,False,NOT_DOMINATED,-0.9689533432343556,-0.0410580236656335,-0.0187610850174637

@@ -1,0 +1,82 @@
+{
+  "campaign_integrity": {
+    "blocking_errors": [],
+    "complete_bundles": 960,
+    "registry": {
+      "attempt_counts": {
+        "1": 925,
+        "2": 35
+      },
+      "complete_by_lane": {
+        "control": 120,
+        "core": 840
+      },
+      "duplicate_registry_keys": 0,
+      "event_counts": {
+        "CLAIMED": 995,
+        "COMPLETE": 960,
+        "FAILED_RETRYABLE": 35
+      },
+      "status_counts": {
+        "COMPLETE": 960
+      }
+    },
+    "registry_filesystem_errors": [],
+    "status": "PASS"
+  },
+  "generated_utc": "2026-07-21T12:17:21+00:00",
+  "kill_test": {
+    "fault_phases": [
+      {
+        "fault_returncode": -9,
+        "lane": "core",
+        "pass": true,
+        "phase": "during-training",
+        "recovery_returncode": 0,
+        "sigkill_observed": true
+      },
+      {
+        "fault_returncode": -9,
+        "lane": "core",
+        "pass": true,
+        "phase": "during-checkpoint",
+        "recovery_returncode": 0,
+        "sigkill_observed": true
+      },
+      {
+        "fault_returncode": -9,
+        "lane": "control",
+        "pass": true,
+        "phase": "during-promotion",
+        "recovery_returncode": 0,
+        "sigkill_observed": true
+      },
+      {
+        "fault_returncode": -9,
+        "lane": "core",
+        "pass": true,
+        "phase": "after-promotion",
+        "recovery_returncode": 0,
+        "sigkill_observed": true
+      }
+    ],
+    "status": "PASS",
+    "terminal_runs": 16
+  },
+  "overall_supervisory_request": "CONDITIONAL GO: accept Stage 4F.1c and Stage 4F-R campaign integrity; hold public release/next-stage escalation until second-host replay is supplied or waived by the supervisor.",
+  "protocol_source_ledger": {
+    "entries_checked": 105,
+    "mismatches": [],
+    "status": "PASS"
+  },
+  "replay": {
+    "complete_bundles": 4,
+    "independent_second_host": false,
+    "supervisory_status": "OPEN - rerun on a genuinely separate host",
+    "technical_validation": "PASS",
+    "worker_ids": [
+      "Subhojits-MacBook-Air.local-replay-control",
+      "Subhojits-MacBook-Air.local-replay-core"
+    ]
+  }
+}

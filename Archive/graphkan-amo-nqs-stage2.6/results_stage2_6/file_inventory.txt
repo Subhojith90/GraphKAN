@@ -1,0 +1,10 @@
+results_stage2_6/aggregated/stage2_6_paired_kan_deltas.csv
+results_stage2_6/aggregated/stage2_6_summary.csv
+results_stage2_6/environment/convention.json
+results_stage2_6/environment/netket_convention_check.json
+results_stage2_6/environment/nqs_preflight.json
+results_stage2_6/environment/pip_freeze.txt
+results_stage2_6/file_inventory.txt
+results_stage2_6/raw/netket_vmc_stabilized_history.csv
+results_stage2_6/raw/netket_vmc_stabilized_metrics_snapshot.csv
+results_stage2_6/raw/netket_vmc_stabilized_metrics.csv

@@ -1,0 +1,131 @@
+{
+  "schema": "stage4e-capacity-manifest-v1",
+  "profile": "stage4e_n10_capacity",
+  "n_sites": 10,
+  "delta": 1.5,
+  "c6": 4.0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_samples": 4096,
+  "n_chains": 64,
+  "n_iter": 700,
+  "models": [
+    {
+      "label": "rbf_radial_b13",
+      "kind": "kan_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 13,
+      "hidden": 1,
+      "actual_n_parameters_n10": 23
+    },
+    {
+      "label": "endpoint_sum_b12",
+      "kind": "kan_endpoint_sum_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 12,
+      "hidden": 1,
+      "actual_n_parameters_n10": 23
+    },
+    {
+      "label": "endpoint_sum_b16",
+      "kind": "kan_endpoint_sum_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 16,
+      "hidden": 1,
+      "actual_n_parameters_n10": 27
+    },
+    {
+      "label": "endpoint_sum_b24",
+      "kind": "kan_endpoint_sum_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 24,
+      "hidden": 1,
+      "actual_n_parameters_n10": 35
+    },
+    {
+      "label": "endpoint_sum_b32",
+      "kind": "kan_endpoint_sum_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 32,
+      "hidden": 1,
+      "actual_n_parameters_n10": 43
+    },
+    {
+      "label": "endpoint_product_b12",
+      "kind": "kan_endpoint_product_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 12,
+      "hidden": 1,
+      "actual_n_parameters_n10": 23
+    },
+    {
+      "label": "endpoint_product_b16",
+      "kind": "kan_endpoint_product_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 16,
+      "hidden": 1,
+      "actual_n_parameters_n10": 27
+    },
+    {
+      "label": "endpoint_product_b24",
+      "kind": "kan_endpoint_product_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 24,
+      "hidden": 1,
+      "actual_n_parameters_n10": 35
+    },
+    {
+      "label": "endpoint_product_b32",
+      "kind": "kan_endpoint_product_jastrow",
+      "basis_family": "rbf",
+      "n_basis": 32,
+      "hidden": 1,
+      "actual_n_parameters_n10": 43
+    },
+    {
+      "label": "mlp_endpoint_small",
+      "kind": "mlp_endpoint_pair",
+      "basis_family": "rbf",
+      "n_basis": 5,
+      "hidden": 6,
+      "actual_n_parameters_n10": 71
+    },
+    {
+      "label": "mlp_endpoint_medium",
+      "kind": "mlp_endpoint_pair",
+      "basis_family": "rbf",
+      "n_basis": 12,
+      "hidden": 7,
+      "actual_n_parameters_n10": 130
+    },
+    {
+      "label": "mlp_endpoint_large",
+      "kind": "mlp_endpoint_pair",
+      "basis_family": "rbf",
+      "n_basis": 17,
+      "hidden": 11,
+      "actual_n_parameters_n10": 253
+    },
+    {
+      "label": "rbm_h16",
+      "kind": "rbm",
+      "basis_family": "none",
+      "n_basis": 1,
+      "hidden": 16,
+      "actual_n_parameters_n10": 186
+    },
+    {
+      "label": "rbm_h32",
+      "kind": "rbm",
+      "basis_family": "none",
+      "n_basis": 1,
+      "hidden": 32,
+      "actual_n_parameters_n10": 362
+    }
+  ]
+}

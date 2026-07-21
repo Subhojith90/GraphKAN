@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "989260615834ff91f758d754a4cb5c6183900fb70945884421f89d68416e8360",
+  "leaf_count": 2,
+  "model_kind": "kan_endpoint_sum_jastrow",
+  "model_label": "endpoint_sum_b32",
+  "n_parameters": 42,
+  "profile": "stage4e1_n10_periodic_boundary_paired5",
+  "run_id": "stage4e1_n10_periodic_boundary_paired5:ryd_periodic_chain_N10_D1.5_C64_481f3024aa18fddd:endpoint_sum_b32:samples4096:shift0.1:seed2",
+  "seed": 2,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'kan_coeff': *, 'site_bias': *})"
+}

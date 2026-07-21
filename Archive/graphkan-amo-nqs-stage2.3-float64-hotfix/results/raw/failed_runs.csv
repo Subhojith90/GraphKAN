@@ -1,0 +1,2 @@
+profile,status,reason,timestamp_utc
+netket_smoke,NOT_RUN_DEPENDENCY,"Missing NQS dependencies: jax, flax, optax, netket. Install with `pip install -e '.[nqs]'`.",2026-06-23T14:25:28.311181+00:00

@@ -1,0 +1,13 @@
+candidate,baseline,paired_seeds,median_delta_energy,median_delta_density,median_delta_corr,median_runtime_ratio_candidate_over_baseline,candidate_better_energy_all_seeds,candidate_better_density_all_seeds,candidate_better_corr_all_seeds,baseline_dominates_candidate,candidate_pareto_non_dominated
+endpoint_sum_b16,mlp_endpoint_medium,5,0.1092774921986894,0.0019661287069527994,0.008724914183203099,0.9022259319473974,False,False,False,False,True
+endpoint_sum_b16,mlp_endpoint_large,5,0.1095414399249659,0.0047064351754381,0.0086033810274436,0.9220253398660135,False,False,False,False,True
+endpoint_sum_b24,mlp_endpoint_medium,5,0.0420762835105322,-0.011861981242739001,0.0051875616437031995,0.9656255918997174,False,True,False,False,True
+endpoint_sum_b24,mlp_endpoint_large,5,0.041840218013813796,-0.011075706304413499,0.0049979095052652,1.0667316129598783,False,True,False,False,True
+endpoint_sum_b32,mlp_endpoint_medium,5,0.033311745017846,-0.0109029914063292,0.0030596223311621,1.0779598655345155,False,True,False,False,True
+endpoint_sum_b32,mlp_endpoint_large,5,0.033542731904914205,-0.0102012305318434,0.002873614283751001,1.0955057691600845,False,True,False,False,True
+endpoint_product_b16,mlp_endpoint_medium,5,0.15388235840397088,-0.0098915318412488,0.0026254306934336002,0.8605036606780656,False,True,False,False,True
+endpoint_product_b16,mlp_endpoint_large,5,0.15292895748746818,-0.0069990056064445985,0.0023654465922499004,0.8168638085825577,False,True,False,False,True
+endpoint_product_b24,mlp_endpoint_medium,5,0.0739680344648335,-0.0150736302848692,0.0024816445788989998,0.8867685145090415,False,True,False,False,True
+endpoint_product_b24,mlp_endpoint_large,5,0.07301463354833079,-0.0144584512862363,0.0020736439860418003,0.8618449643942562,False,True,False,False,True
+endpoint_product_b32,mlp_endpoint_medium,5,0.06925975823847891,-0.0136552173843721,0.0016539934924302002,0.8761019140304112,False,True,False,False,True
+endpoint_product_b32,mlp_endpoint_large,5,0.0685191092197126,-0.012430217935820598,0.0013525178797192004,0.8926455250177006,False,True,False,False,True

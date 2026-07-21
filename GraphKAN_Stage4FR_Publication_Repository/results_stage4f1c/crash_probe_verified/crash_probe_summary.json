@@ -1,0 +1,58 @@
+{
+  "crash_recovery": "PASS",
+  "failed_phases": [],
+  "phases": {
+    "after-promotion": {
+      "expected_sigkill_observed": true,
+      "fault_returncode": -9,
+      "fault_stderr_tail": "",
+      "fault_stdout_tail": "",
+      "pass": true,
+      "recovery_returncode": 0,
+      "recovery_stderr_tail": "",
+      "recovery_stdout_tail": "COMPLETE stage4f1c_crash_probe_after_promotion__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0\n{\n  \"worker_id\": \"recovery-after-promotion\",\n  \"completed\": 1,\n  \"failures\": 0\n}\n",
+      "validation_returncode": 0,
+      "validation_stderr_tail": "",
+      "validation_stdout_tail": "{\n  \"blocking_errors\": [],\n  \"campaign\": \"results_stage4f1c/crash_probe_verified/after-promotion\",\n  \"complete_bundles_checked\": 1,\n  \"registry_filesystem_errors\": [],\n  \"registry_summary\": {\n    \"duplicate_registry_keys\": 0,\n    \"status_counts\": {\n      \"COMPLETE\": 1\n    },\n    \"total_expected\": 1\n  },\n  \"schema_version\": \"stage4f-native-v1c\",\n  \"validation\": \"PASS\"\n}\n"
+    },
+    "during-checkpoint": {
+      "expected_sigkill_observed": true,
+      "fault_returncode": -9,
+      "fault_stderr_tail": "",
+      "fault_stdout_tail": "",
+      "pass": true,
+      "recovery_returncode": 0,
+      "recovery_stderr_tail": "",
+      "recovery_stdout_tail": "COMPLETE stage4f1c_crash_probe_during_checkpoint__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0\n{\n  \"worker_id\": \"recovery-during-checkpoint\",\n  \"completed\": 1,\n  \"failures\": 0\n}\n",
+      "validation_returncode": 0,
+      "validation_stderr_tail": "",
+      "validation_stdout_tail": "{\n  \"blocking_errors\": [],\n  \"campaign\": \"results_stage4f1c/crash_probe_verified/during-checkpoint\",\n  \"complete_bundles_checked\": 1,\n  \"registry_filesystem_errors\": [],\n  \"registry_summary\": {\n    \"duplicate_registry_keys\": 0,\n    \"status_counts\": {\n      \"COMPLETE\": 1\n    },\n    \"total_expected\": 1\n  },\n  \"schema_version\": \"stage4f-native-v1c\",\n  \"validation\": \"PASS\"\n}\n"
+    },
+    "during-promotion": {
+      "expected_sigkill_observed": true,
+      "fault_returncode": -9,
+      "fault_stderr_tail": "",
+      "fault_stdout_tail": "",
+      "pass": true,
+      "recovery_returncode": 0,
+      "recovery_stderr_tail": "",
+      "recovery_stdout_tail": "COMPLETE stage4f1c_crash_probe_during_promotion__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0\n{\n  \"worker_id\": \"recovery-during-promotion\",\n  \"completed\": 1,\n  \"failures\": 0\n}\n",
+      "validation_returncode": 0,
+      "validation_stderr_tail": "",
+      "validation_stdout_tail": "{\n  \"blocking_errors\": [],\n  \"campaign\": \"results_stage4f1c/crash_probe_verified/during-promotion\",\n  \"complete_bundles_checked\": 1,\n  \"registry_filesystem_errors\": [],\n  \"registry_summary\": {\n    \"duplicate_registry_keys\": 0,\n    \"status_counts\": {\n      \"COMPLETE\": 1\n    },\n    \"total_expected\": 1\n  },\n  \"schema_version\": \"stage4f-native-v1c\",\n  \"validation\": \"PASS\"\n}\n"
+    },
+    "during-training": {
+      "expected_sigkill_observed": true,
+      "fault_returncode": -9,
+      "fault_stderr_tail": "",
+      "fault_stdout_tail": "",
+      "pass": true,
+      "recovery_returncode": 0,
+      "recovery_stderr_tail": "",
+      "recovery_stdout_tail": "COMPLETE stage4f1c_crash_probe_during_training__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0\n{\n  \"worker_id\": \"recovery-during-training\",\n  \"completed\": 1,\n  \"failures\": 0\n}\n",
+      "validation_returncode": 0,
+      "validation_stderr_tail": "",
+      "validation_stdout_tail": "{\n  \"blocking_errors\": [],\n  \"campaign\": \"results_stage4f1c/crash_probe_verified/during-training\",\n  \"complete_bundles_checked\": 1,\n  \"registry_filesystem_errors\": [],\n  \"registry_summary\": {\n    \"duplicate_registry_keys\": 0,\n    \"status_counts\": {\n      \"COMPLETE\": 1\n    },\n    \"total_expected\": 1\n  },\n  \"schema_version\": \"stage4f-native-v1c\",\n  \"validation\": \"PASS\"\n}\n"
+    }
+  }
+}

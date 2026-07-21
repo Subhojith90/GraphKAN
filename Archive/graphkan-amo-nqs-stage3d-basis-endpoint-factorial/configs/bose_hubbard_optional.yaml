@@ -1,0 +1,4 @@
+profile: bose_hubbard_optional
+output_root: results
+run_policy: not_run_by_default
+reason: "Bose-Hubbard is secondary and should not delay Rydberg core. Tiny analytic tests are included in pytest."

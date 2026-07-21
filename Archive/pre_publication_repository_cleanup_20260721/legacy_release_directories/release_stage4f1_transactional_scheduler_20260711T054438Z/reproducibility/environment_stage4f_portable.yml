@@ -1,0 +1,18 @@
+name: graphkan-stage4f-py312
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=1.26
+  - scipy=1.13
+  - pandas
+  - matplotlib
+  - pyyaml
+  - pytest
+  - pip
+  - pip:
+      - jax==0.7.1
+      - jaxlib==0.7.1
+      - flax==0.12.0
+      - optax==0.2.8
+      - netket==3.22.3

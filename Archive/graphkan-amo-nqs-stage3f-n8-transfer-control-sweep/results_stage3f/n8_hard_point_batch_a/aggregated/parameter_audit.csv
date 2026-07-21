@@ -1,0 +1,6 @@
+model_label,n_parameters
+rbf_endpoint_21p,21
+rbf_radial_21p,21
+rbf_smooth_21p,21
+sine_endpoint_21p,21
+sine_radial_21p,21

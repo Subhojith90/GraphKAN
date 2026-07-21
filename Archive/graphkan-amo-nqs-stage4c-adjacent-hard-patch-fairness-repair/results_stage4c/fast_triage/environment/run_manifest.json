@@ -1,0 +1,13 @@
+{
+  "config_hash": "6b1a325868020851c58bcc128f666f2d3ed0cefac25a450acaf629aefebaf84c",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4c_fast_triage",
+  "raw_files": [
+    "stage4c_metrics.csv",
+    "stage4c_history.csv",
+    "stage4c_site_observables.csv",
+    "stage4c_corr_observables.csv"
+  ],
+  "schema_version": "stage4c-native-v1",
+  "stage": "4C"
+}

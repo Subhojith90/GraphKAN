@@ -1,0 +1,29 @@
+=== Stage 4D VMC batch ===
+UTC: 2026-07-04T13:52:47Z
+Command: PYTHONPATH=src python scripts/run_stage4d.py --config configs/netket_stage4d_n10_primary_cell1_fiveseed.yaml --overwrite
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.4475, exact|E-E0|=0.4698, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.4868, exact|E-E0|=0.4802, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.4536, exact|E-E0|=0.4676, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.43, exact|E-E0|=0.4579, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.4288, exact|E-E0|=0.477, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.2755, exact|E-E0|=0.2845, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2872, exact|E-E0|=0.2861, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.2952, exact|E-E0|=0.2779, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.2762, exact|E-E0|=0.2653, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.2535, exact|E-E0|=0.2988, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.3786, exact|E-E0|=0.38, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.36, exact|E-E0|=0.3661, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.3444, exact|E-E0|=0.3567, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.3548, exact|E-E0|=0.3637, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.3495, exact|E-E0|=0.3715, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02932, exact|E-E0|=0.03759, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.04587, exact|E-E0|=0.03776, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.04119, exact|E-E0|=0.03692, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.04293, exact|E-E0|=0.03811, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03924, exact|E-E0|=0.03592, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02524, exact|E-E0|=0.0392, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05249, exact|E-E0|=0.0435, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.04087, exact|E-E0|=0.04049, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.05354, exact|E-E0|=0.04367, exact_flags=none, sample_flags=none
+valid stage4d_n10_primary_cell1_fiveseed:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03651, exact|E-E0|=0.04012, exact_flags=none, sample_flags=none
+Stage 4D complete: exact_valid=25/25, sample_valid=25/25

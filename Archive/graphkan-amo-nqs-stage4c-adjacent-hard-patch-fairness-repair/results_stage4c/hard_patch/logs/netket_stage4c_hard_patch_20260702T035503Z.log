@@ -1,0 +1,4 @@
+=== Stage 4C VMC batch ===
+UTC: 2026-07-02T03:55:03Z
+Command: PYTHONPATH=src python scripts/run_stage4c_patch.py --config configs/netket_stage4c_hard_patch.yaml --only-n-sites 8 --resume
+Python 3.12.7

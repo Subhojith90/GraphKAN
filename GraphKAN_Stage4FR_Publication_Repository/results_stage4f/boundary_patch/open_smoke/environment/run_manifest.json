@@ -1,0 +1,13 @@
+{
+  "config_hash": "99c3e5cb5dc6cc76e7e153a52004670b4bb109f1ef1ece3775d9e57c1bc97947",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4f_boundary_patch_open_smoke",
+  "raw_files": [
+    "stage4e_metrics.csv",
+    "stage4e_history.csv",
+    "stage4e_site_observables.csv",
+    "stage4e_corr_observables.csv"
+  ],
+  "schema_version": "stage4e-native-v1",
+  "stage": "4E"
+}

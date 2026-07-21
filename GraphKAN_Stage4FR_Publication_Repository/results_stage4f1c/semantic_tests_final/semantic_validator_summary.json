@@ -1,0 +1,230 @@
+{
+  "false_accepts": 0,
+  "invalid_cases": {
+    "corrupt_checkpoint_rehashed": {
+      "accepted": false,
+      "errors": [
+        "checkpoint payload hash mismatch",
+        "checkpoint restore failed: ValueError: Cannot load file containing pickled data when allow_pickle=False"
+      ]
+    },
+    "false_complete_manifest_hash": {
+      "accepted": false,
+      "errors": [
+        "COMPLETE artifact manifest hash mismatch"
+      ]
+    },
+    "foreign_relabelled_bundle": {
+      "accepted": false,
+      "errors": [
+        "run_manifest run_id mismatch",
+        "COMPLETE identity mismatch",
+        "exit_status identity mismatch",
+        "metrics.csv identity/status mismatch",
+        "history.csv: row 0 run_id mismatch",
+        "history.csv: row 1 run_id mismatch",
+        "history.csv: row 2 run_id mismatch",
+        "history.csv: row 3 run_id mismatch",
+        "history.csv: row 4 run_id mismatch",
+        "history.csv: row 5 run_id mismatch",
+        "history.csv: row 6 run_id mismatch",
+        "history.csv: row 7 run_id mismatch",
+        "history.csv: row 8 run_id mismatch",
+        "history.csv: row 9 run_id mismatch",
+        "history.csv: row 10 run_id mismatch",
+        "history.csv: row 11 run_id mismatch",
+        "history.csv: row 12 run_id mismatch",
+        "history.csv: row 13 run_id mismatch",
+        "site_observables.csv: row 0 run_id mismatch",
+        "site_observables.csv: row 1 run_id mismatch",
+        "site_observables.csv: row 2 run_id mismatch",
+        "site_observables.csv: row 3 run_id mismatch",
+        "site_observables.csv: row 4 run_id mismatch",
+        "site_observables.csv: row 5 run_id mismatch",
+        "site_observables.csv: row 6 run_id mismatch",
+        "site_observables.csv: row 7 run_id mismatch",
+        "site_observables.csv: row 8 run_id mismatch",
+        "site_observables.csv: row 9 run_id mismatch",
+        "corr_observables.csv: row 0 run_id mismatch",
+        "corr_observables.csv: row 1 run_id mismatch",
+        "corr_observables.csv: row 2 run_id mismatch",
+        "corr_observables.csv: row 3 run_id mismatch",
+        "corr_observables.csv: row 4 run_id mismatch",
+        "corr_observables.csv: row 5 run_id mismatch",
+        "corr_observables.csv: row 6 run_id mismatch",
+        "corr_observables.csv: row 7 run_id mismatch",
+        "corr_observables.csv: row 8 run_id mismatch",
+        "corr_observables.csv: row 9 run_id mismatch",
+        "corr_observables.csv: row 10 run_id mismatch",
+        "corr_observables.csv: row 11 run_id mismatch",
+        "corr_observables.csv: row 12 run_id mismatch",
+        "corr_observables.csv: row 13 run_id mismatch",
+        "corr_observables.csv: row 14 run_id mismatch",
+        "corr_observables.csv: row 15 run_id mismatch",
+        "corr_observables.csv: row 16 run_id mismatch",
+        "corr_observables.csv: row 17 run_id mismatch",
+        "corr_observables.csv: row 18 run_id mismatch",
+        "corr_observables.csv: row 19 run_id mismatch",
+        "corr_observables.csv: row 20 run_id mismatch",
+        "corr_observables.csv: row 21 run_id mismatch",
+        "corr_observables.csv: row 22 run_id mismatch",
+        "corr_observables.csv: row 23 run_id mismatch",
+        "corr_observables.csv: row 24 run_id mismatch",
+        "corr_observables.csv: row 25 run_id mismatch",
+        "corr_observables.csv: row 26 run_id mismatch",
+        "corr_observables.csv: row 27 run_id mismatch",
+        "corr_observables.csv: row 28 run_id mismatch",
+        "corr_observables.csv: row 29 run_id mismatch",
+        "corr_observables.csv: row 30 run_id mismatch",
+        "corr_observables.csv: row 31 run_id mismatch",
+        "corr_observables.csv: row 32 run_id mismatch",
+        "corr_observables.csv: row 33 run_id mismatch",
+        "corr_observables.csv: row 34 run_id mismatch",
+        "corr_observables.csv: row 35 run_id mismatch",
+        "corr_observables.csv: row 36 run_id mismatch",
+        "corr_observables.csv: row 37 run_id mismatch",
+        "corr_observables.csv: row 38 run_id mismatch",
+        "corr_observables.csv: row 39 run_id mismatch",
+        "corr_observables.csv: row 40 run_id mismatch",
+        "corr_observables.csv: row 41 run_id mismatch",
+        "corr_observables.csv: row 42 run_id mismatch",
+        "corr_observables.csv: row 43 run_id mismatch",
+        "corr_observables.csv: row 44 run_id mismatch",
+        "corr_observables.csv: row 45 run_id mismatch",
+        "corr_observables.csv: row 46 run_id mismatch",
+        "corr_observables.csv: row 47 run_id mismatch",
+        "corr_observables.csv: row 48 run_id mismatch",
+        "corr_observables.csv: row 49 run_id mismatch",
+        "corr_observables.csv: row 50 run_id mismatch",
+        "corr_observables.csv: row 51 run_id mismatch",
+        "corr_observables.csv: row 52 run_id mismatch",
+        "corr_observables.csv: row 53 run_id mismatch",
+        "corr_observables.csv: row 54 run_id mismatch",
+        "corr_observables.csv: row 55 run_id mismatch",
+        "corr_observables.csv: row 56 run_id mismatch",
+        "corr_observables.csv: row 57 run_id mismatch",
+        "corr_observables.csv: row 58 run_id mismatch",
+        "corr_observables.csv: row 59 run_id mismatch",
+        "corr_observables.csv: row 60 run_id mismatch",
+        "corr_observables.csv: row 61 run_id mismatch",
+        "corr_observables.csv: row 62 run_id mismatch",
+        "corr_observables.csv: row 63 run_id mismatch",
+        "corr_observables.csv: row 64 run_id mismatch",
+        "corr_observables.csv: row 65 run_id mismatch",
+        "corr_observables.csv: row 66 run_id mismatch",
+        "corr_observables.csv: row 67 run_id mismatch",
+        "corr_observables.csv: row 68 run_id mismatch",
+        "corr_observables.csv: row 69 run_id mismatch",
+        "corr_observables.csv: row 70 run_id mismatch",
+        "corr_observables.csv: row 71 run_id mismatch",
+        "corr_observables.csv: row 72 run_id mismatch",
+        "corr_observables.csv: row 73 run_id mismatch",
+        "corr_observables.csv: row 74 run_id mismatch",
+        "corr_observables.csv: row 75 run_id mismatch",
+        "corr_observables.csv: row 76 run_id mismatch",
+        "corr_observables.csv: row 77 run_id mismatch",
+        "corr_observables.csv: row 78 run_id mismatch",
+        "corr_observables.csv: row 79 run_id mismatch",
+        "corr_observables.csv: row 80 run_id mismatch",
+        "corr_observables.csv: row 81 run_id mismatch",
+        "corr_observables.csv: row 82 run_id mismatch",
+        "corr_observables.csv: row 83 run_id mismatch",
+        "corr_observables.csv: row 84 run_id mismatch",
+        "corr_observables.csv: row 85 run_id mismatch",
+        "corr_observables.csv: row 86 run_id mismatch",
+        "corr_observables.csv: row 87 run_id mismatch",
+        "corr_observables.csv: row 88 run_id mismatch",
+        "corr_observables.csv: row 89 run_id mismatch",
+        "corr_observables.csv: row 90 run_id mismatch",
+        "corr_observables.csv: row 91 run_id mismatch",
+        "corr_observables.csv: row 92 run_id mismatch",
+        "corr_observables.csv: row 93 run_id mismatch",
+        "corr_observables.csv: row 94 run_id mismatch",
+        "corr_observables.csv: row 95 run_id mismatch",
+        "corr_observables.csv: row 96 run_id mismatch",
+        "corr_observables.csv: row 97 run_id mismatch",
+        "corr_observables.csv: row 98 run_id mismatch",
+        "corr_observables.csv: row 99 run_id mismatch",
+        "checkpoint identity mismatch"
+      ]
+    },
+    "invalid_status": {
+      "accepted": false,
+      "errors": [
+        "metrics.csv identity/status mismatch"
+      ]
+    },
+    "manifest_omits_mandatory": {
+      "accepted": false,
+      "errors": [
+        "COMPLETE artifact manifest hash mismatch",
+        "artifact manifest coverage mismatch: expected ['checkpoint.npz', 'checkpoint_manifest.json', 'command.json', 'corr_observables.csv', 'exit_status.json', 'history.csv', 'metrics.csv', 'resolved_config.yaml', 'run_manifest.json', 'site_observables.csv', 'stderr.log', 'stdout.log'], got ['checkpoint.npz', 'checkpoint_manifest.json', 'command.json', 'corr_observables.csv', 'exit_status.json', 'history.csv', 'resolved_config.yaml', 'run_manifest.json', 'site_observables.csv', 'stderr.log', 'stdout.log']",
+        "COMPLETE.json is older than artifact_manifest.json"
+      ]
+    },
+    "metrics_only_run_id": {
+      "accepted": false,
+      "errors": [
+        "metrics.csv: missing column boundary",
+        "metrics.csv: missing column c6",
+        "metrics.csv: missing column delta",
+        "metrics.csv: missing column energy_error",
+        "metrics.csv: missing column energy_mean",
+        "metrics.csv: missing column model",
+        "metrics.csv: missing column scientific_validity",
+        "metrics.csv: missing column seed",
+        "metrics.csv: missing column status",
+        "metrics.csv identity/status mismatch",
+        "metrics.csv invalid scientific_validity enum",
+        "metrics.csv model mismatch",
+        "metrics.csv boundary mismatch",
+        "metrics.csv delta mismatch",
+        "metrics.csv c6 mismatch",
+        "metrics.csv seed mismatch",
+        "metrics.csv non-finite/non-numeric energy_mean",
+        "metrics.csv non-finite/non-numeric energy_error"
+      ]
+    },
+    "nonnumeric_physics": {
+      "accepted": false,
+      "errors": [
+        "metrics.csv non-finite/non-numeric energy_mean",
+        "metrics.csv non-finite/non-numeric energy_error"
+      ]
+    },
+    "one_row_history": {
+      "accepted": false,
+      "errors": [
+        "history.csv: expected exactly 14 rows, got 1"
+      ]
+    },
+    "path_traversal_manifest": {
+      "accepted": false,
+      "errors": [
+        "COMPLETE artifact manifest hash mismatch",
+        "artifact manifest coverage mismatch: expected ['checkpoint.npz', 'checkpoint_manifest.json', 'command.json', 'corr_observables.csv', 'exit_status.json', 'history.csv', 'metrics.csv', 'resolved_config.yaml', 'run_manifest.json', 'site_observables.csv', 'stderr.log', 'stdout.log'], got ['../escape', 'checkpoint.npz', 'checkpoint_manifest.json', 'command.json', 'corr_observables.csv', 'exit_status.json', 'history.csv', 'metrics.csv', 'resolved_config.yaml', 'run_manifest.json', 'site_observables.csv', 'stderr.log', 'stdout.log']",
+        "unsafe manifest path: '../escape'",
+        "COMPLETE.json is older than artifact_manifest.json"
+      ]
+    },
+    "wrong_resolved_identity": {
+      "accepted": false,
+      "errors": [
+        "resolved_config campaign_id mismatch",
+        "resolved_config protocol_hash mismatch",
+        "resolved_config run_id mismatch",
+        "resolved_config boundary mismatch",
+        "resolved_config delta mismatch",
+        "resolved_config c6 mismatch",
+        "resolved_config model mismatch",
+        "resolved_config seed mismatch",
+        "resolved_config lane mismatch",
+        "resolved_config n_sites mismatch",
+        "resolved_config expected_history_rows mismatch",
+        "resolved_config attempt_id mismatch"
+      ]
+    }
+  },
+  "semantic_validator": "PASS",
+  "valid_bundle": true
+}

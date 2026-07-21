@@ -1,0 +1,6 @@
+{
+  "profile": "stage2_8_batch_a_n6_smoke",
+  "config_hash": "13064a6a32cbdaf4210751b8ae20fb61355c8d243de185b4c300041fd7be157f",
+  "stage": "2.7",
+  "purpose": "hard-regime diagnostic and matched-fairness gate"
+}

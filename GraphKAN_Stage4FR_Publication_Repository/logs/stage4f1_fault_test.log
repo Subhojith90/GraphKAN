@@ -1,0 +1,48 @@
+{
+  "duplicate_worker_claim_blocked": true,
+  "fault_injection": "PASS",
+  "invalid_faults_rejected": {
+    "corrupt_checkpoint": {
+      "errors": [
+        "missing artifact_manifest.json",
+        "missing COMPLETE.json"
+      ],
+      "valid": false
+    },
+    "kill_after_metrics": {
+      "errors": [
+        "missing artifact_manifest.json",
+        "missing COMPLETE.json"
+      ],
+      "valid": false
+    },
+    "kill_before_complete_marker": {
+      "errors": [
+        "missing COMPLETE.json"
+      ],
+      "valid": false
+    },
+    "kill_during_checkpoint": {
+      "errors": [
+        "missing artifact_manifest.json",
+        "missing COMPLETE.json"
+      ],
+      "valid": false
+    },
+    "missing_history": {
+      "errors": [
+        "missing history.csv",
+        "missing COMPLETE.json"
+      ],
+      "valid": false
+    }
+  },
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 1
+    },
+    "total_expected": 1
+  },
+  "valid_complete_bundle": "results_stage4f1/fault_injection/runs/stage4f1_fault_injection__stage4f-native-v1__Bopen__D1p50__C4__Mendpoint_product_b32__S0"
+}

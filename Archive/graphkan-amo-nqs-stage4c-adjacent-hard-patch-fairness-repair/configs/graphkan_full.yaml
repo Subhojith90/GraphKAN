@@ -1,0 +1,4 @@
+profile: graphkan_full
+output_root: results
+run_policy: not_run_by_default
+reason: "Graph-KAN is gated on KAN-Jastrow stability and a fair graph MPNN baseline."

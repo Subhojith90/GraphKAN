@@ -1,0 +1,65 @@
+profile: netket_stage2_5_phase_aware_ed_gate
+output_root: results_stage2_5
+models:
+- product
+- rbm
+- smooth_jastrow
+- mlp_pair
+- kan_jastrow
+chains:
+  n_sites:
+  - 6
+  spacing: 1.0
+parameters:
+  omega:
+  - 1.0
+  delta:
+  - 1.0
+  c6:
+  - 1.0
+  sign_rule: parity
+training:
+  seeds:
+  - 0
+  - 1
+  - 2
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 128
+  n_iter: 600
+  chunk_size: 50
+  learning_rate: 0.002
+  diag_shift: 0.05
+  grad_clip_norm: 5.0
+  n_basis: 8
+  hidden: 12
+model_overrides:
+  product:
+    learning_rate: 0.002
+    diag_shift: 0.05
+  rbm:
+    learning_rate: 0.003
+    diag_shift: 0.03
+    hidden: 12
+  smooth_jastrow:
+    learning_rate: 0.002
+    diag_shift: 0.05
+  mlp_pair:
+    learning_rate: 0.001
+    diag_shift: 0.1
+    grad_clip_norm: 2.0
+  kan_jastrow:
+    learning_rate: 0.001
+    diag_shift: 0.1
+    grad_clip_norm: 2.0
+health_gate:
+  min_energy_error: 1.0e-10
+  min_energy_variance: 1.0e-12
+  min_unique_states: 2
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+fairness:
+  rule: Stage 2.5 is a known-good phase-aware validation gate. No cross-architecture
+    ranking is valid until RBM and at least one custom model meet the ED threshold.
+notes: Phase-aware amplitudes implement the parity sign required by positive transverse
+  field. N=6, Delta=1, C6=1 only.

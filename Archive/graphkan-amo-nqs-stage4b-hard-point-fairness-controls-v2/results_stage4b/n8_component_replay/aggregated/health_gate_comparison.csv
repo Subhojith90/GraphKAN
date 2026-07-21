@@ -1,0 +1,6 @@
+model_label,rows,exact_valid,sample_valid,duality_agrees_all_rows
+rbf_endpoint_diff_21p,5,3,1,False
+rbf_endpoint_full_21p,5,5,5,True
+rbf_endpoint_product_21p,5,5,5,True
+rbf_endpoint_sum_21p,5,5,5,True
+rbf_radial_21p,5,0,0,True

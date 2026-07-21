@@ -1,0 +1,17 @@
+radial_control,endpoint_model,metric,paired_seeds,median_endpoint_minus_radial,all_endpoint_better,all_endpoint_worse,radial_parameters,endpoint_parameters
+rbf_radial_b24,endpoint_sum_b24,exact_model_abs_energy_error_to_ed,5,-0.1562002904365017,True,False,34,35
+rbf_radial_b24,endpoint_sum_b24,exact_model_density_mae_to_ed,5,-0.0237540225966532,True,False,34,35
+rbf_radial_b24,endpoint_sum_b24,exact_model_connected_correlation_mae_to_ed,5,0.0014317790733589,False,True,34,35
+rbf_radial_b24,endpoint_sum_b24,wall_seconds,5,1.4487615000107326,False,True,34,35
+rbf_radial_b24,endpoint_product_b24,exact_model_abs_energy_error_to_ed,5,-0.12430853948220039,True,False,34,35
+rbf_radial_b24,endpoint_product_b24,exact_model_density_mae_to_ed,5,-0.026664303430911904,True,False,34,35
+rbf_radial_b24,endpoint_product_b24,exact_model_connected_correlation_mae_to_ed,5,-0.0011718500957288002,True,False,34,35
+rbf_radial_b24,endpoint_product_b24,wall_seconds,5,-0.17608208308229223,False,False,34,35
+rbf_radial_b32,endpoint_sum_b32,exact_model_abs_energy_error_to_ed,5,-0.15481902009581822,True,False,42,43
+rbf_radial_b32,endpoint_sum_b32,exact_model_density_mae_to_ed,5,-0.0200756720289468,True,False,42,43
+rbf_radial_b32,endpoint_sum_b32,exact_model_connected_correlation_mae_to_ed,5,0.0002482362220668005,False,True,42,43
+rbf_radial_b32,endpoint_sum_b32,wall_seconds,5,2.1351433329982683,False,True,42,43
+rbf_radial_b32,endpoint_product_b32,exact_model_abs_energy_error_to_ed,5,-0.1186582549774489,True,False,42,43
+rbf_radial_b32,endpoint_product_b32,exact_model_density_mae_to_ed,5,-0.0221242919021119,True,False,42,43
+rbf_radial_b32,endpoint_product_b32,exact_model_connected_correlation_mae_to_ed,5,-0.0011319655232859003,True,False,42,43
+rbf_radial_b32,endpoint_product_b32,wall_seconds,5,2.7241781249758787,False,True,42,43

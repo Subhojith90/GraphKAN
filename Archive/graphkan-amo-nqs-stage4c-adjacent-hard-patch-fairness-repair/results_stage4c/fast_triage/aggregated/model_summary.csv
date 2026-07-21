@@ -1,0 +1,4 @@
+model_label,model_kind,basis_family,n_parameters,runs,exact_valid,sample_valid,median_exact_energy_error,median_exact_density_mae,median_exact_corr_mae,median_wall_seconds,exact_valid_rate,sample_valid_rate
+mlp_endpoint_128p,mlp_endpoint_pair,rbf,128,1,0,0,2.039112496092258,0.2431808359524822,0.0375170628854282,1.6451426660059951,0.0,0.0
+rbf_endpoint_sum_21p,kan_endpoint_sum_jastrow,rbf,21,1,0,0,3.019144058322473,0.2378570413520826,0.0392607570083729,1.4070680409786291,0.0,0.0
+rbf_radial_21p,kan_jastrow,rbf,21,1,0,0,4.62577353259112,0.2445208353444807,0.03800572496149,2.0861777089885436,0.0,0.0

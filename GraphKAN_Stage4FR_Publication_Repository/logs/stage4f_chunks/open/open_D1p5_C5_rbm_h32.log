@@ -1,0 +1,11 @@
+RUN open D=1.5 C6=5 model=rbm_h32
+/opt/anaconda3/envs/graphkan-stage4b-py312/bin/python scripts/run_stage4e.py --config configs/_stage4f_chunks/open/stage4f_open_D1p5_C5_rbm_h32.yaml --resume
+
+SKIP existing stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C65_20901a0435fd3031:rbm_h32:samples4096:shift0.1:seed0
+SKIP existing stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C65_20901a0435fd3031:rbm_h32:samples4096:shift0.1:seed1
+flagged stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C65_20901a0435fd3031:rbm_h32:samples4096:shift0.1:seed2: sample|E-E0|=0.3286, exact|E-E0|=0.3267, exact_flags=LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_DENSITY_ERROR
+flagged stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C65_20901a0435fd3031:rbm_h32:samples4096:shift0.1:seed3: sample|E-E0|=0.2718, exact|E-E0|=0.2729, exact_flags=LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_DENSITY_ERROR
+flagged stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C65_20901a0435fd3031:rbm_h32:samples4096:shift0.1:seed4: sample|E-E0|=0.3227, exact|E-E0|=0.3282, exact_flags=LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_DENSITY_ERROR
+Stage 4E complete: exact_valid=0/3, sample_valid=0/3
+1a0435fd3031:rbm_h32:samples4096:shift0.1:seed4: sample|E-E0|=0.3227, exact|E-E0|=0.3282, exact_flags=LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_DENSITY_ERROR
+Stage 4E complete: exact_valid=0/5, sample_valid=0/5

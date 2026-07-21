@@ -1,0 +1,17 @@
+profile: rydberg_chain_pilot
+output_root: results
+seed: 0
+models: [product, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [8, 10]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0]
+  c6: [1.0, 4.0]
+  sign_rule: parity
+training:
+  maxiter: 55
+  seeds: [0, 1]
+  ridge: 1.0e-8
+notes: "CPU-limited pilot: two seeds, exact full-basis training; final PRA gate requires five to ten seeds and NetKet/DMRG references."

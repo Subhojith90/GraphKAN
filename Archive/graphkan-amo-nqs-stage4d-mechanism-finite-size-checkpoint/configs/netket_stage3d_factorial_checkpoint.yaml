@@ -1,0 +1,36 @@
+profile: stage3d_factorial_checkpoint_n6
+output_root: results_stage3d/factorial_checkpoint_n6
+netket: {inverted_ordering: false}
+chains: {n_sites: [6], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training:
+  seeds: [0, 1]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 10
+  hidden: 1
+model_specs:
+  sine_radial_19p: {kind: kan_jastrow, basis_family: sine, n_basis: 13, hidden: 1}
+  sine_endpoint_19p: {kind: kan_endpoint_jastrow, basis_family: sine, n_basis: 10, hidden: 1}
+  rbf_radial_19p: {kind: kan_jastrow, basis_family: rbf, n_basis: 13, hidden: 1}
+  rbf_endpoint_19p: {kind: kan_endpoint_jastrow, basis_family: rbf, n_basis: 10, hidden: 1}
+  rbf_jastrow_19p: {kind: smooth_jastrow, basis_family: rbf, n_basis: 13, hidden: 1}
+  mlp_pair_control: {kind: mlp_pair, basis_family: rbf, n_basis: 4, hidden: 1}
+  mlp_endpoint_control: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 4, hidden: 1}
+health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+notes: >-
+  Stage 3D checkpoint factorial. Explicitly tests radial-basis family (sine/RBF)
+  crossed with endpoint feature access, plus RBF-Jastrow and MLP controls. Parameter
+  counts are recorded, not assumed matched for MLP controls. Do not proceed to the
+  five-seed replication or N=8 batch until this two-seed checkpoint is reviewed.

@@ -1,0 +1,6 @@
+{
+  "profile": "stage3f_component_ablation_n6",
+  "config_hash": "a2c287ee3c9c65a79b9df8cc960a832325df777589f117a260893cc7f7ca3c7b",
+  "stage": "3F",
+  "purpose": "taxonomy-locked, matched-parameter basis-by-endpoint fairness and five-seed replication gate"
+}

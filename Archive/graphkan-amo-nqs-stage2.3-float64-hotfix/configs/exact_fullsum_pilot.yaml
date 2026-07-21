@@ -1,0 +1,16 @@
+profile: exact_fullsum_pilot
+output_root: results
+seed: 0
+models: [product, radial_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [6, 8, 10]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-0.5, 0.5, 1.5]
+  c6: [2.0, 6.0]
+  sign_rule: parity
+training:
+  maxiter: 45
+  seeds: [0, 1, 2]
+  ridge: 1.0e-8

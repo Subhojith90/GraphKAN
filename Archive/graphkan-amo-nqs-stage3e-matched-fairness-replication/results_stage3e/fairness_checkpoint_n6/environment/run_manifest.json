@@ -1,0 +1,6 @@
+{
+  "profile": "stage3e_fairness_checkpoint_n6",
+  "config_hash": "5003951f184f730938c20191cf7bfc88c01835df3204aea537f0d6d952dc759b",
+  "stage": "3E",
+  "purpose": "taxonomy-locked, matched-parameter basis-by-endpoint fairness and five-seed replication gate"
+}

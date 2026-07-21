@@ -1,0 +1,7 @@
+model_label,n_parameters,is_19_parameter_match
+mlp_endpoint_19p,19,True
+mlp_radial_19p,19,True
+rbf_endpoint_19p,19,True
+rbf_radial_19p,19,True
+sine_endpoint_19p,19,True
+sine_radial_19p,19,True

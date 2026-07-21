@@ -1,0 +1,16 @@
+runtime_calibration:
+  output_root: results_stage4f1/runtime_calibration
+  boundary_cells:
+    - boundary: open
+      delta: "1.50"
+      c6: "4"
+    - boundary: periodic
+      delta: "1.50"
+      c6: "4"
+  seeds: [0, 1]
+  models:
+    - rbf_radial_b32
+    - endpoint_product_b32
+    - endpoint_full_b32
+    - rbm_h32
+  note: This is for heartbeat and timeout calibration only, not confirmatory physics.

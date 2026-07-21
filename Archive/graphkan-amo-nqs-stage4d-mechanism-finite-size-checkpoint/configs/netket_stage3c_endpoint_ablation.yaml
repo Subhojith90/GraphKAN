@@ -1,0 +1,31 @@
+profile: stage3c_endpoint_ablation_n6
+output_root: results_stage3c/endpoint_ablation_n6
+netket: {inverted_ordering: false}
+chains: {n_sites: [6], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training:
+  seeds: [0, 1]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 10
+  hidden: 1
+model_specs:
+  radial_sine_19p: {kind: kan_jastrow, basis_family: sine, n_basis: 13, hidden: 1}
+  centre_sine_19p: {kind: kan_boundary_jastrow, basis_family: sine, n_basis: 12, hidden: 1}
+  endpoint_sum_19p: {kind: kan_endpoint_sum_jastrow, basis_family: sine, n_basis: 12, hidden: 1}
+  endpoint_diff_19p: {kind: kan_endpoint_diff_jastrow, basis_family: sine, n_basis: 12, hidden: 1}
+  endpoint_product_19p: {kind: kan_endpoint_product_jastrow, basis_family: sine, n_basis: 12, hidden: 1}
+  endpoint_full_19p: {kind: kan_endpoint_jastrow, basis_family: sine, n_basis: 10, hidden: 1}
+health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+notes: "Blocked until Stage 3B.1 sine-taxonomy replay passes. Six endpoint-feature ablations, two seeds each; 12 runs total."

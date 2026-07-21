@@ -1,0 +1,2 @@
+candidate,candidate_present,candidate_exact_valid_all,no_control_dominates_under_1_25x_compute,stage4b_status,interpretation
+rbf_endpoint_sum_b12_21p,True,True,True,PASS,Exact metrics and exact validity drive the headline gate; sampled gate is reported separately.

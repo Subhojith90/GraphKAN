@@ -1,0 +1,6 @@
+{
+  "profile": "stage3d_factorial_checkpoint_n6",
+  "config_hash": "a2310c880982a09b62515454c03a42945f04746fd505095727fa617e0f8ae985",
+  "stage": "3C",
+  "purpose": "taxonomy-locked endpoint-feature ablation and N=8 replication gate"
+}

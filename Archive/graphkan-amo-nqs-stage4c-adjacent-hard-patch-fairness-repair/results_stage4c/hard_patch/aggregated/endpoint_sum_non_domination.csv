@@ -1,0 +1,7 @@
+candidate,control,pairs,candidate_exact_valid_all,candidate_not_worse_energy_all,candidate_not_worse_density_all,candidate_not_worse_corr_all,control_over_candidate_runtime_ratio_median,control_dominates_candidate_under_1_25x_compute,status,median_energy_delta,median_density_delta,median_corr_delta
+rbf_endpoint_sum_21p,mlp_endpoint_128p,5,True,False,False,False,1.0850724951391282,False,NOT_DOMINATED,0.0377856453157186,-0.019368707114412548,-0.0049419979119377
+rbf_endpoint_sum_21p,mlp_endpoint_64p,5,True,False,False,False,1.0925460321333413,False,NOT_DOMINATED,0.028023560172150148,-0.023861879334299153,-0.004020603258401599
+rbf_endpoint_sum_21p,mlp_radial_128p,5,True,False,True,False,1.0780120287860142,False,NOT_DOMINATED,0.031087156461053804,-0.0241623497776063,-0.008730963139005999
+rbf_endpoint_sum_21p,mlp_radial_64p,5,True,False,False,False,1.0680198036981805,False,NOT_DOMINATED,0.03038703928239485,-0.023755613181116048,-0.00736933221028575
+rbf_endpoint_sum_21p,rbf_endpoint_product_21p,5,True,True,False,False,1.0025956064699963,False,NOT_DOMINATED,-0.0343082304713227,-0.0039171617282101005,-0.0006050967275598998
+rbf_endpoint_sum_21p,rbf_radial_21p,5,True,True,True,False,0.9920906852907223,False,NOT_DOMINATED,-0.1226392883548648,-0.03090522650398225,-0.0028425127255300503

@@ -1,0 +1,14 @@
+{
+  "basis_family": "none",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "41cf24dc4e6401f35b8d2425853eba042bbf7ead179281c4a3a1374afda3d146",
+  "leaf_count": 3,
+  "model_kind": "rbm",
+  "model_label": "rbm_h32",
+  "n_parameters": 362,
+  "profile": "stage4f_boundary_patch_open_smoke_allmodels",
+  "run_id": "stage4f_boundary_patch_open_smoke_allmodels:ryd_chain_N10_D1.5_C64_611ae99b817fc149:rbm_h32:samples4096:shift0.1:seed0",
+  "seed": 0,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'hidden_bias': *, 'visible_bias': *, 'weights': *})"
+}

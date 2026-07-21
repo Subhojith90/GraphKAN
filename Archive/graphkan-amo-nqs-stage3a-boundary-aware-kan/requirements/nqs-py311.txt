@@ -1,0 +1,14 @@
+# Recommended isolated environment: Python 3.11
+# Install the project first, then this lock-style compatibility set.
+# GPU builds should follow the official JAX installation selector before installing NetKet.
+numpy>=1.26,<2.1
+scipy>=1.11,<1.15
+pandas>=2.1,<2.3
+matplotlib>=3.8,<3.10
+pyyaml>=6.0
+pytest>=8,<9
+jax>=0.4.30,<0.5
+jaxlib>=0.4.30,<0.5
+flax>=0.8.5,<0.11
+optax>=0.2.3,<0.3
+netket>=3.12,<3.16

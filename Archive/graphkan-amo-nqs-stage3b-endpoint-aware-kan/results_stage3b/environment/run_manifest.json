@@ -1,0 +1,6 @@
+{
+  "profile": "stage3b_endpoint_kan_gate",
+  "config_hash": "c9cbb3b8832f1b0c1e0ae366478ae12284ddda73fd7f8f00bff2849da86a4595",
+  "stage": "3B",
+  "purpose": "endpoint-aware KAN density diagnostic"
+}

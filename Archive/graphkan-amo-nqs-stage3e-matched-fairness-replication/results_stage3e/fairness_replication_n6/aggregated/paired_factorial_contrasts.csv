@@ -1,0 +1,29 @@
+comparison,question,metric,pairs,median_delta,mean_delta,treated_lower_fraction
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_abs_energy_error_to_ed,5,-0.007513692534785399,-0.007450856524208585,1.0
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_density_mae_to_ed,5,-0.003691663336381004,-0.0035785107366756,1.0
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_connected_correlation_mae_to_ed,5,-0.0010295105754146994,-0.0010411588283318006,1.0
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,wall_seconds,5,0.15736225100044976,-0.02184833339997567,0.4
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_abs_energy_error_to_ed,5,-0.1250470651074691,-0.12504170205313533,1.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_density_mae_to_ed,5,-0.0404290545504555,-0.04047658906363534,1.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_connected_correlation_mae_to_ed,5,0.0022839916727826013,0.0021006041076490206,0.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,wall_seconds,5,0.26558875000045923,0.1645393744001918,0.2
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_abs_energy_error_to_ed,5,0.1069447268679538,0.10643604887471092,0.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_density_mae_to_ed,5,-0.051255901494775,-0.0515764255704231,1.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_connected_correlation_mae_to_ed,5,-0.03455727498156361,-0.03451376416086206,1.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,wall_seconds,5,0.04688841599818083,-0.1912976082003297,0.4
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_abs_energy_error_to_ed,5,-0.010887803590313702,-0.01115479665421584,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_density_mae_to_ed,5,-0.0882707547999249,-0.08847450389738284,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_connected_correlation_mae_to_ed,5,-0.0315175487239113,-0.031372001224881235,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,wall_seconds,5,0.10319070799960173,-0.004909900400162215,0.2
+mlp_endpoint_19p minus mlp_radial_19p,endpoint effect under MLP control,exact_model_abs_energy_error_to_ed,5,0.09144940202460289,0.12222921795306299,0.0
+mlp_endpoint_19p minus mlp_radial_19p,endpoint effect under MLP control,exact_model_density_mae_to_ed,5,-0.006750570159253899,-0.005579668756232314,0.6
+mlp_endpoint_19p minus mlp_radial_19p,endpoint effect under MLP control,exact_model_connected_correlation_mae_to_ed,5,0.0088563240104166,0.0085944148755081,0.0
+mlp_endpoint_19p minus mlp_radial_19p,endpoint effect under MLP control,wall_seconds,5,0.0756906259994139,0.012350191999212256,0.4
+mlp_endpoint_19p minus rbf_endpoint_19p,endpoint-aware RBF versus matched endpoint-aware MLP,exact_model_abs_energy_error_to_ed,5,0.6831887252976269,0.6492907513484105,0.0
+mlp_endpoint_19p minus rbf_endpoint_19p,endpoint-aware RBF versus matched endpoint-aware MLP,exact_model_density_mae_to_ed,5,0.1476760723546972,0.15333482987180538,0.0
+mlp_endpoint_19p minus rbf_endpoint_19p,endpoint-aware RBF versus matched endpoint-aware MLP,exact_model_connected_correlation_mae_to_ed,5,0.013355926976359199,0.0119012177260291,0.0
+mlp_endpoint_19p minus rbf_endpoint_19p,endpoint-aware RBF versus matched endpoint-aware MLP,wall_seconds,5,0.5935879589997057,0.6664424587997931,0.0
+mlp_radial_19p minus rbf_radial_19p,radial RBF versus matched radial MLP,exact_model_abs_energy_error_to_ed,5,0.4217771084817335,0.40201983134221225,0.0
+mlp_radial_19p minus rbf_radial_19p,radial RBF versus matched radial MLP,exact_model_density_mae_to_ed,5,0.11682729083429189,0.11843790956440237,0.0
+mlp_radial_19p minus rbf_radial_19p,radial RBF versus matched radial MLP,exact_model_connected_correlation_mae_to_ed,5,0.0067835946387252,0.005407406958170021,0.0
+mlp_radial_19p minus rbf_radial_19p,radial RBF versus matched radial MLP,wall_seconds,5,0.8756445420021919,0.8186316412007727,0.0

@@ -1,0 +1,13 @@
+{
+  "config_hash": "c197acfb25c334988cb9bc434be69ebd72bfb4a16cb88883a191731fd75fa611",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4b_n8_controls_core",
+  "raw_files": [
+    "stage4b_metrics.csv",
+    "stage4b_history.csv",
+    "stage4b_site_observables.csv",
+    "stage4b_corr_observables.csv"
+  ],
+  "schema_version": "stage4b-native-v1",
+  "stage": "4B"
+}

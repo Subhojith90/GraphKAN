@@ -1,0 +1,79 @@
+profile: stage4d_low_detuning_autopsy
+stage: 4D
+output_root: results_stage4d/low_detuning_autopsy
+netket:
+  inverted_ordering: false
+chains:
+  n_sites: [8]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  # Four diagnostic cells: prior hard point plus the two N=8 low-detuning domination cells.
+  delta: [1.5]
+  c6: [4.0, 5.0]
+training:
+  seeds: [0, 1, 2]
+  n_samples: 2048
+  n_chains: 32
+  n_discard_per_chain: 128
+  n_iter: 350
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  n_basis: 12
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+exact_health_gate:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+# This is a registered screening profile, not a final universal-performance gate.
+model_specs:
+  rbf_radial_21p:
+    kind: kan_jastrow
+    basis_family: rbf
+    n_basis: 13
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_sum_21p:
+    kind: kan_endpoint_sum_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_product_21p:
+    kind: kan_endpoint_product_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_diff_21p:
+    kind: kan_endpoint_diff_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_hybrid_22p:
+    kind: kan_endpoint_hybrid_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  rbf_endpoint_full_23p:
+    kind: kan_endpoint_jastrow
+    basis_family: rbf
+    n_basis: 12
+    hidden: 1
+    save_checkpoint: true
+  mlp_endpoint_128p:
+    kind: mlp_endpoint_pair
+    basis_family: rbf
+    n_basis: 12
+    hidden: 7
+    save_checkpoint: true

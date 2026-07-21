@@ -1,0 +1,6 @@
+model,scientific_validity,runs
+kan_jastrow,VALID,3
+mlp_pair,VALID,3
+product,VALID,3
+rbm,VALID,3
+smooth_jastrow,VALID,3

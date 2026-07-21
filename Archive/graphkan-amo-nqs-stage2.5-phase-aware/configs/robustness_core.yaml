@@ -1,0 +1,4 @@
+profile: robustness_core
+output_root: results
+run_policy: not_run_by_default
+reason: "Position jitter and sampler robustness require expanded runs beyond the CPU artifact."

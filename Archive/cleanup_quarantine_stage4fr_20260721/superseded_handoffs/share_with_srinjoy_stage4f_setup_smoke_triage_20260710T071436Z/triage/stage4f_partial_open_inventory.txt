@@ -1,0 +1,79 @@
+rows: 308
+
+cell/model counts:
+delta  c6   model_label         
+1.25   3.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+       4.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+       5.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+1.50   3.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+       4.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+       5.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 8
+1.75   3.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            mlp_endpoint_large      5
+            mlp_endpoint_medium     5
+            rbf_radial_b32          5
+            rbm_h32                 5
+       4.0  endpoint_full_b32       5
+            endpoint_hybrid_b32     5
+            endpoint_product_b32    5
+            endpoint_sum_b32        5
+            rbf_radial_b32          5
+
+validity:
+model_label           scientific_validity_exact
+endpoint_full_b32     VALID                        40
+endpoint_hybrid_b32   VALID                        40
+endpoint_product_b32  VALID                        40
+endpoint_sum_b32      VALID                        40
+mlp_endpoint_large    VALID                        35
+mlp_endpoint_medium   VALID                        35
+rbf_radial_b32        VALID                        40
+rbm_h32               FLAGGED                      38
+
+expected open rows: 480
+missing open rows: 172

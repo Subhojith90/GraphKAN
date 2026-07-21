@@ -1,0 +1,6 @@
+{
+  "profile": "stage3a_boundary_kan_gate",
+  "config_hash": "e388a2f903daf5f4db420b2992ac6af25dc7faa86ceea636c0a003fd0ae054c2",
+  "stage": "3A",
+  "purpose": "boundary-aware KAN density diagnostic"
+}

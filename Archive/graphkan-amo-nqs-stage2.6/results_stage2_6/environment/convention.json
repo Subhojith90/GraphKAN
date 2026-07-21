@@ -1,0 +1,6 @@
+{
+  "hilbert": "Spin(s=1/2)",
+  "inverted_ordering": false,
+  "physical_occupation": "(1-sigma)/2 when inverted_ordering=False; (sigma+1)/2 when True",
+  "phase_rule": "occupation parity when omega>0"
+}

@@ -1,0 +1,28 @@
+profile: stage2_8_batch_b_n8_smoke
+output_root: results_stage2_8/batch_b_n8_smoke
+netket: {inverted_ordering: false}
+chains: {n_sites: [8], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training:
+  seeds: [0, 1]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 128
+  n_iter: 200
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 10
+  hidden: 1
+model_specs:
+  rbf_matched: {kind: smooth_jastrow, n_basis: 10, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+  mlp_matched: {kind: mlp_pair, n_basis: 10, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+  kan_matched: {kind: kan_jastrow, n_basis: 10, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+notes: "Stage 2.8 Batch B: six-run N=8 execution smoke gate."

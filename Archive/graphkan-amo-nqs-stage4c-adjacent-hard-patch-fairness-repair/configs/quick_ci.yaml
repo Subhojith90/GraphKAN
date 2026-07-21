@@ -1,0 +1,17 @@
+profile: quick_ci
+output_root: results
+seed: 0
+models: [product, radial_jastrow, mlp_pair, kan_jastrow]
+geometry:
+  family: chain
+  n_sites: 6
+  spacing: 1.0
+hamiltonian:
+  omega: 1.0
+  delta: 0.5
+  c6: 4.0
+  sign_rule: parity
+training:
+  maxiter: 25
+  seeds: [0]
+  ridge: 1.0e-8

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphkan-amo-nqs"
+version = "0.1.0"
+description = "Hardware-free Rydberg AMO neural quantum-state benchmark with blockade-normalised KAN-Jastrow pilots"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = {text = "MIT"}
+authors = [{name = "GraphKAN AMO NQS contributors"}]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "pyyaml>=6",
+  "matplotlib>=3.7",
+  "pytest>=7",
+  "tqdm>=4"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+nqs = ["jax", "flax", "optax", "netket"]
+ed = ["quspin"]
+tensor = ["tenpy"]
+ibm = ["qiskit", "qiskit-ibm-runtime"]
+torch_fallback = ["torch"]
+all = ["jax", "flax", "optax", "netket", "quspin", "tenpy", "qiskit", "qiskit-ibm-runtime", "torch"]
+
+[project.scripts]
+graphkan-amo-nqs = "graphkan_amo_nqs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

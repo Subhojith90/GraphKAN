@@ -1,0 +1,8 @@
+model_label,rows,exact_valid,sample_valid,duality_agrees_all_rows
+mlp_endpoint_128p,45,45,45,True
+mlp_endpoint_64p,46,46,46,True
+mlp_radial_128p,45,45,45,True
+mlp_radial_64p,50,50,49,False
+rbf_endpoint_product_21p,50,50,50,True
+rbf_endpoint_sum_21p,50,50,50,True
+rbf_radial_21p,50,50,50,True

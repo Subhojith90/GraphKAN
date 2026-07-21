@@ -1,0 +1,8 @@
+{
+  "stage": "Stage 4E.1-R",
+  "artifact_type": "artifact_repair_release",
+  "created_utc": "20260708T064105Z",
+  "claim_boundary": "Boundary-conditioned mechanism evidence at one registered N=10 cell; not method superiority.",
+  "root_relative_manifest": "MANIFEST.sha256",
+  "release_tests": "release_tests/test_stage4e1_release_artifact.py"
+}

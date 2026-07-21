@@ -1,0 +1,13 @@
+{
+  "config_hash": "74bb2826dbe2d4efdf15dc9a2735b1e63fecbd36b3f206d69851ae7e28957d5c",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p50__C5__Mmlp_endpoint_large__S1",
+  "raw_files": [
+    "stage4e_metrics.csv",
+    "stage4e_history.csv",
+    "stage4e_site_observables.csv",
+    "stage4e_corr_observables.csv"
+  ],
+  "schema_version": "stage4e-native-v1",
+  "stage": "4E"
+}

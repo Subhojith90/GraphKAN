@@ -1,0 +1,39 @@
+campaign:
+  name: stage4f1c_crash_probe_during_training
+  schema_version: stage4f-native-v1c
+  output_root: results_stage4f1c/crash_probe_verified/during-training
+  claim_boundary: deterministic SIGKILL recovery probe only; not scientific evidence
+physics:
+  n_sites: 10
+  omega: 1.0
+  deltas:
+  - '1.50'
+  c6_values:
+  - '4'
+  boundaries:
+  - open
+  seeds:
+  - 0
+  samples: 256
+  sr_shift: 0.1
+models:
+  endpoint_product_b32:
+    lane: core
+base_configs:
+  open: configs/netket_stage4f_boundary_patch_open.yaml
+runner_overrides:
+  training:
+    n_samples: 256
+    n_chains: 16
+    n_discard_per_chain: 16
+    n_iter: 2
+    chunk_size: 1
+scheduler:
+  lease_seconds: 3
+  max_attempts: 3
+  backoff_seconds: 0
+completion_requirements:
+  checkpoint_format: jax-tree-leaves-npz-v1
+  require_complete_manifest_coverage: true
+  require_registry_filesystem_reconciliation: true
+  require_fenced_publication: true

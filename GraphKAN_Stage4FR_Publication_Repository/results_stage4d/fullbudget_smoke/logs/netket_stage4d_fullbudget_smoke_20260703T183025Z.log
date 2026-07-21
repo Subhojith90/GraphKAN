@@ -1,0 +1,10 @@
+=== Stage 4D VMC batch ===
+UTC: 2026-07-03T18:30:25Z
+Command: PYTHONPATH=src python scripts/run_stage4d.py --config configs/netket_stage4d_fullbudget_smoke.yaml --overwrite
+flagged stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.5433, exact|E-E0|=0.5155, exact_flags=LARGE_EXACT_ED_ERROR;LARGE_EXACT_DENSITY_ERROR, sample_flags=LARGE_ED_ERROR;LARGE_DENSITY_ERROR
+valid stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1849, exact|E-E0|=0.1649, exact_flags=none, sample_flags=none
+valid stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.204, exact|E-E0|=0.2028, exact_flags=none, sample_flags=none
+valid stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:rbf_endpoint_hybrid_22p:samples4096:shift0.1:seed0: sample|E-E0|=0.186, exact|E-E0|=0.1637, exact_flags=none, sample_flags=none
+valid stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:rbf_endpoint_full_23p:samples4096:shift0.1:seed0: sample|E-E0|=0.1882, exact|E-E0|=0.1622, exact_flags=none, sample_flags=none
+valid stage4d_fullbudget_smoke:ryd_chain_N8_D2_C64_4d66847e71a41384:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.04071, exact|E-E0|=0.04193, exact_flags=none, sample_flags=none
+Stage 4D complete: exact_valid=5/6, sample_valid=5/6

@@ -1,0 +1,320 @@
+=== Stage 4C VMC batch ===
+UTC: 2026-06-30T15:50:27Z
+Command: PYTHONPATH=src python scripts/run_stage4c_patch.py --config configs/netket_stage4c_hard_patch.yaml --only-n-sites 6 --resume
+Python 3.12.7
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_radial_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_radial_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_radial_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_radial_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_radial_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_product_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_product_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_product_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_product_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:rbf_endpoint_product_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_64p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_64p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_64p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_64p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_64p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_64p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_64p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_64p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_64p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_64p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_128p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_128p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_128p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_128p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_radial_128p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_128p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_128p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_128p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_128p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C63_73f1eb4c531681ca:mlp_endpoint_128p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_radial_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_radial_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_radial_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_radial_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_radial_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_product_21p:samples4096:shift0.1:seed0
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_product_21p:samples4096:shift0.1:seed1
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_product_21p:samples4096:shift0.1:seed2
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_product_21p:samples4096:shift0.1:seed3
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:rbf_endpoint_product_21p:samples4096:shift0.1:seed4
+SKIP existing stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_64p:samples4096:shift0.1:seed0
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.03782, exact|E-E0|=0.03468, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.02508, exact|E-E0|=0.03108, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.03084, exact|E-E0|=0.03265, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.0306, exact|E-E0|=0.02979, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.02519, exact|E-E0|=0.02397, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.04117, exact|E-E0|=0.03346, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.02901, exact|E-E0|=0.0365, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.0238, exact|E-E0|=0.02491, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.04374, exact|E-E0|=0.04952, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02828, exact|E-E0|=0.03042, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.04067, exact|E-E0|=0.03584, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.02838, exact|E-E0|=0.03235, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03477, exact|E-E0|=0.0358, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03352, exact|E-E0|=0.03089, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.0291, exact|E-E0|=0.02685, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03042, exact|E-E0|=0.0258, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.02561, exact|E-E0|=0.02562, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.02404, exact|E-E0|=0.02412, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C64_6ba2e7e57252a5ef:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.02501, exact|E-E0|=0.02461, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.2628, exact|E-E0|=0.2655, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2991, exact|E-E0|=0.2765, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.2591, exact|E-E0|=0.2666, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.2955, exact|E-E0|=0.2571, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.279, exact|E-E0|=0.2756, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.07367, exact|E-E0|=0.07345, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.07862, exact|E-E0|=0.07498, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08128, exact|E-E0|=0.07396, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.07404, exact|E-E0|=0.07344, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.07099, exact|E-E0|=0.07533, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1158, exact|E-E0|=0.1185, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1439, exact|E-E0|=0.1214, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1251, exact|E-E0|=0.119, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.127, exact|E-E0|=0.1159, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1242, exact|E-E0|=0.1209, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.02761, exact|E-E0|=0.02984, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.02912, exact|E-E0|=0.03471, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.02262, exact|E-E0|=0.03054, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.01867, exact|E-E0|=0.03199, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.02623, exact|E-E0|=0.02891, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.02463, exact|E-E0|=0.0229, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.04343, exact|E-E0|=0.03734, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.03589, exact|E-E0|=0.03792, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.01874, exact|E-E0|=0.02497, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.04837, exact|E-E0|=0.05411, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02412, exact|E-E0|=0.02884, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03421, exact|E-E0|=0.03471, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03052, exact|E-E0|=0.03116, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.0307, exact|E-E0|=0.03483, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03172, exact|E-E0|=0.02948, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02682, exact|E-E0|=0.02635, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.02335, exact|E-E0|=0.02575, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.02932, exact|E-E0|=0.02496, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.01056, exact|E-E0|=0.02419, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D1.5_C65_3184b7d88cda9ee8:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.01821, exact|E-E0|=0.02225, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.08881, exact|E-E0|=0.08911, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.09657, exact|E-E0|=0.09209, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08701, exact|E-E0|=0.09041, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.08692, exact|E-E0|=0.08591, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.09097, exact|E-E0|=0.09203, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.05836, exact|E-E0|=0.0521, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.06077, exact|E-E0|=0.05253, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.05269, exact|E-E0|=0.05204, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.04755, exact|E-E0|=0.05146, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.05394, exact|E-E0|=0.05241, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.06362, exact|E-E0|=0.06792, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.08041, exact|E-E0|=0.06932, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.07417, exact|E-E0|=0.06844, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.07211, exact|E-E0|=0.06592, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.0649, exact|E-E0|=0.06871, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.03092, exact|E-E0|=0.03694, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.04899, exact|E-E0|=0.03968, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.04588, exact|E-E0|=0.0381, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.03673, exact|E-E0|=0.03885, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.0378, exact|E-E0|=0.03757, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.02843, exact|E-E0|=0.03329, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.04104, exact|E-E0|=0.03742, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.04778, exact|E-E0|=0.04233, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.02517, exact|E-E0|=0.0311, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.0505, exact|E-E0|=0.04795, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03212, exact|E-E0|=0.03686, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05133, exact|E-E0|=0.04189, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.04556, exact|E-E0|=0.0388, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03901, exact|E-E0|=0.04061, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03608, exact|E-E0|=0.03847, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02636, exact|E-E0|=0.0337, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03719, exact|E-E0|=0.03308, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03536, exact|E-E0|=0.03441, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03158, exact|E-E0|=0.03217, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C63_24a5e7c92e017e03:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.02766, exact|E-E0|=0.0325, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.2062, exact|E-E0|=0.1974, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2059, exact|E-E0|=0.2062, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1958, exact|E-E0|=0.2, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.1878, exact|E-E0|=0.1908, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.2136, exact|E-E0|=0.2073, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.06932, exact|E-E0|=0.07445, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.08605, exact|E-E0|=0.07623, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.07861, exact|E-E0|=0.07531, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.0762, exact|E-E0|=0.07467, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.07634, exact|E-E0|=0.07618, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1012, exact|E-E0|=0.1239, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1379, exact|E-E0|=0.1249, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1206, exact|E-E0|=0.1239, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.1219, exact|E-E0|=0.1203, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1111, exact|E-E0|=0.1241, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.03314, exact|E-E0|=0.04282, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05271, exact|E-E0|=0.04761, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.03797, exact|E-E0|=0.04467, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.03998, exact|E-E0|=0.0439, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.04091, exact|E-E0|=0.04239, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.03497, exact|E-E0|=0.03655, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05517, exact|E-E0|=0.04468, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.05746, exact|E-E0|=0.05208, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.03901, exact|E-E0|=0.03726, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.03663, exact|E-E0|=0.05571, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03545, exact|E-E0|=0.04346, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05699, exact|E-E0|=0.04857, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03792, exact|E-E0|=0.04632, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.05129, exact|E-E0|=0.04869, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.04503, exact|E-E0|=0.04456, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.02428, exact|E-E0|=0.03902, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.04315, exact|E-E0|=0.0381, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.0354, exact|E-E0|=0.04015, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.04147, exact|E-E0|=0.03713, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C64_70b4b4bdd928b7ec:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03108, exact|E-E0|=0.03675, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.3401, exact|E-E0|=0.3498, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.3912, exact|E-E0|=0.3619, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.3789, exact|E-E0|=0.3512, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.3711, exact|E-E0|=0.3402, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.3833, exact|E-E0|=0.3625, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.08636, exact|E-E0|=0.08875, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1002, exact|E-E0|=0.08961, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08918, exact|E-E0|=0.08847, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.0915, exact|E-E0|=0.08816, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1073, exact|E-E0|=0.09023, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.173, exact|E-E0|=0.1997, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2045, exact|E-E0|=0.2018, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.202, exact|E-E0|=0.2006, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.2154, exact|E-E0|=0.1954, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1988, exact|E-E0|=0.1989, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.04063, exact|E-E0|=0.04225, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05699, exact|E-E0|=0.04767, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.04342, exact|E-E0|=0.04356, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.04328, exact|E-E0|=0.04393, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.03992, exact|E-E0|=0.04175, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.04059, exact|E-E0|=0.03807, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05513, exact|E-E0|=0.05033, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.06525, exact|E-E0|=0.05664, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.02519, exact|E-E0|=0.03839, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.05549, exact|E-E0|=0.0726, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03451, exact|E-E0|=0.04163, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.06822, exact|E-E0|=0.04746, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.04961, exact|E-E0|=0.04438, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.04312, exact|E-E0|=0.04773, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.04677, exact|E-E0|=0.04262, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.04116, exact|E-E0|=0.03972, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03968, exact|E-E0|=0.03924, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03551, exact|E-E0|=0.03935, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03663, exact|E-E0|=0.03739, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2_C65_4420e263a7eb9628:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03623, exact|E-E0|=0.03711, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.09672, exact|E-E0|=0.09501, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1052, exact|E-E0|=0.09861, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08447, exact|E-E0|=0.09487, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.07858, exact|E-E0|=0.09181, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1193, exact|E-E0|=0.09789, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.04282, exact|E-E0|=0.04675, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.03973, exact|E-E0|=0.04738, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.03516, exact|E-E0|=0.04664, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.04357, exact|E-E0|=0.04645, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.04232, exact|E-E0|=0.04735, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.05739, exact|E-E0|=0.06414, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.07092, exact|E-E0|=0.06617, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.05886, exact|E-E0|=0.06395, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.06188, exact|E-E0|=0.06256, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.05901, exact|E-E0|=0.06593, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.03795, exact|E-E0|=0.03808, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.03175, exact|E-E0|=0.04045, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.03023, exact|E-E0|=0.03845, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.02403, exact|E-E0|=0.03909, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.03475, exact|E-E0|=0.03934, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.03397, exact|E-E0|=0.0366, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05041, exact|E-E0|=0.04027, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.03662, exact|E-E0|=0.04221, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.0304, exact|E-E0|=0.03295, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.05384, exact|E-E0|=0.04965, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03762, exact|E-E0|=0.03847, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.04303, exact|E-E0|=0.03995, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03163, exact|E-E0|=0.03908, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03253, exact|E-E0|=0.0396, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.03534, exact|E-E0|=0.03935, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03607, exact|E-E0|=0.03542, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03533, exact|E-E0|=0.03412, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03179, exact|E-E0|=0.03462, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.03324, exact|E-E0|=0.03324, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C63_f83c99894ea2ec0d:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.02697, exact|E-E0|=0.03438, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1836, exact|E-E0|=0.2055, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2234, exact|E-E0|=0.217, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.1851, exact|E-E0|=0.2068, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.2193, exact|E-E0|=0.198, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.227, exact|E-E0|=0.2169, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.06807, exact|E-E0|=0.07594, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.08836, exact|E-E0|=0.07672, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08425, exact|E-E0|=0.07617, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.08161, exact|E-E0|=0.07575, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.06637, exact|E-E0|=0.07749, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.1319, exact|E-E0|=0.1372, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1577, exact|E-E0|=0.1393, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.143, exact|E-E0|=0.1381, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.1433, exact|E-E0|=0.1335, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.1314, exact|E-E0|=0.1394, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.05352, exact|E-E0|=0.04916, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.0537, exact|E-E0|=0.05369, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.05019, exact|E-E0|=0.05108, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.04931, exact|E-E0|=0.04993, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.04214, exact|E-E0|=0.0499, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.04788, exact|E-E0|=0.04478, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.0539, exact|E-E0|=0.04664, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.06064, exact|E-E0|=0.05786, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.04655, exact|E-E0|=0.04219, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.0748, exact|E-E0|=0.06663, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.05533, exact|E-E0|=0.04949, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05416, exact|E-E0|=0.05344, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.05069, exact|E-E0|=0.05135, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.05539, exact|E-E0|=0.05282, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.04495, exact|E-E0|=0.05147, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.04722, exact|E-E0|=0.04444, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.03715, exact|E-E0|=0.04374, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.03548, exact|E-E0|=0.0452, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.04292, exact|E-E0|=0.04163, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C64_481479e245ff173c:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.0332, exact|E-E0|=0.04341, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_radial_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.404, exact|E-E0|=0.4062, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_radial_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.4193, exact|E-E0|=0.4242, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_radial_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.4151, exact|E-E0|=0.41, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_radial_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.4173, exact|E-E0|=0.3949, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_radial_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.4414, exact|E-E0|=0.4255, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_sum_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.08956, exact|E-E0|=0.09576, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_sum_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.1003, exact|E-E0|=0.09661, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_sum_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.08561, exact|E-E0|=0.0949, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_sum_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.1001, exact|E-E0|=0.09587, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_sum_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.08761, exact|E-E0|=0.09819, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_product_21p:samples4096:shift0.1:seed0: sample|E-E0|=0.2657, exact|E-E0|=0.2591, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_product_21p:samples4096:shift0.1:seed1: sample|E-E0|=0.2854, exact|E-E0|=0.2632, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_product_21p:samples4096:shift0.1:seed2: sample|E-E0|=0.2696, exact|E-E0|=0.2575, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_product_21p:samples4096:shift0.1:seed3: sample|E-E0|=0.2645, exact|E-E0|=0.2522, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:rbf_endpoint_product_21p:samples4096:shift0.1:seed4: sample|E-E0|=0.2493, exact|E-E0|=0.2622, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.04927, exact|E-E0|=0.04929, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.06775, exact|E-E0|=0.05433, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.05421, exact|E-E0|=0.05206, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.05371, exact|E-E0|=0.04997, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.05515, exact|E-E0|=0.05004, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_64p:samples4096:shift0.1:seed0: sample|E-E0|=0.04135, exact|E-E0|=0.04861, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_64p:samples4096:shift0.1:seed1: sample|E-E0|=0.05425, exact|E-E0|=0.0562, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_64p:samples4096:shift0.1:seed2: sample|E-E0|=0.0708, exact|E-E0|=0.06694, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_64p:samples4096:shift0.1:seed3: sample|E-E0|=0.04975, exact|E-E0|=0.0466, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_64p:samples4096:shift0.1:seed4: sample|E-E0|=0.06186, exact|E-E0|=0.07471, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.0462, exact|E-E0|=0.04954, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05462, exact|E-E0|=0.05489, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.05812, exact|E-E0|=0.05262, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.05333, exact|E-E0|=0.05392, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_radial_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.04988, exact|E-E0|=0.05156, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_128p:samples4096:shift0.1:seed0: sample|E-E0|=0.03366, exact|E-E0|=0.04684, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_128p:samples4096:shift0.1:seed1: sample|E-E0|=0.05808, exact|E-E0|=0.04695, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_128p:samples4096:shift0.1:seed2: sample|E-E0|=0.04924, exact|E-E0|=0.04723, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_128p:samples4096:shift0.1:seed3: sample|E-E0|=0.04873, exact|E-E0|=0.04477, exact_flags=none, sample_flags=none
+valid stage4c_adjacent_hard_patch:ryd_chain_N6_D2.5_C65_12f0ea599d5795c6:mlp_endpoint_128p:samples4096:shift0.1:seed4: sample|E-E0|=0.035, exact|E-E0|=0.04521, exact_flags=none, sample_flags=none
+Stage 4C complete: exact_valid=264/264, sample_valid=264/264

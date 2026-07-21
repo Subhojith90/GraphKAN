@@ -1,0 +1,15 @@
+{
+  "first_claim": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9__Bopen__D1p25__C3__Mrbf_radial_b32__S0",
+  "lease_retry": "PASS",
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "FAILED_RETRYABLE": 1,
+      "PENDING": 957,
+      "RUNNING": 2
+    },
+    "total_expected": 960
+  },
+  "second_claim_after_stale": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9__Bopen__D1p25__C3__Mendpoint_sum_b32__S0",
+  "third_claim_pending_progress": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9__Bopen__D1p25__C3__Mendpoint_product_b32__S0"
+}

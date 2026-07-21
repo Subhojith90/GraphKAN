@@ -1,0 +1,13 @@
+{
+  "config_hash": "59d6932d4f5e7b06594fb025dea3c3d2e46eecdc7a21d59985d468340ed3f52d",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4d_n10_fullbudget_smoke",
+  "raw_files": [
+    "stage4d_metrics.csv",
+    "stage4d_history.csv",
+    "stage4d_site_observables.csv",
+    "stage4d_corr_observables.csv"
+  ],
+  "schema_version": "stage4d-native-v1",
+  "stage": "4D"
+}

@@ -1,0 +1,62 @@
+profile: stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D2p00__C4__Mrbm_h32__S0
+stage: stage4f1c_real_runner
+output_root: /Users/subhojithalder/Desktop/Research Papers/Graph Kan/graphkan-amo-nqs-stage4d-v2-fullbudget-smoke-mechanism-gate/results_stage4f_r/frozen/attempts/stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D2p00__C4__Mrbm_h32__S0/23185ab7993041b9b450ef89ea3571d6__sf2f26ny/_runner_output
+netket:
+  inverted_ordering: false
+parameters:
+  omega:
+  - 1.0
+  delta:
+  - 2.0
+  c6:
+  - 4.0
+training:
+  seeds:
+  - 0
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  n_basis: 12
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+exact_health_gate:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+model_specs:
+  rbm_h32:
+    kind: rbm
+    basis_family: none
+    n_basis: 1
+    hidden: 32
+    save_checkpoint: true
+requires_smoke_gate: true
+smoke_gate_path: results_stage4d/fullbudget_smoke/stage4d_smoke_gate.json
+geometry:
+  family: chain
+  n_sites: 10
+  spacing: 1.0
+transaction_identity:
+  campaign_id: stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33
+  protocol_hash: 327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9
+  run_id: stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D2p00__C4__Mrbm_h32__S0
+  boundary: open
+  delta: '2.00'
+  c6: '4'
+  model: rbm_h32
+  seed: 0
+  lane: control
+  priority: 87
+  n_sites: 10
+  expected_history_rows: 14
+  attempt_id: 23185ab7993041b9b450ef89ea3571d6

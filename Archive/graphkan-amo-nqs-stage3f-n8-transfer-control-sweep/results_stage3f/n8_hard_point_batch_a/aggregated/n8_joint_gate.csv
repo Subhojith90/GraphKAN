@@ -1,0 +1,2 @@
+status,pairs,endpoint_all_valid,endpoint_energy_not_worse_all_seeds,endpoint_density_not_worse_all_seeds,correlation_penalty_within_abs_0_01_and_rel_25pct,median_energy_delta,median_density_delta,median_correlation_delta
+PASS,2,True,True,True,True,-0.3154091643842501,-0.035086422209226156,0.002242771488335302

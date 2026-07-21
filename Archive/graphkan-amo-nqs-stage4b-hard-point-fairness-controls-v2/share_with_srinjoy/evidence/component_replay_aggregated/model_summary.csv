@@ -1,0 +1,6 @@
+model_label,model_kind,basis_family,n_parameters,runs,exact_valid,sample_valid,median_exact_energy_error,median_exact_density_mae,median_exact_corr_mae,median_wall_seconds,exact_valid_rate,sample_valid_rate
+rbf_endpoint_diff_21p,kan_endpoint_diff_jastrow,rbf,21,5,3,1,0.4914976667293462,0.0539635749955946,0.012427406274955,19.758539250004105,0.6,0.2
+rbf_endpoint_full_21p,kan_endpoint_jastrow,rbf,21,5,5,5,0.2154743465421216,0.0461623238447893,0.0292281345180198,19.78589058299258,1.0,1.0
+rbf_endpoint_product_21p,kan_endpoint_product_jastrow,rbf,21,5,5,5,0.2042148404974462,0.0264570443003837,0.0095140843397004,19.9189283339947,1.0,1.0
+rbf_endpoint_sum_21p,kan_endpoint_sum_jastrow,rbf,21,5,5,5,0.164077730353112,0.0231742740272353,0.0204152955012223,19.92659629099944,1.0,1.0
+rbf_radial_21p,kan_jastrow,rbf,21,5,0,0,0.5283557325896329,0.0811941317375706,0.0272087026051479,19.726671459007775,0.0,0.0

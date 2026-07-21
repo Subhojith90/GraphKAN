@@ -1,0 +1,6 @@
+{
+  "profile": "stage3c_endpoint_ablation_n6",
+  "config_hash": "020bef13daa9a3a3c6a3be84996a4d25e5ac8c53fda3536569eb13e26497dd3e",
+  "stage": "3C",
+  "purpose": "taxonomy-locked endpoint-feature ablation and N=8 replication gate"
+}

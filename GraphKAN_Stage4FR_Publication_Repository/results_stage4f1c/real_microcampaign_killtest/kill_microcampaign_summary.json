@@ -1,0 +1,221 @@
+{
+  "campaign_root": "results_stage4f1c/real_microcampaign_killtest",
+  "config": "configs/stage4f1c_real_microcampaign_killtest.yaml",
+  "failures": [],
+  "fault_results": [
+    {
+      "fault_returncode": -9,
+      "lane": "core",
+      "pass": true,
+      "phase": "during-training",
+      "recovery_returncode": 0,
+      "sigkill_observed": true
+    },
+    {
+      "fault_returncode": -9,
+      "lane": "core",
+      "pass": true,
+      "phase": "during-checkpoint",
+      "recovery_returncode": 0,
+      "sigkill_observed": true
+    },
+    {
+      "fault_returncode": -9,
+      "lane": "control",
+      "pass": true,
+      "phase": "during-promotion",
+      "recovery_returncode": 0,
+      "sigkill_observed": true
+    },
+    {
+      "fault_returncode": -9,
+      "lane": "core",
+      "pass": true,
+      "phase": "after-promotion",
+      "recovery_returncode": 0,
+      "sigkill_observed": true
+    }
+  ],
+  "gate": "PASS",
+  "registry_evidence": {
+    "event_counts": [
+      {
+        "count": 20,
+        "event_type": "CLAIMED"
+      },
+      {
+        "count": 16,
+        "event_type": "COMPLETE"
+      },
+      {
+        "count": 4,
+        "event_type": "FAILED_RETRYABLE"
+      }
+    ],
+    "runs": [
+      {
+        "attempt": 2,
+        "boundary": "open",
+        "delta": "1.50",
+        "model": "rbf_radial_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mrbf_radial_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "open",
+        "delta": "1.50",
+        "model": "endpoint_product_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 2,
+        "boundary": "open",
+        "delta": "1.50",
+        "model": "mlp_endpoint_large",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mmlp_endpoint_large__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 2,
+        "boundary": "open",
+        "delta": "1.50",
+        "model": "rbm_h32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mrbm_h32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "open",
+        "delta": "2.00",
+        "model": "rbf_radial_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mrbf_radial_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 2,
+        "boundary": "open",
+        "delta": "2.00",
+        "model": "endpoint_product_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mendpoint_product_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "open",
+        "delta": "2.00",
+        "model": "mlp_endpoint_large",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mmlp_endpoint_large__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "open",
+        "delta": "2.00",
+        "model": "rbm_h32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mrbm_h32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "1.50",
+        "model": "rbf_radial_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D1p50__C4__Mrbf_radial_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "1.50",
+        "model": "endpoint_product_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D1p50__C4__Mendpoint_product_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "1.50",
+        "model": "mlp_endpoint_large",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D1p50__C4__Mmlp_endpoint_large__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "1.50",
+        "model": "rbm_h32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D1p50__C4__Mrbm_h32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "2.00",
+        "model": "rbf_radial_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D2p00__C4__Mrbf_radial_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "2.00",
+        "model": "endpoint_product_b32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D2p00__C4__Mendpoint_product_b32__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "2.00",
+        "model": "mlp_endpoint_large",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D2p00__C4__Mmlp_endpoint_large__S0",
+        "status": "COMPLETE"
+      },
+      {
+        "attempt": 1,
+        "boundary": "periodic",
+        "delta": "2.00",
+        "model": "rbm_h32",
+        "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bperiodic__D2p00__C4__Mrbm_h32__S0",
+        "status": "COMPLETE"
+      }
+    ]
+  },
+  "retried_work_items": [
+    {
+      "attempt": 2,
+      "boundary": "open",
+      "delta": "1.50",
+      "model": "rbf_radial_b32",
+      "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mrbf_radial_b32__S0",
+      "status": "COMPLETE"
+    },
+    {
+      "attempt": 2,
+      "boundary": "open",
+      "delta": "1.50",
+      "model": "mlp_endpoint_large",
+      "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mmlp_endpoint_large__S0",
+      "status": "COMPLETE"
+    },
+    {
+      "attempt": 2,
+      "boundary": "open",
+      "delta": "1.50",
+      "model": "rbm_h32",
+      "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D1p50__C4__Mrbm_h32__S0",
+      "status": "COMPLETE"
+    },
+    {
+      "attempt": 2,
+      "boundary": "open",
+      "delta": "2.00",
+      "model": "endpoint_product_b32",
+      "run_id": "stage4f1c_real_microcampaign_killtest__stage4f-native-v1c__Pe8cc6ce55d126bbe__Bopen__D2p00__C4__Mendpoint_product_b32__S0",
+      "status": "COMPLETE"
+    }
+  ],
+  "validation_returncode": 0
+}

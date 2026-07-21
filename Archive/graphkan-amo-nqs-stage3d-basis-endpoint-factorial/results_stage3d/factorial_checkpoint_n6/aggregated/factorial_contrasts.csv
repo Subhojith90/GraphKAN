@@ -1,0 +1,13 @@
+comparison,question,metric,pairs,median_delta,mean_delta,treated_lower_fraction
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_abs_energy_error_to_ed,2,-0.007300736022914506,-0.007300736022914506,1.0
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_density_mae_to_ed,2,-0.003296882782160754,-0.003296882782160754,1.0
+sine_endpoint_19p minus sine_radial_19p,endpoint effect under sine radial basis,exact_model_connected_correlation_mae_to_ed,2,-0.0010693206861232991,-0.0010693206861232991,1.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_abs_energy_error_to_ed,2,-0.12620851294203428,-0.12620851294203428,1.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_density_mae_to_ed,2,-0.04061504471832185,-0.04061504471832185,1.0
+rbf_endpoint_19p minus rbf_radial_19p,endpoint effect under RBF radial basis,exact_model_connected_correlation_mae_to_ed,2,0.002325562241102551,0.002325562241102551,0.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_abs_energy_error_to_ed,2,0.10804072386690095,0.10804072386690095,0.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_density_mae_to_ed,2,-0.051361802250511096,-0.051361802250511096,1.0
+rbf_radial_19p minus sine_radial_19p,radial-basis effect without endpoints,exact_model_connected_correlation_mae_to_ed,2,-0.03455781228524065,-0.03455781228524065,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_abs_energy_error_to_ed,2,-0.0108670530522188,-0.0108670530522188,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_density_mae_to_ed,2,-0.08867996418667219,-0.08867996418667219,1.0
+rbf_endpoint_19p minus sine_endpoint_19p,radial-basis effect with endpoints,exact_model_connected_correlation_mae_to_ed,2,-0.031162929358014797,-0.031162929358014797,1.0

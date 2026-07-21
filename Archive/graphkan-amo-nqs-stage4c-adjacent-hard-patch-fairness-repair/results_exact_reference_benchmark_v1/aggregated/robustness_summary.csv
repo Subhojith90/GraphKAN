@@ -1,0 +1,2 @@
+profile,status,reason
+robustness_core,not_run,CPU artifact did not execute robustness profile.

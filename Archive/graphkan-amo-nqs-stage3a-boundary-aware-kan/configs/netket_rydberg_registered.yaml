@@ -1,0 +1,26 @@
+profile: netket_rydberg_registered
+output_root: results
+models: [product, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [8, 10, 12, 14, 16]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0]
+  c6: [1.0, 4.0]
+  sign_rule: parity
+training:
+  seeds: [0, 1, 2, 3, 4]
+  n_samples: 4096
+  n_chains: 32
+  n_iter: 600
+  chunk_size: 50
+  learning_rate: 0.01
+  diag_shift: 0.01
+  n_basis: 8
+  hidden: 16
+fairness:
+  rule: "same sampler, samples, chains, optimizer, SR shift, iterations, seeds, and Hamiltonian instances for every model"
+  report_parameter_counts: true
+  report_wall_seconds: true
+notes: "Registered VMC benchmark. Aggregate only completed rows; retain failures separately."

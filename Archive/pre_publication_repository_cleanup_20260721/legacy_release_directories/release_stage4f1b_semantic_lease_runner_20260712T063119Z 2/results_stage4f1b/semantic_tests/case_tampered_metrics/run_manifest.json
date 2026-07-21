@@ -1,0 +1,12 @@
+{
+  "boundary": "open",
+  "c6": "3",
+  "campaign_id": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9",
+  "delta": "1.25",
+  "lane": "core",
+  "model": "rbf_radial_b32",
+  "priority": 0,
+  "protocol_hash": "f498b4287c8b5ec974060e57fd51e5272113c0334aa7cf29a1c9e68465d58394",
+  "run_id": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9__Bopen__D1p25__C3__Mrbf_radial_b32__S0",
+  "seed": 0
+}

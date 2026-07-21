@@ -1,0 +1,6 @@
+netket: {inverted_ordering: false}
+chains: {n_sites: [2, 6, 8], spacing: 1.0}
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0, 2.0]
+  c6: [1.0, 4.0]

@@ -1,0 +1,13 @@
+{
+  "config_hash": "d46f1c963d8bbdeb126c5a40d42dc7cd2fdb3653ca85b33e06a77a93bd8ead3d",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4d_mechanism_mini",
+  "raw_files": [
+    "stage4d_metrics.csv",
+    "stage4d_history.csv",
+    "stage4d_site_observables.csv",
+    "stage4d_corr_observables.csv"
+  ],
+  "schema_version": "stage4d-native-v1",
+  "stage": "4D"
+}

@@ -1,0 +1,9 @@
+comparison,question,metric,pairs,median_delta,mean_delta,treated_lower_fraction
+sine_endpoint_21p minus sine_radial_21p,endpoint effect under sine basis at N=8,exact_model_abs_energy_error_to_ed,2,-0.01047105750751335,-0.01047105750751335,1.0
+sine_endpoint_21p minus sine_radial_21p,endpoint effect under sine basis at N=8,exact_model_density_mae_to_ed,2,-0.011553797160919796,-0.011553797160919796,1.0
+sine_endpoint_21p minus sine_radial_21p,endpoint effect under sine basis at N=8,exact_model_connected_correlation_mae_to_ed,2,-0.004232887396616848,-0.004232887396616848,1.0
+sine_endpoint_21p minus sine_radial_21p,endpoint effect under sine basis at N=8,wall_seconds,2,-0.8638305624990625,-0.8638305624990625,1.0
+rbf_endpoint_21p minus rbf_radial_21p,endpoint effect under RBF basis at N=8,exact_model_abs_energy_error_to_ed,2,-0.3154091643842501,-0.3154091643842501,1.0
+rbf_endpoint_21p minus rbf_radial_21p,endpoint effect under RBF basis at N=8,exact_model_density_mae_to_ed,2,-0.035086422209226156,-0.035086422209226156,1.0
+rbf_endpoint_21p minus rbf_radial_21p,endpoint effect under RBF basis at N=8,exact_model_connected_correlation_mae_to_ed,2,0.002242771488335302,0.002242771488335302,0.0
+rbf_endpoint_21p minus rbf_radial_21p,endpoint effect under RBF basis at N=8,wall_seconds,2,0.06836445799854296,0.06836445799854296,0.0

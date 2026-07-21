@@ -1,0 +1,4 @@
+profile: ablation_core
+output_root: results
+run_policy: not_run_by_default
+reason: "Ablations are generated from pilot pair comparisons in this CPU artifact; full basis-family sweep is deferred."

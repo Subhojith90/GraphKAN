@@ -1,0 +1,36 @@
+campaign:
+  name: stage4f1c_independent_replay
+  schema_version: stage4f-native-v1c
+  output_root: results_stage4f1c/independent_replay
+  claim_boundary: clean second-host replay of four stratified microcampaign rows; not new science
+
+physics:
+  n_sites: 10
+  omega: 1.0
+  deltas: ["2.00"]
+  c6_values: ["4"]
+  boundaries: ["open", "periodic"]
+  seeds: [0]
+  samples: 4096
+  sr_shift: 0.1
+
+models:
+  endpoint_product_b32: {lane: core}
+  rbm_h32: {lane: control}
+
+base_configs:
+  open: configs/netket_stage4f_boundary_patch_open.yaml
+  periodic: configs/netket_stage4f_boundary_patch_periodic.yaml
+
+scheduler:
+  lease_seconds: 30
+  max_attempts: 3
+  backoff_seconds: 0
+
+completion_requirements:
+  checkpoint_format: jax-tree-leaves-npz-v1
+  require_complete_manifest_coverage: true
+  require_registry_filesystem_reconciliation: true
+  require_fenced_publication: true
+  replay_source_protocol_hash: d0e66ccc6dad4f19258d0c74f6fcbb0d4a684f63b088747f03c7b81549c464cc
+  replay_selection: endpoint-product and RBM controls; open and periodic; delta 2.00; C6 4; seed 0

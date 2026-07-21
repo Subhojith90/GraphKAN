@@ -1,0 +1,20 @@
+profile: exact_reference_benchmark_v1
+split: registered_exact_reference
+output_root: results_exact_reference_benchmark_v1
+models: [product, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [8, 10]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 1.0]
+  c6: [1.0, 4.0]
+  sign_rule: parity
+training:
+  maxiter: 65
+  seeds: [0, 1, 2, 3, 4]
+  ridge: 1.0e-8
+notes: >
+  Registered exact-reference screening suite. Every model receives the same Hamiltonian
+  instances, seed manifest, objective, optimiser family and maximum iteration budget.
+  Results are screening evidence only and must not be presented as NetKet/VMC evidence.

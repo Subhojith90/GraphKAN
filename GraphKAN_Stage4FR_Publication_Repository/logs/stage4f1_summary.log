@@ -1,0 +1,24 @@
+{
+  "campaign": "results_stage4f1/transactional_campaign",
+  "invalid_bundle_count": 0,
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 2,
+      "PENDING": 958
+    },
+    "total_expected": 960
+  },
+  "validated_bundles": [
+    {
+      "errors": [],
+      "run_bundle": "results_stage4f1/transactional_campaign/runs/stage4f1_transactional_scheduler_repair__stage4f-native-v1__Bopen__D1p25__C3__Mendpoint_full_b32__S0",
+      "valid": true
+    },
+    {
+      "errors": [],
+      "run_bundle": "results_stage4f1/transactional_campaign/runs/stage4f1_transactional_scheduler_repair__stage4f-native-v1__Bopen__D1p25__C3__Mendpoint_full_b32__S1",
+      "valid": true
+    }
+  ]
+}

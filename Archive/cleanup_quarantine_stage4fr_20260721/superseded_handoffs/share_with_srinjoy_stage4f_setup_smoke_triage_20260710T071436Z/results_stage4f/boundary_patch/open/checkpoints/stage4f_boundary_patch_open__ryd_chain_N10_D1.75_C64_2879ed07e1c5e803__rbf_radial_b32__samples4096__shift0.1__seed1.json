@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "48c216b66ddd033797e910967953dfe8f4dcad2df3d97b7de41da663fc47d740",
+  "leaf_count": 2,
+  "model_kind": "kan_jastrow",
+  "model_label": "rbf_radial_b32",
+  "n_parameters": 42,
+  "profile": "stage4f_boundary_patch_open",
+  "run_id": "stage4f_boundary_patch_open:ryd_chain_N10_D1.75_C64_2879ed07e1c5e803:rbf_radial_b32:samples4096:shift0.1:seed1",
+  "seed": 1,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'kan_coeff': *, 'site_bias': *})"
+}

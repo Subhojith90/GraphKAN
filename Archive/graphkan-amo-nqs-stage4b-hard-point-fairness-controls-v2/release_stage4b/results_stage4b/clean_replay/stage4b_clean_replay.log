@@ -1,0 +1,365 @@
+=== Stage 4B clean replay ===
+2026-06-29T16:56:19Z
+Python 3.12.7
+Obtaining file:///Users/subhojithalder/Desktop/Research%20Papers/Graph%20Kan/graphkan-amo-nqs-stage4b-hard-point-fairness-controls-v2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.24 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (1.26.4)
+Requirement already satisfied: scipy>=1.10 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (1.13.1)
+Requirement already satisfied: pandas>=2.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (2.2.2)
+Requirement already satisfied: pyyaml>=6 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (6.0.1)
+Requirement already satisfied: matplotlib>=3.7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (3.9.2)
+Requirement already satisfied: pytest>=7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (7.4.4)
+Requirement already satisfied: tqdm>=4 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (4.68.3)
+Requirement already satisfied: ruff in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (0.15.20)
+Requirement already satisfied: jax in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (0.7.1)
+Requirement already satisfied: flax in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (0.12.0)
+Requirement already satisfied: optax in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (0.2.8)
+Requirement already satisfied: netket in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from graphkan-amo-nqs==0.1.0) (3.22.3)
+Requirement already satisfied: contourpy>=1.0.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (1.5.0)
+Requirement already satisfied: packaging>=20.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (26.2)
+Requirement already satisfied: pillow>=8 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (12.2.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from pandas>=2.0->graphkan-amo-nqs==0.1.0) (2026.2)
+Requirement already satisfied: tzdata>=2022.7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from pandas>=2.0->graphkan-amo-nqs==0.1.0) (2026.2)
+Requirement already satisfied: iniconfig in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from pytest>=7->graphkan-amo-nqs==0.1.0) (2.3.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from pytest>=7->graphkan-amo-nqs==0.1.0) (1.6.0)
+Requirement already satisfied: msgpack in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (1.2.1)
+Requirement already satisfied: orbax-checkpoint in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (0.12.1)
+Requirement already satisfied: tensorstore in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (0.1.84)
+Requirement already satisfied: rich>=11.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (15.0.0)
+Requirement already satisfied: typing_extensions>=4.2 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (4.15.0)
+Requirement already satisfied: treescope>=0.1.7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from flax->graphkan-amo-nqs==0.1.0) (0.1.10)
+Requirement already satisfied: jaxlib<=0.7.1,>=0.7.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from jax->graphkan-amo-nqs==0.1.0) (0.7.1)
+Requirement already satisfied: ml_dtypes>=0.5.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from jax->graphkan-amo-nqs==0.1.0) (0.5.4)
+Requirement already satisfied: opt_einsum in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from jax->graphkan-amo-nqs==0.1.0) (3.4.0)
+Requirement already satisfied: einops>=0.8.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (0.8.2)
+Requirement already satisfied: equinox>=0.12.2 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (0.13.0)
+Requirement already satisfied: igraph>=0.10.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (1.0.0)
+Requirement already satisfied: numba>=0.59 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (0.65.1)
+Requirement already satisfied: orjson<4,>=3.10.7 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (3.11.9)
+Requirement already satisfied: plum-dispatch>=2.4 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (2.9.0)
+Requirement already satisfied: sparse>=0.12.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from netket->graphkan-amo-nqs==0.1.0) (0.18.0)
+Requirement already satisfied: absl-py>=0.7.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from optax->graphkan-amo-nqs==0.1.0) (2.4.0)
+Requirement already satisfied: jaxtyping>=0.2.20 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from equinox>=0.12.2->netket->graphkan-amo-nqs==0.1.0) (0.3.11)
+Requirement already satisfied: wadler-lindig>=0.1.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from equinox>=0.12.2->netket->graphkan-amo-nqs==0.1.0) (0.1.7)
+Requirement already satisfied: texttable>=1.6.2 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from igraph>=0.10.0->netket->graphkan-amo-nqs==0.1.0) (1.7.0)
+Requirement already satisfied: llvmlite<0.48,>=0.47.0dev0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from numba>=0.59->netket->graphkan-amo-nqs==0.1.0) (0.47.0)
+Requirement already satisfied: beartype>=0.16.2 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from plum-dispatch>=2.4->netket->graphkan-amo-nqs==0.1.0) (0.22.9)
+Requirement already satisfied: six>=1.5 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from python-dateutil>=2.7->matplotlib>=3.7->graphkan-amo-nqs==0.1.0) (1.17.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from rich>=11.1->flax->graphkan-amo-nqs==0.1.0) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from rich>=11.1->flax->graphkan-amo-nqs==0.1.0) (2.20.0)
+Requirement already satisfied: etils[epath,epy] in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (1.14.0)
+Requirement already satisfied: prometheus-client>=0.20.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (0.25.0)
+Requirement already satisfied: aiofiles in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (25.1.0)
+Requirement already satisfied: protobuf in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (7.35.1)
+Requirement already satisfied: humanize in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (4.15.0)
+Requirement already satisfied: simplejson>=3.16.0 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (4.1.1)
+Requirement already satisfied: psutil in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (7.2.2)
+Requirement already satisfied: uvloop in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (0.22.1)
+Requirement already satisfied: mdurl~=0.1 in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=11.1->flax->graphkan-amo-nqs==0.1.0) (0.1.2)
+Requirement already satisfied: fsspec in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from etils[epath,epy]->orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (2026.6.0)
+Requirement already satisfied: zipp in /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages (from etils[epath,epy]->orbax-checkpoint->flax->graphkan-amo-nqs==0.1.0) (4.1.0)
+Building wheels for collected packages: graphkan-amo-nqs
+  Building editable for graphkan-amo-nqs (pyproject.toml): started
+  Building editable for graphkan-amo-nqs (pyproject.toml): finished with status 'done'
+  Created wheel for graphkan-amo-nqs: filename=graphkan_amo_nqs-0.1.0-0.editable-py3-none-any.whl size=3289 sha256=6587df03b335a1545f9a09b535c57dd5b7701e985994ef313d9ed2972abc29b7
+  Stored in directory: /private/var/folders/7w/gsx1_1k50hg0lrl8m2zc5dtw0000gn/T/pip-ephem-wheel-cache-7vw94uv_/wheels/d5/e2/0c/e1daf547f5976080c6148613936ef062a7df9188cf91e81b32
+Successfully built graphkan-amo-nqs
+Installing collected packages: graphkan-amo-nqs
+  Attempting uninstall: graphkan-amo-nqs
+    Found existing installation: graphkan-amo-nqs 0.1.0
+    Uninstalling graphkan-amo-nqs-0.1.0:
+      Successfully uninstalled graphkan-amo-nqs-0.1.0
+Successfully installed graphkan-amo-nqs-0.1.0
+........................................................                 [100%]
+=============================== warnings summary ===============================
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:64
+  /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:64: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    prop = Group((name + Suppress("=") + comma_separated(value)) | oneOf(_CONSTANTS))
+
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85
+  /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:85: PyparsingDeprecationWarning: 'parseString' deprecated - use 'parse_string'
+    parse = parser.parseString(pattern)
+
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89
+  /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_fontconfig_pattern.py:89: PyparsingDeprecationWarning: 'resetCache' deprecated - use 'reset_cache'
+    parser.resetCache()
+
+../../../../../../opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_mathtext.py:45
+  /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/matplotlib/_mathtext.py:45: PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'
+    ParserElement.enablePackrat()
+
+tests/test_netket_conventions_optional.py::test_explicit_new_ordering_operator_matches_dense
+  /opt/anaconda3/envs/graphkan-stage4b-py312/lib/python3.12/site-packages/equinox/internal/_noinline.py:185: DeprecationWarning: jax.interpreters.batching.NotMapped is deprecated.
+    batch_axes: PyTree[batching.NotMapped | int]  # pyright: ignore
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+{
+  "ok": true,
+  "python": "3.12.7",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "packages": {
+    "jax": "0.7.1",
+    "jaxlib": "0.7.1",
+    "flax": "0.12.0",
+    "optax": "0.2.8",
+    "netket": "3.22.3",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1"
+  },
+  "jax_devices": [
+    "TFRT_CPU_0"
+  ],
+  "errors": [],
+  "warnings": [
+    "Recommended interpreter is Python 3.11; detected 3.12.7.",
+    "CPU-only JAX detected. Use the smoke profile before launching the registered VMC benchmark."
+  ]
+}
+{
+  "ok": true,
+  "convention": {
+    "inverted_ordering": false,
+    "physical_occupation": "(1-sigma)/2"
+  },
+  "checks": [
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 2,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 0.0,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 3.552713678800501e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 8.881784197001252e-16,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 3.552713678800501e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 8.881784197001252e-16,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 6,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 3.552713678800501e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 1.7763568394002505e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": -1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 7.105427357601002e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 8.881784197001252e-16,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": 1.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 3.552713678800501e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 1.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 1.7763568394002505e-15,
+      "operator_valid": true
+    },
+    {
+      "n_sites": 8,
+      "omega": 1.0,
+      "delta": 2.0,
+      "c6": 4.0,
+      "inverted_ordering": false,
+      "numbering_is_permutation": true,
+      "occupation_binary": true,
+      "occupation_formula": "(1-sigma)/2",
+      "matrix_max_abs_diff": 3.552713678800501e-15,
+      "operator_valid": true
+    }
+  ]
+}
+{'jax': '0.7.1', 'jaxlib': '0.7.1', 'flax': '0.12.0', 'netket': '3.22.3', 'numpy': '1.26.4', 'optax': '0.2.8', 'scipy': '1.13.1'}

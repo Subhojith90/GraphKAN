@@ -1,0 +1,27 @@
+{
+  "array_count": 5,
+  "arrays": {
+    "leaf_0000": [
+      11
+    ],
+    "leaf_0001": [
+      20,
+      11
+    ],
+    "leaf_0002": [
+      1
+    ],
+    "leaf_0003": [
+      11,
+      1
+    ],
+    "leaf_0004": [
+      10
+    ]
+  },
+  "checkpoint": "checkpoint.npz",
+  "model": "mlp_endpoint_large",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bopen__D1p25__C3__Mmlp_endpoint_large__S0",
+  "schema_version": "jax-tree-leaves-npz-v1",
+  "sha256": "06a414c2c4bdd4e1966a97322271a61a87ef039e394bb9a8f3b1c7d8113897ed"
+}

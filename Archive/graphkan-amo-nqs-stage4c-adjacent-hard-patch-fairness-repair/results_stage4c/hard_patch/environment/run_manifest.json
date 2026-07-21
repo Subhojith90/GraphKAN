@@ -1,0 +1,13 @@
+{
+  "config_hash": "eade207dbbf6ed0f63bc03c6438ee1de0bff27bff49f794224371551d0592319",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4c_adjacent_hard_patch",
+  "raw_files": [
+    "stage4c_metrics.csv",
+    "stage4c_history.csv",
+    "stage4c_site_observables.csv",
+    "stage4c_corr_observables.csv"
+  ],
+  "schema_version": "stage4c-native-v1",
+  "stage": "4C"
+}

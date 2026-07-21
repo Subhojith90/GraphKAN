@@ -1,0 +1,37 @@
+profile: netket_stage2_6_convention_locked_observable_grid
+output_root: results_stage2_6
+netket:
+  inverted_ordering: false
+models: [product, rbm, smooth_jastrow, mlp_pair, kan_jastrow]
+chains:
+  n_sites: [6, 8]
+  spacing: 1.0
+parameters:
+  omega: [1.0]
+  delta: [-1.0, 0.0, 1.0, 2.0]
+  c6: [0.25, 1.0, 4.0]
+  sign_rule: parity
+training:
+  seeds: [0, 1, 2, 3, 4]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 128
+  n_iter: 600
+  chunk_size: 50
+  learning_rate: 0.001
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 8
+  hidden: 12
+model_overrides: {}
+health_gate:
+  min_energy_error: 1.0e-10
+  min_energy_variance: 1.0e-12
+  min_unique_states: 2
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+fairness:
+  rule: "Frozen Stage 2.6 budget: identical samples, chains, discards, iterations, optimiser, learning rate, SR shift, clipping, seeds, and Hamiltonian instances across all models. Parameter counts are reported, not equalised."
+notes: "Convention-locked ED observable grid. Do not aggregate invalid rows."

@@ -1,0 +1,28 @@
+profile: stage3b_endpoint_kan_gate
+output_root: results_stage3b
+netket: {inverted_ordering: false}
+chains: {n_sites: [6], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training:
+  seeds: [0, 1]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 10
+  hidden: 1
+model_specs:
+  kan_radial_19p: {kind: kan_jastrow, basis_family: sine, n_basis: 13, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+  kan_endpoint: {kind: kan_endpoint_jastrow, basis_family: sine, n_basis: 10, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+  rbf_matched_19p: {kind: smooth_jastrow, basis_family: rbf, n_basis: 13, hidden: 1, n_samples: [4096], diag_shifts: [0.10]}
+health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+notes: "Stage 3B.1 taxonomy-locked replay. Explicit basis_family is recorded in all metric rows.  six-run endpoint-aware KAN gate. Endpoint features are symmetric functions of nearest-boundary distances and distinguish edge-edge, edge-bulk, and bulk-bulk pairs. Parameter matched at 19 trainable parameters for radial KAN, endpoint-aware KAN, and RBF Jastrow."

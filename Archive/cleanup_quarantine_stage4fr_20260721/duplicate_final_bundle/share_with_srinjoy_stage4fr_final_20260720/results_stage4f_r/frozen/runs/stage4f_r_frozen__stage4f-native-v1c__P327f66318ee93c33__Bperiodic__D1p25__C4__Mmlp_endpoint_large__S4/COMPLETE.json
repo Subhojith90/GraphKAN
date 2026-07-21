@@ -1,0 +1,8 @@
+{
+  "artifact_manifest_sha256": "db4c504fc3ff85c9188b02009be8956eb13d2f298c73af6d9ce544c5384b0873",
+  "artifact_validation": "PASS",
+  "attempt_id": "1b4a1ca332ed4cdb886cb444e83c2202",
+  "completed_utc": "2026-07-20T13:04:24+00:00",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p25__C4__Mmlp_endpoint_large__S4",
+  "schema_version": "stage4f-native-v1c"
+}

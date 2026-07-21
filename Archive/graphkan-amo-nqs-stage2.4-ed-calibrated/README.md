@@ -1,0 +1,48 @@
+# graphkan-amo-nqs-real
+
+Production-oriented, hardware-free benchmark code for blockade-scale-normalised KAN-Jastrow and Graph-KAN neural quantum states on small and medium AMO/Rydberg simulator tasks.
+
+This repository is intentionally conservative. The CPU path implements deterministic geometry generation, dense/sparse Rydberg Hamiltonians, exact diagonalisation, exact full-basis variational optimisation for small systems, model/baseline fairness tables, gauge-fixed learned-function extraction, statistical aggregation, figure/table generation, claim validation, and a LaTeX technical report. Optional NetKet/JAX/Flax, QuSpin, TeNPy, and IBM components are detected and documented but are not required for quick CI.
+
+## Quick reproduction
+
+```bash
+cd graphkan-amo-nqs-real
+PYTHONPATH=src python -m pytest -q
+PYTHONPATH=src python scripts/run_quick_ci.py --config configs/quick_ci.yaml
+PYTHONPATH=src python scripts/compute_ed_references.py --config configs/ed_reference.yaml
+PYTHONPATH=src python scripts/run_exact_fullsum_pilot.py --config configs/exact_fullsum_pilot.yaml
+PYTHONPATH=src python scripts/run_rydberg_pilot.py --config configs/rydberg_chain_pilot.yaml
+PYTHONPATH=src python scripts/aggregate_results.py --input results --output results/aggregated
+PYTHONPATH=src python scripts/make_figures.py --config configs/plotting.yaml
+PYTHONPATH=src python scripts/make_tables.py
+PYTHONPATH=src python scripts/make_analysis_report.py
+PYTHONPATH=src python scripts/create_release_manifest.py
+PYTHONPATH=src python scripts/validate_claims.py
+PYTHONPATH=src python scripts/check_top_journal_readiness.py
+```
+
+## Scope boundary
+
+The results produced by the default CPU configs are pilot results, not paper-grade PRA/Quantum results. NetKet/Flax/QuSpin/TeNPy are optional in this artifact. If they are not installed, VMC/tensor-reference scripts mark those profiles as not executed rather than fabricating output.
+
+## Scientific rule
+
+Energy is necessary but not sufficient. Claims require exact references where feasible, connected-correlation errors, paired statistics, failure retention, and gauge-fixed function stability.
+
+## Registered exact-reference benchmark tier
+
+The repository now includes a dependency-light, registered screening suite that is stronger
+than the original CPU pilot while remaining explicitly distinct from VMC:
+
+```bash
+PYTHONPATH=src python scripts/run_exact_benchmark.py --config configs/exact_reference_benchmark.yaml
+PYTHONPATH=src python scripts/aggregate_results.py \
+  --input results_exact_reference_benchmark_v1 \
+  --output results_exact_reference_benchmark_v1/aggregated
+```
+
+This tier optimises each model with the same exact full-basis objective, L-BFGS-B optimiser,
+maximum iteration budget, Hamiltonian instances and five-seed manifest. It produces a
+`benchmark_declaration.json` next to raw results. It is screening/validation evidence only;
+it must not be described as NetKet, Flax, Monte Carlo, DMRG or hardware evidence.

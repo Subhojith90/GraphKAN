@@ -1,0 +1,13 @@
+{
+  "config_hash": "d0d24d3a0cbd00682c2e1b4ff49e48dea03224b12ad02b9df6176a4cbcc6b699",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4d_low_detuning_autopsy_fullbudget",
+  "raw_files": [
+    "stage4d_metrics.csv",
+    "stage4d_history.csv",
+    "stage4d_site_observables.csv",
+    "stage4d_corr_observables.csv"
+  ],
+  "schema_version": "stage4d-native-v1",
+  "stage": "4D"
+}

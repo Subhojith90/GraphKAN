@@ -1,0 +1,50 @@
+{
+  "manifest": {
+    "boundaries": [
+      "open",
+      "periodic"
+    ],
+    "c6_values": [
+      "3",
+      "4",
+      "5"
+    ],
+    "campaign_id": "stage4f1_transactional_scheduler_repair__stage4f-native-v1",
+    "claim_boundary": "scheduler/provenance repair only; not a completed Stage 4F physics result",
+    "config_path": "configs/stage4f_campaign.yaml",
+    "config_sha256": "fc37d56993d1979ebad8fb5cfb72b554af3152a820b6983943a973367d96db92",
+    "created_utc": "2026-07-11T05:42:40+00:00",
+    "deltas": [
+      "1.25",
+      "1.50",
+      "1.75",
+      "2.00"
+    ],
+    "expected_runs": 960,
+    "models": [
+      "rbf_radial_b32",
+      "endpoint_sum_b32",
+      "endpoint_product_b32",
+      "endpoint_hybrid_b32",
+      "endpoint_full_b32",
+      "mlp_endpoint_medium",
+      "mlp_endpoint_large",
+      "rbm_h32"
+    ],
+    "schema_version": "stage4f-native-v1",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "PENDING": 960
+    },
+    "total_expected": 960
+  }
+}

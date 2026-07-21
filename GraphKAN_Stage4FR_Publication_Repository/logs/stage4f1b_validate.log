@@ -1,0 +1,13 @@
+{
+  "campaign": "results_stage4f1b/semantic_lease_runner",
+  "complete_bundles_checked": 2,
+  "invalid_complete_bundles": [],
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 2,
+      "PENDING": 958
+    },
+    "total_expected": 960
+  }
+}

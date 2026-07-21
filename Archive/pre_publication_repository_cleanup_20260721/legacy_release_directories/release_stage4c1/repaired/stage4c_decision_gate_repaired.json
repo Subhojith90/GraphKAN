@@ -1,0 +1,16 @@
+{
+  "candidate": "rbf_endpoint_sum_21p",
+  "expected_rows_per_cell": 35,
+  "n_patch_cells": 18,
+  "candidate_exact_valid_rate": 1.0,
+  "candidate_sample_valid_rate": 1.0,
+  "exact_valid_patch_cells": 18,
+  "non_dominated_exact_valid_cells": 16,
+  "non_dominated_cell_rate": 0.8888888888888888,
+  "min_candidate_exact_valid_rate": 0.9,
+  "min_non_dominated_cell_rate": 0.7,
+  "runtime_convention": "control/candidate wall_seconds <= 1.25",
+  "pairing_key": "n_sites,delta,c6,seed",
+  "stage4c_status": "PASS",
+  "scope_note": "Gate is a predefined Pareto non-domination diagnostic; it does not establish universal superiority."
+}

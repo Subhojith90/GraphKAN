@@ -1,0 +1,6 @@
+n_sites,delta,c6,model_label,model_kind,basis_family,n_parameters,runs,exact_valid,sample_valid,median_exact_energy,median_exact_density,median_exact_corr,median_wall_seconds,exact_valid_rate,sample_valid_rate
+10,1.5,4.0,mlp_endpoint_128p,mlp_endpoint_pair,rbf,130,5,5,5,0.0375905229998192,0.0197132954295164,0.0048350822515797,85.79626295898925,1.0,1.0
+10,1.5,4.0,mlp_radial_128p,mlp_pair,rbf,130,5,5,5,0.0404869170744675,0.019783724614665,0.006547625052832,59.64055395798641,1.0,1.0
+10,1.5,4.0,rbf_endpoint_product_21p,kan_endpoint_product_jastrow,rbf,23,5,5,5,0.3660658750259582,0.0474419818663412,0.0320382508980254,84.88006287498865,1.0,1.0
+10,1.5,4.0,rbf_endpoint_sum_21p,kan_endpoint_sum_jastrow,rbf,23,5,5,5,0.2845499441370922,0.0556109984673226,0.0302545633566717,93.78070645799744,1.0,1.0
+10,1.5,4.0,rbf_radial_21p,kan_jastrow,rbf,23,5,5,5,0.4697659923752812,0.0288532207318196,0.0321224970909665,89.91799320900463,1.0,1.0

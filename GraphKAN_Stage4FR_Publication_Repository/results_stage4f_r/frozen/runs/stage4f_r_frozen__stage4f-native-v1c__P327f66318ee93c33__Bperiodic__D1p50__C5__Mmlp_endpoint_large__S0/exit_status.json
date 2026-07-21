@@ -1,0 +1,8 @@
+{
+  "attempt_id": "3a729ac3b8d84dd1b811284b456844ef",
+  "ended_utc": "2026-07-16T09:35:07+00:00",
+  "exit_code": 0,
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p50__C5__Mmlp_endpoint_large__S0",
+  "status": "COMPLETED",
+  "wall_seconds": 178.31682962500054
+}

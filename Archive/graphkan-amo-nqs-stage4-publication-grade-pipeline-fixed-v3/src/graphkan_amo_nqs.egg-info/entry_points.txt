@@ -1,0 +1,2 @@
+[console_scripts]
+graphkan-amo-nqs = graphkan_amo_nqs.cli:main

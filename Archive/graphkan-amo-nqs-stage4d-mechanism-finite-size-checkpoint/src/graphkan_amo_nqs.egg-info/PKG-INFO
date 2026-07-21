@@ -1,0 +1,59 @@
+Metadata-Version: 2.4
+Name: graphkan-amo-nqs
+Version: 0.1.0
+Summary: Hardware-free Rydberg AMO neural quantum-state benchmark with blockade-normalised KAN-Jastrow pilots
+Author: GraphKAN AMO NQS contributors
+License: MIT
+Requires-Python: <3.14,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: scipy>=1.10
+Requires-Dist: pandas>=2.0
+Requires-Dist: pyyaml>=6
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: pytest>=7
+Requires-Dist: tqdm>=4
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Provides-Extra: nqs
+Requires-Dist: jax; extra == "nqs"
+Requires-Dist: flax; extra == "nqs"
+Requires-Dist: optax; extra == "nqs"
+Requires-Dist: netket; extra == "nqs"
+Provides-Extra: ed
+Requires-Dist: quspin; extra == "ed"
+Provides-Extra: tensor
+Requires-Dist: tenpy; extra == "tensor"
+Provides-Extra: ibm
+Requires-Dist: qiskit; extra == "ibm"
+Requires-Dist: qiskit-ibm-runtime; extra == "ibm"
+Provides-Extra: torch-fallback
+Requires-Dist: torch; extra == "torch-fallback"
+Provides-Extra: all
+Requires-Dist: jax; extra == "all"
+Requires-Dist: flax; extra == "all"
+Requires-Dist: optax; extra == "all"
+Requires-Dist: netket; extra == "all"
+Requires-Dist: quspin; extra == "all"
+Requires-Dist: tenpy; extra == "all"
+Requires-Dist: qiskit; extra == "all"
+Requires-Dist: qiskit-ibm-runtime; extra == "all"
+Requires-Dist: torch; extra == "all"
+Dynamic: license-file
+
+# GraphKAN AMO NQS — Stage 4B Control Gate
+
+This is a self-contained Stage 4B audit-response code package for a controlled N=8 open-chain Rydberg neural-quantum-state study. It contains only the runnable Stage 4B path, native Stage 4B result schemas, a dual sample/exact health policy, per-run checkpoints, and control-sweep configurations.
+
+**Current status:** internal research control gate. This repository does not support claims of KAN superiority, Graph-KAN performance, geometry transfer, finite-size scaling, or manuscript readiness.
+
+Read `STAGE_4B_README.md` before running experiments.
+
+
+## Stage 4C
+See `STAGE_4C_README.md` for the frozen adjacent hard-patch protocol.
+
+## Stage 4D entry point
+See `STAGE_4D_README.md`. This package includes the Stage 4C.1 artifact-release repair before any Stage 4D VMC profile should run.

@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "d051f09d2b76646e9b9c6396cf1d6340afd299dea60dcb4b1ac5739f67bc86ff",
+  "leaf_count": 3,
+  "model_kind": "kan_endpoint_sum_jastrow",
+  "model_label": "endpoint_sum_b24",
+  "n_parameters": 35,
+  "profile": "stage4e_n10_capacity",
+  "run_id": "stage4e_n10_capacity:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:endpoint_sum_b24:samples4096:shift0.1:seed2",
+  "seed": 2,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'endpoint_coeff': *, 'kan_coeff': *, 'site_bias': *})"
+}

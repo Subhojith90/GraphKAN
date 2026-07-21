@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "graphkan-amo-nqs-real"
+message: "If you use this benchmark, cite the repository and the accompanying technical report."
+type: software
+authors:
+  - family-names: "GraphKAN AMO NQS contributors"
+version: "0.1.0"
+date-released: "2026-06-20"
+license: MIT

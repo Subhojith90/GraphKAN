@@ -1,0 +1,45 @@
+{
+  "config_hash": "7e714d206ca7551679bdb6a1420a7d9049773b2b86bccfea3a651d05c25d4a56",
+  "fairness": {
+    "same_instances": true,
+    "same_maxiter": 65,
+    "same_optimizer": "SciPy L-BFGS-B exact full-basis objective",
+    "same_seed_manifest": true
+  },
+  "geometries": {
+    "n_sites": [
+      8,
+      10
+    ],
+    "spacing": 1.0
+  },
+  "models": [
+    "product",
+    "smooth_jastrow",
+    "mlp_pair",
+    "kan_jastrow"
+  ],
+  "parameters": {
+    "c6": [
+      1.0,
+      4.0
+    ],
+    "delta": [
+      -1.0,
+      1.0
+    ],
+    "omega": [
+      1.0
+    ],
+    "sign_rule": "parity"
+  },
+  "profile": "exact_reference_benchmark_v1",
+  "scope": "exact full-basis variational benchmark; not VMC",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

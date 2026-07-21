@@ -1,0 +1,5 @@
+model,scientific_validity,runs
+kan_jastrow,FLAGGED,12
+mlp_pair,FLAGGED,12
+product,FLAGGED,12
+smooth_jastrow,FLAGGED,12

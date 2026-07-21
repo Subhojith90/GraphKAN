@@ -1,0 +1,2 @@
+valid stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p25__C4__Mmlp_endpoint_large__S3:ryd_periodic_chain_N10_D1.25_C64_78b0049f146ab1e4:mlp_endpoint_large:samples4096:shift0.1:seed3: sample|E-E0|=0.03888, exact|E-E0|=0.03368, exact_flags=none, sample_flags=none
+Stage 4E complete: exact_valid=1/1, sample_valid=1/1

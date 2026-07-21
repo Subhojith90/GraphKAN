@@ -1,0 +1,16 @@
+profile: stage3f_mlp_control_sweep_n8
+stage: 3F
+output_root: results_stage3f/mlp_control_sweep_n8
+netket: {inverted_ordering: false}
+chains: {n_sites: [8], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training: {seeds: [0, 1], n_samples: 4096, n_chains: 64, n_discard_per_chain: 256, n_iter: 700, chunk_size: 50, learning_rate: 0.0008, diag_shift: 0.10, grad_clip_norm: 2.0, n_basis: 10, hidden: 1}
+model_specs:
+  mlp_radial_h1_b11: {kind: mlp_pair, basis_family: rbf, n_basis: 11, hidden: 1}
+  mlp_radial_h2_b6: {kind: mlp_pair, basis_family: rbf, n_basis: 6, hidden: 2}
+  mlp_endpoint_h1_b8: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 8, hidden: 1}
+  mlp_endpoint_h2_b5: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 5, hidden: 2}
+  mlp_radial_h4_b6: {kind: mlp_pair, basis_family: rbf, n_basis: 6, hidden: 4}
+  mlp_endpoint_h4_b5: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 5, hidden: 4}
+health_gate: {min_energy_error: 1.0e-10, min_unique_state_fraction: 0.005, max_abs_energy_error_to_ed: 0.5, max_density_mae_to_ed: 0.08, max_connected_correlation_mae_to_ed: 0.08}
+notes: Validation-only capacity and compute sweep. Report all models; do not select a post hoc winner for a confirmatory comparison.

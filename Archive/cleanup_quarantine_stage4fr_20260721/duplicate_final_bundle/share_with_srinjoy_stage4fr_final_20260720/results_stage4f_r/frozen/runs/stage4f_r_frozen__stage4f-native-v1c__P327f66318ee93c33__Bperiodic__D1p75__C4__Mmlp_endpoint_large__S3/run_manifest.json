@@ -1,0 +1,20 @@
+{
+  "attempt_id": "6dd49fd026fb4659b63af21549532e23",
+  "boundary": "periodic",
+  "c6": "4",
+  "campaign_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33",
+  "claim_token_hash": "b21ea7fa53f4401e9536f2125a81442d49f74729089b155b4065b074116b16d7",
+  "created_utc": "2026-07-20T10:28:40+00:00",
+  "delta": "1.75",
+  "expected_history_rows": 14,
+  "expected_spec_hash": "9952717601132045d215687be37b564e5b5394d7d92efe2d3664d8fa15256226",
+  "lane": "core",
+  "model": "mlp_endpoint_large",
+  "n_sites": 10,
+  "priority": 734,
+  "protocol_hash": "327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9",
+  "run_id": "stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p75__C4__Mmlp_endpoint_large__S3",
+  "runner_run_id": "stage4f1c__stage4f_r_frozen__stage4f-native-v1c__P327f66318ee93c33__Bperiodic__D1p75__C4__Mmlp_endpoint_large__S3:ryd_periodic_chain_N10_D1.75_C64_ff53eba2a36a2d2e:mlp_endpoint_large:samples4096:shift0.1:seed3",
+  "schema_version": "stage4f-native-v1c",
+  "seed": 3
+}

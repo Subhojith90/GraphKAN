@@ -1,0 +1,9 @@
+model_label,rows,exact_valid,sample_valid,duality_agrees_all_rows
+rbf_endpoint_sum_b12_21p,5,5,5,True
+rbf_endpoint_sum_b16_25p,5,5,5,True
+rbf_endpoint_sum_b24_33p,5,5,5,True
+rbf_endpoint_sum_b8_17p,5,5,5,True
+rbf_radial_b12_20p,5,1,0,False
+rbf_radial_b16_24p,5,0,0,True
+rbf_radial_b24_32p,5,0,1,False
+rbf_radial_b8_16p,5,0,0,True

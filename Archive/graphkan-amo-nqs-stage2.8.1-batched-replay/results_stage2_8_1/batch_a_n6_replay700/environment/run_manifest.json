@@ -1,0 +1,6 @@
+{
+  "profile": "stage2_8_1_batch_a_n6_replay700",
+  "config_hash": "adbf1d501c2a547cd419a1aeff00e80374cf5ce94e5223fc07452828189ad1a9",
+  "stage": "2.7",
+  "purpose": "hard-regime diagnostic and matched-fairness gate"
+}

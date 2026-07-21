@@ -1,0 +1,4 @@
+profile: ibm_optional_sanity
+output_root: results/ibm_optional
+run_policy: not_run_by_default
+reason: "IBM hardware is supplementary only and does not validate Rydberg NQS claims."

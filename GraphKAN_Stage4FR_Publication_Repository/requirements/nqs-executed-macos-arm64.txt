@@ -1,0 +1,12 @@
+# Exact Stage 2.5 execution stack recorded on macOS arm64 / Python 3.12.7
+jax==0.7.1
+jaxlib==0.7.1
+flax==0.12.0
+optax==0.2.8
+netket==3.22.3
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.2
+matplotlib==3.9.2
+PyYAML==6.0.1
+pytest==7.4.4

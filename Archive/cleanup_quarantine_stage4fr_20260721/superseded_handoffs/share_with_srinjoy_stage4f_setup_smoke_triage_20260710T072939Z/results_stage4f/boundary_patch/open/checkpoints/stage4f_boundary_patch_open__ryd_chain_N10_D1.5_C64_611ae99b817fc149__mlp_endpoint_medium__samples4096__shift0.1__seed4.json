@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "540a4d8cb24cb63920d7fb397f08862963fcbfb470f062dd6a27a7eda33fd934",
+  "leaf_count": 5,
+  "model_kind": "mlp_endpoint_pair",
+  "model_label": "mlp_endpoint_medium",
+  "n_parameters": 130,
+  "profile": "stage4f_boundary_patch_open",
+  "run_id": "stage4f_boundary_patch_open:ryd_chain_N10_D1.5_C64_611ae99b817fc149:mlp_endpoint_medium:samples4096:shift0.1:seed4",
+  "seed": 4,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'edge_dense_1': {'bias': *, 'kernel': *}, 'edge_dense_2': {'bias': *, 'kernel': *}, 'site_bias': *})"
+}

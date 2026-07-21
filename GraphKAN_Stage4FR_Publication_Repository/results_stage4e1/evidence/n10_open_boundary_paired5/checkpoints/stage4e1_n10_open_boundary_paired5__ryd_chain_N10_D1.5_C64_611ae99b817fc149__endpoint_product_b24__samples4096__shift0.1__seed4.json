@@ -1,0 +1,14 @@
+{
+  "basis_family": "rbf",
+  "checkpoint_format": "jax_tree_leaves_npz_v1",
+  "config_hash": "1d8f1843ba47689b69ee84752861ed333a10479420e9507cec801d390aad3c2a",
+  "leaf_count": 3,
+  "model_kind": "kan_endpoint_product_jastrow",
+  "model_label": "endpoint_product_b24",
+  "n_parameters": 35,
+  "profile": "stage4e1_n10_open_boundary_paired5",
+  "run_id": "stage4e1_n10_open_boundary_paired5:ryd_chain_N10_D1.5_C64_611ae99b817fc149:endpoint_product_b24:samples4096:shift0.1:seed4",
+  "seed": 4,
+  "stage": "4E",
+  "treedef_repr": "PyTreeDef({'endpoint_coeff': *, 'kan_coeff': *, 'site_bias': *})"
+}

@@ -1,0 +1,13 @@
+{
+  "config_hash": "792d1626338713057bde20f7364976ad16c990b2cd8a4b28318ab60c120f2968",
+  "health_definition": "dual sampled and exact all-state validity columns; headline summaries use exact validity",
+  "profile": "stage4f1c__stage4f1c_crash_probe_during_checkpoint__stage4f-native-v1c__P4080170a2234924c__Bopen__D1p50__C4__Mendpoint_product_b32__S0",
+  "raw_files": [
+    "stage4e_metrics.csv",
+    "stage4e_history.csv",
+    "stage4e_site_observables.csv",
+    "stage4e_corr_observables.csv"
+  ],
+  "schema_version": "stage4e-native-v1",
+  "stage": "4E"
+}

@@ -1,0 +1,8 @@
+name: graphkan-amo-nqs-py312
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e .[nqs,dev]
+      - -r requirements/nqs-executed-macos-arm64.txt

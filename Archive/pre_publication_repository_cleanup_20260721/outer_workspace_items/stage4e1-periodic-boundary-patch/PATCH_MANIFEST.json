@@ -1,0 +1,21 @@
+{
+  "schema": "stage4e1-periodic-boundary-patch-v1",
+  "files": [
+    "configs/netket_stage4e1_n10_open_boundary_smoke.yaml",
+    "configs/netket_stage4e1_n10_periodic_boundary_smoke.yaml",
+    "scripts/_common.py",
+    "scripts/run_stage4e.py",
+    "src/graphkan_amo_nqs/geometry/__init__.py",
+    "src/graphkan_amo_nqs/geometry/base.py",
+    "src/graphkan_amo_nqs/geometry/chains.py",
+    "src/graphkan_amo_nqs/geometry/distances.py",
+    "src/graphkan_amo_nqs/geometry/hashing.py",
+    "src/graphkan_amo_nqs/hamiltonians/exact_diag.py",
+    "src/graphkan_amo_nqs/hamiltonians/netket_builders.py",
+    "src/graphkan_amo_nqs/hamiltonians/rydberg.py",
+    "src/graphkan_amo_nqs/models/flax_nqs.py",
+    "tests/test_periodic_chain_geometry.py",
+    "tests/test_periodic_flax_features_optional.py",
+    "tests/test_periodic_netket_operator_optional.py"
+  ]
+}

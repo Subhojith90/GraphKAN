@@ -1,0 +1,4 @@
+profile: rydberg_geometry_transfer
+output_root: results
+run_policy: not_run_by_default
+reason: "Requires trained parameter-conditioned models beyond CPU pilot."

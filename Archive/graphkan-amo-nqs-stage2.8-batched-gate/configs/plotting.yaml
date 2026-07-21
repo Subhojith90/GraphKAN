@@ -1,0 +1,5 @@
+profile: plotting
+results_root: results
+figures_root: figures
+tables_root: tables
+allow_smoke_for_paper: false

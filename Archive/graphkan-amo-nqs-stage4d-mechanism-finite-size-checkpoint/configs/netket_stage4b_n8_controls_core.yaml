@@ -1,0 +1,39 @@
+profile: stage4b_n8_controls_core
+stage: 4B
+output_root: results_stage4b/n8_controls_core
+netket: {inverted_ordering: false}
+chains: {n_sites: [8], spacing: 1.0}
+parameters: {omega: [1.0], delta: [2.0], c6: [4.0]}
+training:
+  seeds: [0, 1, 2, 3, 4]
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  n_iter: 700
+  chunk_size: 50
+  learning_rate: 0.0008
+  diag_shift: 0.10
+  grad_clip_norm: 2.0
+  n_basis: 12
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 1.0e-10
+  min_unique_state_fraction: 0.005
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+exact_health_gate:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+model_specs:
+  rbf_radial_21p: {kind: kan_jastrow, basis_family: rbf, n_basis: 13, hidden: 1, save_checkpoint: true}
+  rbf_endpoint_sum_21p: {kind: kan_endpoint_sum_jastrow, basis_family: rbf, n_basis: 12, hidden: 1, save_checkpoint: true}
+  smooth_radial_21p: {kind: smooth_jastrow, basis_family: rbf, n_basis: 13, hidden: 1, save_checkpoint: true}
+  smooth_endpoint_sum_21p: {kind: smooth_endpoint_sum_jastrow, basis_family: rbf, n_basis: 12, hidden: 1, save_checkpoint: true}
+  mlp_radial_21p: {kind: mlp_pair, basis_family: rbf, n_basis: 10, hidden: 1, save_checkpoint: true}
+  mlp_endpoint_21p: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 7, hidden: 1, save_checkpoint: true}
+  mlp_radial_64p: {kind: mlp_pair, basis_family: rbf, n_basis: 9, hidden: 5, save_checkpoint: true}
+  mlp_endpoint_64p: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 6, hidden: 5, save_checkpoint: true}
+  mlp_radial_128p: {kind: mlp_pair, basis_family: rbf, n_basis: 15, hidden: 7, save_checkpoint: true}
+  mlp_endpoint_128p: {kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 12, hidden: 7, save_checkpoint: true}

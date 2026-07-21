@@ -1,0 +1,6 @@
+gate,status,evidence
+A_hamiltonian_validity,PASS,Dense/sparse and analytic-limit tests passed in pytest and quick_ci.
+B_kan_jastrow_viability,PILOT_INCONCLUSIVE_OR_NEGATIVE,KAN-Jastrow is not convincingly better than matched MLP-pair/smooth Jastrow in the CPU pilot; method-superiority claims are unsafe.
+C_interpretability,PILOT_PASS,Median pilot curve alignment = 1.000.
+D_graphkan_value,NOT_RUN,Graph-KAN profile is gated on KAN-Jastrow stability and was not executed.
+E_top_journal_pursuit,NOT_READY,"Current artifact is a CPU pilot, not PRA/Quantum-grade final evidence."

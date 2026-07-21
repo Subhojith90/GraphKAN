@@ -1,0 +1,8 @@
+model_label,n_parameters
+rbf_endpoint_diff_19p,19
+rbf_endpoint_full_19p,19
+rbf_endpoint_product_19p,19
+rbf_endpoint_sum_19p,19
+rbf_radial_19p,19
+sine_endpoint_full_19p,19
+sine_radial_19p,19

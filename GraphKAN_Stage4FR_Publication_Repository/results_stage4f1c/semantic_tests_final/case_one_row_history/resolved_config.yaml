@@ -1,0 +1,15 @@
+synthetic: true
+transaction_identity:
+  attempt_id: synthetic-attempt
+  boundary: open
+  c6: '3'
+  campaign_id: stage4f1c_schema_fenced_runner__stage4f-native-v1c__Pb6e16d590d1aca75
+  delta: '1.25'
+  expected_history_rows: 14
+  lane: core
+  model: rbf_radial_b32
+  n_sites: 10
+  priority: 0
+  protocol_hash: b6e16d590d1aca7586a704a20c475e054ab94eaa8cabd6154b33c1617ee86768
+  run_id: stage4f1c_schema_fenced_runner__stage4f-native-v1c__Pb6e16d590d1aca75__Bopen__D1p25__C3__Mrbf_radial_b32__S0
+  seed: 0

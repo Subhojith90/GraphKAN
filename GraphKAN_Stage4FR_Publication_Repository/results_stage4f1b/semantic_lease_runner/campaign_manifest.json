@@ -1,0 +1,9 @@
+{
+  "campaign_id": "stage4f1b_semantic_lease_runner__stage4f-native-v1b__Pf498b4287c8b5ec9",
+  "claim_boundary": "Stage 4F.1b engineering gate only; not Stage 4F-R science.",
+  "config_path": "configs/stage4f1b_campaign.yaml",
+  "config_sha256": "8275d4d4df5fe968a178afb7f98c9f9580ff53f2cdaa55703323263dbf8cca24",
+  "created_utc": "2026-07-12T06:11:22+00:00",
+  "expected_runs": 960,
+  "protocol_hash": "f498b4287c8b5ec974060e57fd51e5272113c0334aa7cf29a1c9e68465d58394"
+}

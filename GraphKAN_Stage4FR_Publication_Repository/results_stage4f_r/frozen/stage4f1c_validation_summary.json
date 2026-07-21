@@ -1,0 +1,15 @@
+{
+  "blocking_errors": [],
+  "campaign": "results_stage4f_r/frozen",
+  "complete_bundles_checked": 960,
+  "registry_filesystem_errors": [],
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 960
+    },
+    "total_expected": 960
+  },
+  "schema_version": "stage4f-native-v1c",
+  "validation": "PASS"
+}

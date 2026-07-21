@@ -1,0 +1,15 @@
+run_id,profile,model_label,seed,step,energy_mean,energy_error,n_samples,diag_shift
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,50,-4.934942195083484,0.05724537042157124,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,100,-5.76829597630509,0.04873784686732621,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,150,-6.372546071098756,0.03920709941539712,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,200,-6.767604664530252,0.034121769450127744,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,250,-7.1506421396707704,0.035267247599314315,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,300,-7.637553482861863,0.033823824723668454,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,350,-7.926358480896228,0.0286797822937748,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,400,-8.18173636954625,0.01748874781974062,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,450,-8.219187924656936,0.017924859755911748,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,500,-8.295510633690057,0.01527203750307676,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,550,-8.368582973198333,0.012216588920124661,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,600,-8.422359985765173,0.011213775251144828,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,650,-8.436278187331911,0.009484324530047194,4096,0.1
+stage4d_n10_rbm_only_smoke:ryd_chain_N10_D1.5_C64_71c7bb3e5f4756c1:rbm_h8:samples4096:shift0.1:seed0,stage4d_n10_rbm_only_smoke,rbm_h8,0,700,-8.430150516149993,0.006757967094554755,4096,0.1
