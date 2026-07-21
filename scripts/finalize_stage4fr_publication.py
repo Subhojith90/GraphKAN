@@ -477,7 +477,7 @@ def build_pdf(report_path: Path, analysis_dir: Path, analysis: dict, gates: dict
     status = Table([[Paragraph("CAMPAIGN + INTEGRITY: PASS", styles["Status"]), Paragraph("SECOND-HOST REPLAY: OPEN", styles["Status"])]], colWidths=[87 * mm, 87 * mm])
     status.setStyle(TableStyle([("BACKGROUND", (0, 0), (0, 0), colors.HexColor("#16803c")), ("BACKGROUND", (1, 0), (1, 0), colors.HexColor("#b45309")), ("BOX", (0, 0), (-1, -1), .5, colors.white), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("TOPPADDING", (0, 0), (-1, -1), 10), ("BOTTOMPADDING", (0, 0), (-1, -1), 10)]))
     story += [status, Spacer(1, 14)]
-    story += [_p("Prepared for final full-stage validation by Srinjoy", styles["H2Blue"]), _p("Version 1.0 - 20 July 2026", styles["BodyCompact"])]
+    story += [_p("Prepared for final full-stage validation by Srinjoy", styles["H2Blue"]), _p("Version 1.1 - 21 July 2026", styles["BodyCompact"])]
     story += [Spacer(1, 14), _p("Executive statement", styles["H1Blue"])]
     story += [_p("All 960 registered work items are COMPLETE: 840 core-lane model runs and 120 RBM control runs. Strict bundle, checkpoint, manifest, registry, and filesystem reconciliation checked all 960 canonical bundles and returned PASS with zero blocking errors, zero filesystem mismatches, and zero duplicate registry keys. The execution source tree still matches all 105 hashes frozen at campaign initialization.", styles["BodyCompact"])]
     story += [_p(f"Scientific health is mixed rather than universally green: {analysis['exact_valid_runs']}/960 runs pass the exact-health screen and {analysis['exact_flagged_runs']} are flagged; {analysis['sample_valid_runs']}/960 pass the sampled-health screen and {analysis['sample_flagged_runs']} are flagged. These registered failures are retained in every full-grid table and reported as a failure-map result, not removed as invalid files.", styles["BodyCompact"])]
@@ -545,18 +545,18 @@ def build_pdf(report_path: Path, analysis_dir: Path, analysis: dict, gates: dict
     ft.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#123a63")), ("TEXTCOLOR", (0, 0), (-1, 0), colors.white), ("GRID", (0, 0), (-1, -1), .35, colors.HexColor("#cbd5e1")), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f8fafc")]), ("FONTSIZE", (0, 0), (-1, -1), 8.3), ("TOPPADDING", (0, 0), (-1, -1), 6), ("BOTTOMPADDING", (0, 0), (-1, -1), 6)]))
     story += [ft, Spacer(1, 12), _p("The 16-run microcampaign terminated 16/16 COMPLETE after four deliberate process kills. The full Stage 4F-R registry records all 960 rows COMPLETE. Late or lease-lost attempts were quarantined and did not become canonical.", styles["BodyCompact"]), _p("Replay disclosure", styles["H2Blue"]), _p("The four-run replay validates 4/4 canonical bundles with zero reconciliation errors. Its worker IDs contain 'Subhojits-MacBook-Air', so it is a clean same-host replay, not independent second-host evidence. The package therefore requests either a genuine separate-host replay or an explicit supervisory waiver before public release.", styles["BodyCompact"]), PageBreak()]
 
-    story += [_p("7. Reproducibility and review commands", styles["H1Blue"])]
+    story += [_p("7. Reproducibility<br/>and review commands", styles["H1Blue"])]
     commands = [
-        "sha256sum -c SHA256SUMS.txt",
+        "cd reports/stage4fr_final_20260721 && shasum -a 256 -c SHA256SUMS.txt && cd ../..",
         "PYTHONPATH=\"$PWD/src\" python scripts/stage4f1c_campaign.py validate --campaign results_stage4f_r/frozen --strict-integrity --reconcile-registry --require-terminal --require-complete",
         "python -m pytest -q",
-        "python scripts/finalize_stage4fr_publication.py --campaign results_stage4f_r/frozen --analysis-output results_stage4f_r/publication_analysis --report output/pdf/GraphKAN_Stage4FR_Final_Validation_Handoff_20260720.pdf",
+        "python scripts/finalize_stage4fr_publication.py --campaign results_stage4f_r/frozen --analysis-output reports/stage4fr_final_20260721/analysis --report output/pdf/GraphKAN_Stage4FR_Final_Validation_Report_20260721.pdf --skip-package",
     ]
     for command in commands:
         story += [_p(command, styles["Small"]), Spacer(1, 5)]
     story += [Spacer(1, 8), _p("Reviewer checklist", styles["H2Blue"])]
     checks = [
-        "Confirm the repository and root ledger checksums.",
+        "Confirm the regenerated report checksum ledger.",
         "Re-run strict campaign validation; require 960/960 COMPLETE and PASS.",
         "Confirm campaign protocol hash 327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9.",
         "Inspect kill_microcampaign_summary.json for four SIGKILL/recovery passes.",
@@ -657,7 +657,7 @@ This package supports completion and integrity of the registered Stage 4F-R N=10
 
     handoff = f"""# Student handoff for Srinjoy - Stage 4F-R
 
-Date: 20 July 2026
+Date: 21 July 2026
 
 ## Short update
 
@@ -685,9 +685,9 @@ The four-run replay is technically clean but was executed on the same Mac. I am 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Finalize Stage 4F-R analysis and supervisory handoff")
     ap.add_argument("--campaign", default="results_stage4f_r/frozen")
-    ap.add_argument("--analysis-output", default="results_stage4f_r/publication_analysis")
-    ap.add_argument("--report", default="output/pdf/GraphKAN_Stage4FR_Final_Validation_Handoff_20260720.pdf")
-    ap.add_argument("--package", default="share_with_srinjoy_stage4fr_final_20260720")
+    ap.add_argument("--analysis-output", default="reports/stage4fr_final_20260721/analysis")
+    ap.add_argument("--report", default="output/pdf/GraphKAN_Stage4FR_Final_Validation_Report_20260721.pdf")
+    ap.add_argument("--package", default="stage4fr_review_directory_20260721")
     ap.add_argument("--skip-package", action="store_true")
     args = ap.parse_args()
 
