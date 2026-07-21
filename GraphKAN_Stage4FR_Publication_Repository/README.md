@@ -4,6 +4,17 @@ This repository contains the complete code, frozen protocol, execution evidence,
 analysis, and supervisory handoff material for the GraphKAN AMO neural quantum
 state Stage 4F-R campaign.
 
+## Clone and verify
+
+```bash
+git clone https://github.com/Subhojith90/GraphKAN.git
+cd GraphKAN
+bash verify_repository.sh
+```
+
+Run all commands from the cloned repository root. The verifier checks the full
+960-run campaign, regenerated report checksums, and repository test suite.
+
 ## Validation status
 
 - Frozen campaign: `results_stage4f_r/frozen`
@@ -26,9 +37,9 @@ frozen registered grid.
 - `configs/` — frozen and historical experiment configurations
 - `tests/` and `release_tests/` — regression and release checks
 - `results_stage4f_r/frozen/` — canonical Stage 4F-R campaign evidence
-- `results_stage4f_r/publication_analysis/` — publication-stage tables and plots
+- `reports/stage4fr_final_20260721/` — regenerated tables, figures, and validation ledger
+- `output/pdf/` — visually verified supervisory report
 - `results_stage4f1c/` — scheduler, recovery, replay, and microcampaign evidence
-- `output/pdf/` — supervisory report
 - `docs/` — scientific reports and supervision material
 - `docs/tracking/` — stage history, changelogs, repair logs, and execution records
 - `reproducibility/` and `requirements/` — portable environments and dependency locks
@@ -80,17 +91,17 @@ export PYTHONPATH="$PWD/src"
 
 python scripts/finalize_stage4fr_publication.py \
   --campaign results_stage4f_r/frozen \
-  --analysis-output results_stage4f_r/publication_analysis \
-  --report output/pdf/GraphKAN_Stage4FR_Final_Validation_Handoff_20260720.pdf \
-  --package stage4fr_review_directory
+  --analysis-output reports/stage4fr_final_20260721/analysis \
+  --report output/pdf/GraphKAN_Stage4FR_Final_Validation_Report_20260721.pdf \
+  --skip-package
 ```
 
 The finalizer now creates a normal review directory and does not create a ZIP.
 
 ## Primary review documents
 
-- `output/pdf/GraphKAN_Stage4FR_Final_Validation_Handoff_20260720.pdf`
-- `results_stage4f_r/publication_analysis/final_gate_summary.json`
+- `output/pdf/GraphKAN_Stage4FR_Final_Validation_Report_20260721.pdf`
+- `reports/stage4fr_final_20260721/analysis/final_gate_summary.json`
 - `docs/tracking/stage4f/README_STAGE4F1C.md`
 - `REPRODUCIBILITY.md`
 - `LIMITATIONS_AND_UNSAFE_CLAIMS.md` is maintained under
@@ -102,4 +113,3 @@ The included replay is technically clean but was executed on the same Mac as
 the main campaign. It must not be represented as genuine second-host evidence.
 Any public-release or next-stage claim should preserve that limitation unless a
 separate host replay is completed and documented.
-

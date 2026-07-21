@@ -32,7 +32,7 @@
   },
   "exact_flagged_runs": 129,
   "exact_valid_runs": 831,
-  "generated_utc": "2026-07-21T12:50:32+00:00",
+  "generated_utc": "2026-07-21T15:37:08+00:00",
   "interpretation_class": "descriptive confirmatory outcomes with cell-level paired comparisons; no universal-superiority claim",
   "models": [
     "rbf_radial_b32",
