@@ -1,0 +1,16 @@
+# Keep source files consistent while protecting immutable scientific payload bytes.
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv text eol=lf
+
+# Campaign payloads and release archives must never undergo text conversion.
+results_stage*/** -text
+frozen_execution_source/** -text
+releases/*.zip -text
+*.npz -text
+*.sqlite -text

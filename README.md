@@ -30,6 +30,19 @@ Stage 4F-R N=10 benchmark. It does not establish generic KAN, endpoint-feature,
 Graph-KAN, or top-journal superiority. Descriptive rankings apply only to the
 frozen registered grid.
 
+### Stage 4F-R.1 integrity reconstruction
+
+The byte-preserving reconstruction is available at
+`releases/GraphKAN_Stage4FR1_BytePreserving_20260722.zip` with its adjacent
+`.zip.sha256` sidecar. It closes 11,520/11,520 raw payload hashes, 960/960
+completion/registry hashes, and 105/105 frozen execution-source hashes. The
+builder also performs a ZIP CRC test and verifies a clean extraction.
+
+The independent 16-run Ubuntu replay is intentionally marked **PENDING**. Run
+the manual GitHub Actions workflow `Stage 4F-R.1 independent Linux replay` and
+return its artifact before claiming publication-grade integrity closure. See
+`docs/STAGE4FR1_RELEASE_STATUS.md` for the exact boundary.
+
 ## Repository map
 
 - `src/graphkan_amo_nqs/` — research implementation
@@ -45,8 +58,8 @@ frozen registered grid.
 - `reproducibility/` and `requirements/` — portable environments and dependency locks
 
 Earlier `results_stage*` directories are retained as traceable research history.
-Generated ZIP handoffs and duplicate extracted release folders are deliberately
-excluded from the active repository.
+Duplicate extracted release folders remain excluded; the single audited
+Stage 4F-R.1 archive and its checksum sidecar are versioned deliberately.
 
 ## Validate the frozen campaign
 

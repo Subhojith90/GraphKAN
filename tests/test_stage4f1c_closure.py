@@ -51,6 +51,26 @@ def test_configured_max_attempts_is_stored(tmp_path):
     assert registry.run_rows()[0]["max_attempts"] == 7
 
 
+def test_explicit_physics_cells_do_not_expand_to_cartesian_product(tmp_path):
+    cfg, _ = one_run_config(tmp_path)
+    cfg["physics"]["boundaries"] = ["open", "periodic"]
+    cfg["physics"]["cells"] = [
+        {"delta": "1.25", "c6": "3"},
+        {"delta": "2.00", "c6": "5"},
+    ]
+    cfg["models"] = {
+        "rbf_radial_b32": {"lane": "core"},
+        "endpoint_full_b32": {"lane": "core"},
+        "mlp_endpoint_large": {"lane": "core"},
+        "rbm_h32": {"lane": "control"},
+    }
+    runs = expected_runs(cfg)
+    assert len(runs) == 16
+    assert {(run.delta, run.c6) for run in runs} == {("1.25", "3"), ("2.00", "5")}
+    assert sum(run.lane == "core" for run in runs) == 12
+    assert sum(run.lane == "control" for run in runs) == 4
+
+
 def test_late_stale_worker_is_fenced(tmp_path):
     cfg, path = one_run_config(tmp_path)
     registry = Stage4F1BRegistry(Path(cfg["campaign"]["output_root"]) / "registry.sqlite")

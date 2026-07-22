@@ -5,7 +5,10 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 export PYTHONPATH="$ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
 
-echo "[1/3] Validating the frozen 960-run campaign"
+echo "[1/4] Verifying raw payload, completion, registry and frozen-source hashes"
+python scripts/verify_stage4fr1_release.py --root .
+
+echo "[2/4] Validating the frozen 960-run campaign"
 python scripts/stage4f1c_campaign.py validate \
   --campaign results_stage4f_r/frozen \
   --strict-integrity \
@@ -13,7 +16,7 @@ python scripts/stage4f1c_campaign.py validate \
   --require-terminal \
   --require-complete
 
-echo "[2/3] Verifying regenerated report checksums"
+echo "[3/4] Verifying regenerated report checksums"
 if command -v sha256sum >/dev/null 2>&1; then
   (cd reports/stage4fr_final_20260721 && sha256sum -c SHA256SUMS.txt)
 elif command -v shasum >/dev/null 2>&1; then
@@ -23,8 +26,7 @@ else
   exit 1
 fi
 
-echo "[3/3] Running the repository test suite"
+echo "[4/4] Running the repository test suite"
 python -m pytest -q
 
 echo "GraphKAN Stage 4F-R repository verification: PASS"
-

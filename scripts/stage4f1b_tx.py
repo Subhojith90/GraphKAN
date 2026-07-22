@@ -210,29 +210,40 @@ def expected_runs(config: dict[str, Any], project_root: Path = Path(".")) -> lis
     phash = protocol_hash_from_config(config, project_root)
     campaign_id = make_campaign_id(config, project_root)
     physics = config["physics"]
+    configured_cells = physics.get("cells")
+    if configured_cells:
+        physics_cells = [
+            (cell["delta"], cell["c6"])
+            for cell in configured_cells
+        ]
+    else:
+        physics_cells = [
+            (delta, c6)
+            for delta in physics["deltas"]
+            for c6 in physics["c6_values"]
+        ]
     runs: list[RunSpec] = []
     priority = 0
     for seed in physics["seeds"]:
         for boundary in physics["boundaries"]:
-            for delta in physics["deltas"]:
-                for c6 in physics["c6_values"]:
-                    for model, model_cfg in config["models"].items():
-                        runs.append(
-                            RunSpec(
-                                campaign_id=campaign_id,
-                                protocol_hash=phash,
-                                boundary=str(boundary),
-                                delta=f"{float(delta):.2f}",
-                                c6=str(int(float(c6))),
-                                model=str(model),
-                                seed=int(seed),
-                                lane=str(model_cfg.get("lane", "core")),
-                                priority=priority,
-                                n_sites=int(physics["n_sites"]),
-                                expected_history_rows=_history_rows_for_boundary(config, str(boundary), project_root),
-                            )
+            for delta, c6 in physics_cells:
+                for model, model_cfg in config["models"].items():
+                    runs.append(
+                        RunSpec(
+                            campaign_id=campaign_id,
+                            protocol_hash=phash,
+                            boundary=str(boundary),
+                            delta=f"{float(delta):.2f}",
+                            c6=str(int(float(c6))),
+                            model=str(model),
+                            seed=int(seed),
+                            lane=str(model_cfg.get("lane", "core")),
+                            priority=priority,
+                            n_sites=int(physics["n_sites"]),
+                            expected_history_rows=_history_rows_for_boundary(config, str(boundary), project_root),
                         )
-                        priority += 1
+                    )
+                    priority += 1
     return runs
 
 
