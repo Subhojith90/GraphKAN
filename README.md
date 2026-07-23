@@ -49,6 +49,14 @@ is available at
 sidecar and verification record. See
 `docs/STAGE4FR1B_INDEPENDENT_REPLAY_CLOSURE.md`.
 
+Srinjoy's 23 July 2026 final supervisory review formally accepted the frozen
+campaign and independent-replay publication-integrity gate. The remaining
+public-archive hygiene is handled by the Stage 4F-R.1b final composite release:
+the current root manifest, superseding build record, commit-role table,
+SHA-pinned archival workflow, SPDX SBOM, clean replay regression, and
+cache/executable-safe source archives. See
+`docs/STAGE4FR1B_FINAL_COMPOSITE_RELEASE.md`.
+
 ## Repository map
 
 - `src/graphkan_amo_nqs/` — research implementation

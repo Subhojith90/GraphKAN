@@ -1,0 +1,981 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2026-07-23T00:00:00Z",
+    "creators": [
+      "Tool: scripts/generate_stage4fr1b_sbom.py"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentDescribes": [
+    "SPDXRef-Package-GraphKAN-AMO-NQS"
+  ],
+  "documentNamespace": "https://github.com/Subhojith90/GraphKAN/releases/tag/stage4fr1b-final-20260723/sbom",
+  "name": "GraphKAN-Stage4FR1b-Final-Composite-SBOM",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-GraphKAN-AMO-NQS",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "84a5c0002a0a28beb775446e22a8bedbbf057f1cdfa8175702ae6027d030958a"
+        }
+      ],
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "https://github.com/Subhojith90/GraphKAN",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "graphkan-amo-nqs",
+      "supplier": "Organization: GraphKAN AMO NQS contributors",
+      "versionInfo": "0.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-absl-py",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "absl-py",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.5.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-aiofiles",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "aiofiles",
+      "supplier": "NOASSERTION",
+      "versionInfo": "25.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-beartype",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "beartype",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.22.9"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-contourpy",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "contourpy",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.3.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-cycler",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "cycler",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.12.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-einops",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "einops",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.8.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-equinox",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "equinox",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.13.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-etils",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "etils",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.14.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-flax",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "flax",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.12.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-fonttools",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "fonttools",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.63.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-fsspec",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "fsspec",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2026.6.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-humanize",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "humanize",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.16.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-igraph",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "igraph",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-iniconfig",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "iniconfig",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.3.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-jax",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "jax",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.7.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-jaxlib",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "jaxlib",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.7.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-jaxtyping",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "jaxtyping",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.3.11"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-kiwisolver",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "kiwisolver",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.5.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-llvmlite",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "llvmlite",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.48.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-markdown-it-py",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "markdown-it-py",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.2.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-matplotlib",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "matplotlib",
+      "supplier": "NOASSERTION",
+      "versionInfo": "3.9.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-mdurl",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "mdurl",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.1.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-ml-dtypes",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "ml-dtypes",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.5.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-msgpack",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "msgpack",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.2.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-netket",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "netket",
+      "supplier": "NOASSERTION",
+      "versionInfo": "3.22.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-numba",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "numba",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.66.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-numpy",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "numpy",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.26.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-opt-einsum",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "opt-einsum",
+      "supplier": "NOASSERTION",
+      "versionInfo": "3.4.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-optax",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "optax",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.2.8"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-orbax-checkpoint",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "orbax-checkpoint",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.12.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-orjson",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "orjson",
+      "supplier": "NOASSERTION",
+      "versionInfo": "3.11.9"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-packaging",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "packaging",
+      "supplier": "NOASSERTION",
+      "versionInfo": "26.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pandas",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pandas",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.2.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pillow",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pillow",
+      "supplier": "NOASSERTION",
+      "versionInfo": "12.3.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pluggy",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pluggy",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.6.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-plum-dispatch",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "plum-dispatch",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.9.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-prometheus-client",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "prometheus-client",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.25.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-protobuf",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "protobuf",
+      "supplier": "NOASSERTION",
+      "versionInfo": "7.35.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-psutil",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "psutil",
+      "supplier": "NOASSERTION",
+      "versionInfo": "7.2.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pygments",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pygments",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.20.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pyparsing",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pyparsing",
+      "supplier": "NOASSERTION",
+      "versionInfo": "3.3.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pytest",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pytest",
+      "supplier": "NOASSERTION",
+      "versionInfo": "7.4.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-python-dateutil",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "python-dateutil",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2.9.0.post0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pytz",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pytz",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2026.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pyyaml",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "pyyaml",
+      "supplier": "NOASSERTION",
+      "versionInfo": "6.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-rich",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "rich",
+      "supplier": "NOASSERTION",
+      "versionInfo": "15.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-scipy",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "scipy",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.13.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-simplejson",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "simplejson",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-six",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "six",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.17.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sparse",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "sparse",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.19.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tensorstore",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "tensorstore",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.1.84"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-texttable",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "texttable",
+      "supplier": "NOASSERTION",
+      "versionInfo": "1.7.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tqdm",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "tqdm",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.69.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-treescope",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "treescope",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.1.10"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-typing-extensions",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "typing-extensions",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.16.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tzdata",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "tzdata",
+      "supplier": "NOASSERTION",
+      "versionInfo": "2026.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-uvloop",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "uvloop",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.22.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-wadler-lindig",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "wadler-lindig",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.1.7"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-zipp",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "name": "zipp",
+      "supplier": "NOASSERTION",
+      "versionInfo": "4.1.0"
+    }
+  ],
+  "relationships": [
+    {
+      "relatedSpdxElement": "SPDXRef-Package-absl-py",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-aiofiles",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-beartype",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-contourpy",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-cycler",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-einops",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-equinox",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-etils",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-flax",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-fonttools",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-fsspec",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-humanize",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-igraph",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-iniconfig",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-jax",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-jaxlib",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-jaxtyping",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-kiwisolver",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-llvmlite",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-markdown-it-py",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-matplotlib",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-mdurl",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-ml-dtypes",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-msgpack",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-netket",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-numba",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-numpy",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-opt-einsum",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-optax",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-orbax-checkpoint",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-orjson",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-packaging",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pandas",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pillow",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pluggy",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-plum-dispatch",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-prometheus-client",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-protobuf",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-psutil",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pygments",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pyparsing",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pytest",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-python-dateutil",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pytz",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-pyyaml",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-rich",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-scipy",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-simplejson",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-six",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-sparse",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-tensorstore",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-texttable",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-tqdm",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-treescope",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-typing-extensions",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-tzdata",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-uvloop",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-wadler-lindig",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-zipp",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-GraphKAN-AMO-NQS"
+    }
+  ],
+  "spdxVersion": "SPDX-2.3"
+}

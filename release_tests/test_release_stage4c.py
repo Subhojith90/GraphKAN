@@ -1,12 +1,15 @@
 from pathlib import Path
 import json
 
-def test_release_has_manifest_and_native_schema():
+def test_release_has_current_manifest_and_historical_stage4d_manifest():
     root = Path(__file__).resolve().parents[1]
     assert (root / "release_manifest.json").exists()
-    assert (root / "results_stage4c").exists()
     manifest = json.loads((root / "release_manifest.json").read_text())
-    assert "results_stage4c/evidence_bundle/batch_index.csv" in manifest
+    assert manifest["authoritative_stage"] == "Stage 4F-R.1b"
+    historical = json.loads(
+        (root / "release_integrity/historical/stage4d_root_manifest.json").read_text()
+    )
+    assert historical["status"] == "HISTORICAL_SUPERSEDED"
 
 def test_release_has_stage4c_artifact_minimums():
     root = Path(__file__).resolve().parents[1]

@@ -1,0 +1,19 @@
+{
+  "accepted_campaign_integrity": "PASS",
+  "accepted_independent_linux_replay": "PASS",
+  "campaign_archive_sha256": "841145240c66e9824bda8b3d9bd4ff7bf0ec8457b19f3f433bba64b7ac7e10bd",
+  "campaign_bundles": 960,
+  "commit_role_table": "release_integrity/commit_roles.json",
+  "composite_builder": "scripts/build_stage4fr1b_composite_release.py",
+  "immutable_release_tag": "stage4fr1b-final-20260723",
+  "independent_replay_archive_sha256": "cf14747198ae8302d6bad298428faf3bb156d610841b9126590813be214ee8e6",
+  "independent_replay_rows": 20,
+  "previous_build_record": {
+    "filename": "GraphKAN_Stage4FR1b_Hardened_20260722.build.json",
+    "status": "SUPERSEDED"
+  },
+  "publication_integrity_gate": "PASS",
+  "schema_version": "stage4fr1b-final-composite-build-v1",
+  "scientific_protocol_changed": false,
+  "status": "READY_TO_BUILD_FROM_IMMUTABLE_TAGGED_COMMIT"
+}

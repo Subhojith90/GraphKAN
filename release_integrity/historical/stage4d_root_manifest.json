@@ -1,0 +1,7 @@
+{
+  "contains_stage4c1_artifact_patch": true,
+  "release_note": "Historical Stage 4D code-package manifest retained for provenance only. It is not the current root release manifest.",
+  "schema_version": "stage4d-code-package-v1",
+  "stage": "4D",
+  "status": "HISTORICAL_SUPERSEDED"
+}

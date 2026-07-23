@@ -30,4 +30,21 @@ Stage 4F-R.1b therefore closes the requested publication-grade release
 integrity gate. Final public-release wording and manuscript claims remain
 subject to supervisory approval.
 
+## Final supervisory acceptance and composite release
+
+The 23 July 2026 supervisory review formally accepted the campaign and
+independent-replay integrity gate. Its remaining findings are release hygiene,
+not scientific or replay defects. The final composite patch:
+
+- replaces the stale Stage 4D root manifest while retaining it as explicitly
+  historical evidence;
+- supersedes the earlier build record that recorded the then-pending replay;
+- separates campaign-build, replay-dispatch, closure, and final-tag commit
+  roles;
+- pins the archival GitHub Actions to full commit SHAs;
+- adds a deterministic SPDX 2.3 SBOM and clean replay regression;
+- builds explicit source ZIP/TAR assets with cache and executable-mode checks.
+
+The accepted campaign and replay archives remain byte-for-byte unchanged.
+
 No new scientific claim, hidden exclusion or protocol change is introduced by Stage 4F-R.1.

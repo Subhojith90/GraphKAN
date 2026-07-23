@@ -1,0 +1,26 @@
+{
+  "roles": [
+    {
+      "commit": "8a71f8e8a32f3e8167d385626e0b13da1aa732e9",
+      "role": "campaign_release_build",
+      "scope": "Hardened byte-preserving Stage 4F-R.1 release source"
+    },
+    {
+      "commit": "8992748cef1cd526891c3a15b084112567de58c9",
+      "role": "independent_replay_dispatch",
+      "scope": "Exact clean Ubuntu replay checkout and execution identity"
+    },
+    {
+      "commit": "8656c2f4",
+      "role": "replay_closure_documentation",
+      "scope": "Durable replay archive, verification record, and accepted closure documentation"
+    },
+    {
+      "commit": "resolve from tag",
+      "role": "final_composite_release",
+      "scope": "Release-hygiene patch and public archival asset identity",
+      "tag": "stage4fr1b-final-20260723"
+    }
+  ],
+  "schema_version": "stage4fr1b-commit-role-table-v1"
+}

@@ -1,5 +1,16 @@
 # Changelog
 
+## Stage 4F-R.1b final composite release - 2026-07-23
+
+- Recorded formal supervisory acceptance of the campaign and independent Linux
+  replay publication-integrity gate.
+- Replaced the stale Stage 4D root manifest and explicitly preserved historical
+  metadata.
+- Added commit-role provenance, a superseding build record, an SPDX 2.3 SBOM,
+  immutable GitHub Action pins, and a clean-extraction replay regression.
+- Added a deterministic final composite builder with source ZIP/TAR cache and
+  executable-mode checks.
+
 ## Stage 4F-R.1b - 2026-07-23
 
 - Closed the preregistered independent Linux replay gate on GitHub-hosted
