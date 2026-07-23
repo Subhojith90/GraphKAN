@@ -1,5 +1,8 @@
 import json
 from pathlib import Path
+import subprocess
+
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,12 +31,13 @@ def test_workflow_actions_are_immutable_shas():
 
 
 def test_no_tracked_cache_files():
+    if not (ROOT / ".git").exists():
+        pytest.skip("tracked-file hygiene is enforced by the git-archive composite builder")
     forbidden = {"__pycache__", ".pytest_cache", ".cache"}
     tracked = [
         line
         for line in (
-            __import__("subprocess")
-            .run(
+            subprocess.run(
                 ["git", "ls-files"],
                 cwd=ROOT,
                 text=True,
