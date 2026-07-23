@@ -1,0 +1,12 @@
+{
+  "archive": "GraphKAN_Stage4FR1b_Hardened_20260722.zip",
+  "archive_bytes": 20539594,
+  "archive_sha256": "841145240c66e9824bda8b3d9bd4ff7bf0ec8457b19f3f433bba64b7ac7e10bd",
+  "clean_extraction_full_repository_verification": "PASS",
+  "clean_extraction_raw_integrity": "PASS",
+  "independent_linux_replay": "PENDING",
+  "schema_version": "stage4fr1-release-build-v1",
+  "source_commit": "8a71f8e8a32f3e8167d385626e0b13da1aa732e9",
+  "source_tree": "9d5090aaf28ddbc4e05b395095a2f59fe2c88b87",
+  "zip_structural_test": "PASS"
+}

@@ -1,0 +1,70 @@
+[1/4] Verifying raw payload, completion, registry and frozen-source hashes
+{
+  "blocking_errors": [],
+  "canonical_runs": 960,
+  "complete_records": 960,
+  "frozen_source_hashes": {
+    "expected": 105,
+    "matched": 105
+  },
+  "payload_hashes": {
+    "checked": 11520,
+    "expected": 11520,
+    "matched": 11520
+  },
+  "registry_complete_hashes": 960,
+  "registry_rows": 960,
+  "release_tool_hashes": {
+    "expected": 16,
+    "matched": 16
+  },
+  "repository_attestation": "PASS",
+  "schema_version": "stage4fr1-raw-integrity-v1",
+  "validation": "PASS"
+}
+{
+  "blocking_errors": [],
+  "campaign_ledger_entries": 105,
+  "campaign_manifest_sha256": "de8bcfb4ee41e94ea66c896bb1d0c42788c30732a716384766fbf72d81bb9c07",
+  "exact_ledger_equality": true,
+  "release_ledger_entries": 105,
+  "schema_version": "stage4fr1b-campaign-ledger-identity-v1",
+  "source_hashes_matched": 105,
+  "validation": "PASS"
+}
+[2/4] Validating the frozen 960-run campaign
+{
+  "blocking_errors": [],
+  "campaign": "results_stage4f_r/frozen",
+  "complete_bundles_checked": 960,
+  "registry_filesystem_errors": [],
+  "registry_summary": {
+    "duplicate_registry_keys": 0,
+    "status_counts": {
+      "COMPLETE": 960
+    },
+    "total_expected": 960
+  },
+  "schema_version": "stage4f-native-v1c",
+  "validation": "PASS"
+}
+[3/4] Verifying regenerated report checksums
+../../output/pdf/GraphKAN_Stage4FR_Final_Validation_Report_20260721.pdf: OK
+analysis/figures/fig1_exact_outcome_performance.png: OK
+analysis/figures/fig2_endpoint_effect_vs_radial.png: OK
+analysis/figures/fig3_endpoint_full_energy_map.png: OK
+analysis/figures/fig4_accuracy_runtime_pareto.png: OK
+analysis/final_gate_summary.json: OK
+analysis/stage4fr_analysis_summary.json: OK
+analysis/tables/stage4fr_cell_model_summary.csv: OK
+analysis/tables/stage4fr_descriptive_rankings.csv: OK
+analysis/tables/stage4fr_health_flag_inventory.csv: OK
+analysis/tables/stage4fr_model_boundary_summary.csv: OK
+analysis/tables/stage4fr_open_periodic_effects.csv: OK
+analysis/tables/stage4fr_paired_model_comparisons.csv: OK
+analysis/tables/stage4fr_run_metrics.csv: OK
+analysis/tables/stage4fr_scientific_health_summary.csv: OK
+[4/4] Running the repository test suite
+........................................................................ [ 68%]
+.................................                                        [100%]
+GraphKAN Stage 4F-R repository verification: PASS
