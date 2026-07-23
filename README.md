@@ -40,10 +40,14 @@ source ledger. The post-campaign release tools have a distinct ledger. The
 builder performs a ZIP CRC test and runs the complete verifier from a clean
 extraction.
 
-The hardened independent 20-run Ubuntu replay is intentionally marked
-**PENDING**. Run the manual GitHub Actions workflow `Stage 4F-R.1b hardened independent Linux replay` and
-return its artifact before claiming publication-grade integrity closure. See
-`docs/STAGE4FR1_RELEASE_STATUS.md` for the exact boundary.
+The hardened independent 20-run Ubuntu replay is **PASS**. GitHub Actions run
+`29981334627` completed 16 core and four control rows on a clean Ubuntu 24.04
+x86-64 runner. All 20 observable/checkpoint comparison gates and all four
+periodic-collapse invariants passed with zero blocking errors. Durable evidence
+is available at
+`releases/GraphKAN_Stage4FR1b_Independent_Linux_Replay.zip` with its adjacent
+sidecar and verification record. See
+`docs/STAGE4FR1B_INDEPENDENT_REPLAY_CLOSURE.md`.
 
 ## Repository map
 
@@ -124,7 +128,8 @@ The finalizer now creates a normal review directory and does not create a ZIP.
 
 ## Reproducibility boundary
 
-The included replay is technically clean but was executed on the same Mac as
-the main campaign. It must not be represented as genuine second-host evidence.
-Any public-release or next-stage claim should preserve that limitation unless a
-separate host replay is completed and documented.
+The historical replay in `results_stage4f1c/` was executed on the original Mac
+and remains labelled as same-host evidence. The distinct Stage 4F-R.1b replay
+was executed on a clean GitHub-hosted Ubuntu x86-64 runner and is genuine
+second-host evidence. Neither replay changes the registered scientific claim
+boundary.

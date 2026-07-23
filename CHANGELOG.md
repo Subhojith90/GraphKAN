@@ -1,5 +1,15 @@
 # Changelog
 
+## Stage 4F-R.1b - 2026-07-23
+
+- Closed the preregistered independent Linux replay gate on GitHub-hosted
+  Ubuntu 24.04 at commit `8992748cef1cd526891c3a15b084112567de58c9`.
+- Recorded 20/20 complete replay rows, 20/20 passing observable/checkpoint
+  comparisons, four/four passing periodic-collapse invariants, and zero
+  blocking errors.
+- Added the durable checksummed replay archive, environment/commit attestation,
+  machine-readable verification record, and closure report.
+
 ## 0.1.0 - 2026-06-20
 
 - Added deterministic Rydberg geometry and Hamiltonian engines.

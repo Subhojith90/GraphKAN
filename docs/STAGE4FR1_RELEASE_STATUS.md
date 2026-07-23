@@ -13,8 +13,21 @@ The Stage 4F-R scientific campaign is complete (960/960 registered runs). This r
 - Byte-preserving ZIP construction, sidecar generation, structural testing and clean-extraction verification.
 - Current repository test collection and results recorded in release metadata.
 
-## Pending external gate
+## External gate closed
 
-The revised 20-run replay must execute through `.github/workflows/stage4fr1b-independent-replay.yml` on a clean Ubuntu host. It covers both boundaries, two preregistered cells, radial RBF, endpoint-full, endpoint-product, MLP-large, and RBM at seed 0. Until its scalar, full-vector, health, checkpoint, provenance, and periodic-collapse records all report `PASS`, this release is an integrity-reconstruction candidate—not a publication-grade integrity GO.
+The revised 20-run replay executed through
+`.github/workflows/stage4fr1b-independent-replay.yml` on a clean GitHub-hosted
+Ubuntu 24.04 x86-64 runner. It covered both boundaries, two preregistered
+cells, radial RBF, endpoint-full, endpoint-product, MLP-large, and RBM at seed
+0.
+
+All 20 scalar/full-vector/health/checkpoint/provenance comparisons and all four
+periodic-collapse checks passed with zero blocking errors. The replay archive,
+sidecar, machine-readable verification record, and closure report are retained
+under `releases/` and `docs/STAGE4FR1B_INDEPENDENT_REPLAY_CLOSURE.md`.
+
+Stage 4F-R.1b therefore closes the requested publication-grade release
+integrity gate. Final public-release wording and manuscript claims remain
+subject to supervisory approval.
 
 No new scientific claim, hidden exclusion or protocol change is introduced by Stage 4F-R.1.
