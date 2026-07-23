@@ -87,9 +87,14 @@ def verify(root: Path) -> dict[str, Any]:
         errors.append("missing frozen source ledger")
     else:
         ledger = json.loads(ledger_path.read_text())
-        source_count = len(ledger.get("files", []))
-        for item in ledger.get("files", []):
-            relative = Path(item["path"])
+        campaign_manifest = json.loads((campaign / "campaign_manifest.json").read_text())
+        authoritative = campaign_manifest["protocol_identity"]["source_ledger"]
+        supplied = ledger.get("source_ledger", {})
+        if supplied != authoritative:
+            errors.append("release campaign ledger is not exactly equal to campaign_manifest protocol_identity.source_ledger")
+        source_count = len(supplied)
+        for relative_text, expected_hash in supplied.items():
+            relative = Path(relative_text)
             candidates = [
                 root / "frozen_execution_source" / relative,
                 root / "release_integrity" / "frozen_source_overrides" / relative,
@@ -98,12 +103,45 @@ def verify(root: Path) -> dict[str, Any]:
             source = next((candidate for candidate in candidates if candidate.is_file()), None)
             if source is None:
                 errors.append(f"missing frozen source file: {relative}")
-            elif sha256(source) != item["sha256"]:
+            elif sha256(source) != expected_hash:
                 errors.append(f"frozen source hash mismatch: {relative}")
             else:
                 source_matches += 1
         if source_count != 105:
             errors.append(f"frozen source ledger count is {source_count}, expected 105")
+
+    tool_ledger_path = root / "release_integrity/release_tool_ledger.json"
+    release_tool_matches = 0
+    release_tool_count = 0
+    if not tool_ledger_path.is_file():
+        errors.append("missing separate release-tool ledger")
+    else:
+        tool_ledger = json.loads(tool_ledger_path.read_text()).get("source_ledger", {})
+        release_tool_count = len(tool_ledger)
+        for relative, expected in tool_ledger.items():
+            path = root / relative
+            if not path.is_file():
+                errors.append(f"missing release tool: {relative}")
+            elif sha256(path) != expected:
+                errors.append(f"release-tool hash mismatch: {relative}")
+            else:
+                release_tool_matches += 1
+
+    attestation_path = root / "release_integrity/generated/repository_attestation.json"
+    attestation_status = "NOT_PRESENT_IN_DEVELOPMENT_TREE"
+    if attestation_path.is_file():
+        attestation = json.loads(attestation_path.read_text())
+        listing = root / "release_integrity/generated/git_ls_tree.txt"
+        valid = (
+            len(attestation.get("source_commit", "")) == 40
+            and len(attestation.get("source_tree", "")) == 40
+            and attestation.get("tracked_worktree_clean") is True
+            and listing.is_file()
+            and sha256(listing) == attestation.get("git_ls_tree_sha256")
+        )
+        attestation_status = "PASS" if valid else "FAIL"
+        if not valid:
+            errors.append("repository commit/source-tree attestation is invalid")
 
     return {
         "schema_version": "stage4fr1-raw-integrity-v1",
@@ -114,6 +152,8 @@ def verify(root: Path) -> dict[str, Any]:
         "registry_rows": registry_rows,
         "registry_complete_hashes": registry_hash_matches,
         "frozen_source_hashes": {"matched": source_matches, "expected": 105},
+        "release_tool_hashes": {"matched": release_tool_matches, "expected": release_tool_count},
+        "repository_attestation": attestation_status,
         "blocking_errors": errors,
     }
 

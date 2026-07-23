@@ -169,7 +169,9 @@ def validate_cmd(args: argparse.Namespace) -> None:
         "validation": "PASS" if not errors else "FAIL",
         "blocking_errors": errors,
     }
-    write_json(root / "stage4f1c_validation_summary.json", output)
+    if not args.no_write:
+        destination = Path(args.output) if args.output else root / "stage4f1c_validation_summary.json"
+        write_json(destination, output)
     print(json.dumps(output, indent=2, sort_keys=True))
     if errors:
         raise SystemExit(1)
@@ -196,6 +198,8 @@ def main() -> None:
     command.add_argument("--reconcile-registry", action="store_true", help="Compatibility flag; reconciliation is always enabled.")
     command.add_argument("--require-terminal", action="store_true")
     command.add_argument("--require-complete", action="store_true")
+    command.add_argument("--no-write", action="store_true", help="Validate without modifying the campaign tree.")
+    command.add_argument("--output", help="Write the validation record to this path instead of the campaign tree.")
     command.set_defaults(func=validate_cmd)
     args = parser.parse_args()
     args.func(args)

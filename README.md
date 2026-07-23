@@ -32,14 +32,16 @@ frozen registered grid.
 
 ### Stage 4F-R.1 integrity reconstruction
 
-The byte-preserving reconstruction is available at
-`releases/GraphKAN_Stage4FR1_BytePreserving_20260722.zip` with its adjacent
+The hardened reconstruction is available at
+`releases/GraphKAN_Stage4FR1b_Hardened_20260722.zip` with its adjacent
 `.zip.sha256` sidecar. It closes 11,520/11,520 raw payload hashes, 960/960
-completion/registry hashes, and 105/105 frozen execution-source hashes. The
-builder also performs a ZIP CRC test and verifies a clean extraction.
+completion/registry hashes, and the exact authoritative 105/105 campaign
+source ledger. The post-campaign release tools have a distinct ledger. The
+builder performs a ZIP CRC test and runs the complete verifier from a clean
+extraction.
 
-The independent 16-run Ubuntu replay is intentionally marked **PENDING**. Run
-the manual GitHub Actions workflow `Stage 4F-R.1 independent Linux replay` and
+The hardened independent 20-run Ubuntu replay is intentionally marked
+**PENDING**. Run the manual GitHub Actions workflow `Stage 4F-R.1b hardened independent Linux replay` and
 return its artifact before claiming publication-grade integrity closure. See
 `docs/STAGE4FR1_RELEASE_STATUS.md` for the exact boundary.
 

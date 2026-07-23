@@ -1,9 +1,0 @@
-{
-  "archive": "GraphKAN_Stage4FR1_BytePreserving_20260722.zip",
-  "archive_bytes": 20165647,
-  "archive_sha256": "dc432e84877d5646ca13314b1aaa8030f89403d6074181396d33c43055d11552",
-  "clean_extraction_raw_integrity": "PASS",
-  "independent_linux_replay": "PENDING",
-  "schema_version": "stage4fr1-release-build-v1",
-  "zip_structural_test": "PASS"
-}

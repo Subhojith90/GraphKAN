@@ -1,0 +1,75 @@
+name: Stage 4F-R.1b hardened independent Linux replay
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  REPLAY_ROOT: results_stage4fr1b/independent_replay
+  REPLAY_CONFIG: configs/stage4fr1b_second_host_replay.yaml
+
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Checkout the immutable dispatch commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.7"
+          cache: pip
+          cache-dependency-path: requirements/stage4fr1b-linux-py312.lock.txt
+      - name: Install the hash-pinned replay environment
+        run: |
+          python -m pip install --upgrade pip==24.3.1
+          python -m pip install --require-hashes -r requirements/stage4fr1b-linux-py312.lock.txt
+          python -m pip install --no-deps -e .
+      - name: Attest immutable commit, clean tree and host environment
+        run: |
+          mkdir -p "$REPLAY_ROOT/environment"
+          git rev-parse HEAD | tee "$REPLAY_ROOT/environment/git_commit.txt"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git status --porcelain --untracked-files=no > "$REPLAY_ROOT/environment/git_status_porcelain.txt"
+          test ! -s "$REPLAY_ROOT/environment/git_status_porcelain.txt"
+          git ls-tree -r --full-tree HEAD > "$REPLAY_ROOT/environment/git_ls_tree.txt"
+          python scripts/attest_stage4fr1b_environment.py --output "$REPLAY_ROOT/environment/environment_attestation.json"
+          python -m pip freeze --all > "$REPLAY_ROOT/environment/pip_freeze.txt"
+      - name: Verify the supplied frozen campaign read-only
+        run: ./verify_repository.sh
+      - name: Initialize the frozen 20-row replay
+        run: python scripts/stage4f1c_campaign.py init --config "$REPLAY_CONFIG"
+      - name: Execute 16 isolated core rows
+        run: timeout --signal=TERM 300m python -u scripts/stage4f1c_worker.py --config "$REPLAY_CONFIG" --lane core --worker-id github-linux-core-${{ github.run_id }} --real-run --max-runs 16
+      - name: Execute 4 isolated control rows
+        run: timeout --signal=TERM 120m python -u scripts/stage4f1c_worker.py --config "$REPLAY_CONFIG" --lane control --worker-id github-linux-control-${{ github.run_id }} --real-run --max-runs 4
+      - name: Validate and compare all scalar/vector/checkpoint gates
+        run: |
+          python scripts/stage4f1c_campaign.py validate --campaign "$REPLAY_ROOT" --strict-integrity --reconcile-registry --require-terminal --require-complete --output "$REPLAY_ROOT/replay_validation_summary.json"
+          python scripts/compare_stage4fr1b_replay.py --expected-commit "$GITHUB_SHA"
+          printf '%s\n' "$GITHUB_RUN_ID" > "$REPLAY_ROOT/environment/github_run_id.txt"
+          printf '%s\n' "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > "$REPLAY_ROOT/environment/github_run_url.txt"
+      - name: Create replay evidence archive and sidecar
+        if: always()
+        run: |
+          python scripts/package_stage4fr1b_replay.py --replay "$REPLAY_ROOT" --output-dir results_stage4fr1b/release
+      - name: Upload durable-input replay evidence
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage4fr1b-independent-linux-replay-${{ github.run_id }}
+          path: results_stage4fr1b/release
+          if-no-files-found: error
+          retention-days: 90
+      - name: Record Actions artifact identity
+        if: always()
+        run: |
+          echo "Artifact digest: ${{ steps.upload.outputs.artifact-digest }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Artifact URL: ${{ steps.upload.outputs.artifact-url }}" >> "$GITHUB_STEP_SUMMARY"
+

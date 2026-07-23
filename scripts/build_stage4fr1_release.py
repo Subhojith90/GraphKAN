@@ -18,7 +18,7 @@ from pathlib import Path
 from verify_stage4fr1_release import sha256, verify
 
 
-RELEASE_NAME = "GraphKAN_Stage4FR1_BytePreserving_20260722"
+RELEASE_NAME = "GraphKAN_Stage4FR1b_Hardened_20260722"
 COPY_ITEMS = [
     ".gitattributes", ".gitignore", "LICENSE", "README.md", "CITATION.cff",
     "CHANGELOG.md", "REPRODUCIBILITY.md", "pyproject.toml", "verify_repository.sh",
@@ -26,7 +26,7 @@ COPY_ITEMS = [
     "environment-nqs-py312-macos-arm64-stage3f.yml", "environment-nqs-py312-macos-arm64-stage4.yml",
     "environment-nqs-py312-macos-arm64-stage4b.yml", "environment-nqs-py312-macos-arm64-stage4c.yml",
     "environment-nqs-py312-macos-arm64.yml",
-    "configs", "docs", "output/pdf", "release_integrity", "release_tests", "reports/stage4fr_final_20260721",
+    ".github", "configs", "docs", "output/pdf", "release_integrity", "release_tests", "reports/stage4fr_final_20260721",
     "reproducibility", "requirements", "scripts", "src", "tests",
     "results_stage4f_r/frozen", "results_stage4f1c/real_microcampaign_killtest",
     "results_stage4f1c/independent_replay",
@@ -52,11 +52,11 @@ def copy_item(root: Path, stage: Path, relative: str) -> None:
 
 def reconstruct_frozen_source(root: Path, stage: Path) -> None:
     ledger = json.loads((root / "release_integrity/frozen_source_ledger.json").read_text())
-    for item in ledger["files"]:
-        relative = Path(item["path"])
+    for relative_text, expected_hash in ledger["source_ledger"].items():
+        relative = Path(relative_text)
         override = root / "release_integrity/frozen_source_overrides" / relative
         source = override if override.is_file() else root / relative
-        if sha256(source) != item["sha256"]:
+        if sha256(source) != expected_hash:
             raise RuntimeError(f"cannot reconstruct frozen source: {relative}")
         destination = stage / "frozen_execution_source" / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -86,6 +86,34 @@ def run_tests(root: Path, stage: Path) -> dict[str, object]:
     if result.returncode:
         raise RuntimeError("repository tests failed; see pytest_full.txt")
     return summary
+
+
+def git_attestation(root: Path, stage: Path) -> dict[str, object]:
+    def git(*arguments: str) -> str:
+        return subprocess.run(["git", *arguments], cwd=root, text=True, capture_output=True, check=True).stdout
+
+    head = git("rev-parse", "HEAD").strip()
+    tree = git("rev-parse", "HEAD^{tree}").strip()
+    status = git("status", "--porcelain", "--untracked-files=no")
+    listing = git("ls-tree", "-r", "--full-tree", "HEAD")
+    generated = stage / "release_integrity/generated"
+    generated.mkdir(parents=True, exist_ok=True)
+    (generated / "git_ls_tree.txt").write_text(listing)
+    output = {
+        "schema_version": "stage4fr1b-repository-attestation-v1",
+        "source_commit": head,
+        "source_tree": tree,
+        "branch": git("branch", "--show-current").strip(),
+        "remote_origin": git("remote", "get-url", "origin").strip(),
+        "tracked_worktree_clean": not bool(status.strip()),
+        "git_status_porcelain": status.splitlines(),
+        "git_ls_tree_sha256": hashlib.sha256(listing.encode()).hexdigest(),
+        "git_ls_tree_entries": len(listing.splitlines()),
+    }
+    (generated / "repository_attestation.json").write_text(json.dumps(output, indent=2, sort_keys=True) + "\n")
+    if not output["tracked_worktree_clean"]:
+        raise RuntimeError("tracked worktree must be clean before release construction")
+    return output
 
 
 def write_zip(source: Path, destination: Path) -> None:
@@ -125,6 +153,7 @@ def main() -> None:
         generated = stage / "release_integrity/generated"
         generated.mkdir(parents=True, exist_ok=True)
         (generated / "raw_integrity_audit.json").write_text(json.dumps(initial, indent=2, sort_keys=True) + "\n")
+        attestation = git_attestation(root, stage)
         if not args.skip_tests:
             run_tests(root, stage)
         acceptance = {
@@ -134,7 +163,12 @@ def main() -> None:
             "completion_and_registry_hashes_960": "PASS",
             "frozen_source_hashes_105": "PASS",
             "clean_extraction_verification": "PASS",
-            "independent_linux_replay_16": "PENDING",
+            "campaign_ledger_exact_identity": "PASS",
+            "release_tool_ledger": "PASS",
+            "read_only_frozen_verification": "PASS",
+            "hash_pinned_linux_environment": "PASS",
+            "hardened_20_run_protocol": "PASS",
+            "independent_linux_replay_20": "PENDING",
             "publication_integrity_go": "PENDING",
             "scientific_protocol_changed": False,
         }
@@ -142,7 +176,7 @@ def main() -> None:
         (stage / "RELEASE_README.md").write_text(
             "# GraphKAN Stage 4F-R.1 byte-preserving release\n\n"
             "All 960 canonical bundles and 11,520 payload bytes verify exactly. The 105-file frozen execution source is reconstructed under `frozen_execution_source/`.\n\n"
-            "Run `python scripts/verify_stage4fr1_release.py --root .` after extraction. The independent 16-run Ubuntu replay remains explicitly PENDING until the GitHub workflow artifact is returned and audited.\n"
+            "Run `./verify_repository.sh` after extraction. The hardened independent 20-run Ubuntu replay remains explicitly PENDING until the GitHub workflow artifact is returned and audited.\n"
         )
         archive_path.unlink(missing_ok=True)
         sidecar_path.unlink(missing_ok=True)
@@ -155,6 +189,10 @@ def main() -> None:
         clean = verify(extracted)
         if clean["validation"] != "PASS":
             raise RuntimeError(f"clean extraction raw integrity failed: {clean['blocking_errors'][:5]}")
+        full_clean = subprocess.run(["bash", "verify_repository.sh"], cwd=extracted, text=True, capture_output=True)
+        clean_transcript = full_clean.stdout + full_clean.stderr
+        if full_clean.returncode:
+            raise RuntimeError("clean-extraction full repository verification failed")
 
     archive_hash = sha256(archive_path)
     sidecar_path.write_text(f"{archive_hash}  {archive_path.name}\n")
@@ -165,9 +203,13 @@ def main() -> None:
         "archive_bytes": archive_path.stat().st_size,
         "zip_structural_test": "PASS",
         "clean_extraction_raw_integrity": "PASS",
+        "clean_extraction_full_repository_verification": "PASS",
+        "source_commit": attestation["source_commit"],
+        "source_tree": attestation["source_tree"],
         "independent_linux_replay": "PENDING",
     }
     (output_dir / f"{RELEASE_NAME}.build.json").write_text(json.dumps(metadata, indent=2, sort_keys=True) + "\n")
+    (output_dir / f"{RELEASE_NAME}.clean-extraction-verifier.txt").write_text(clean_transcript)
     print(json.dumps(metadata, indent=2, sort_keys=True))
 
 

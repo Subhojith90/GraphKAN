@@ -6,6 +6,7 @@ import subprocess
 import sys
 import threading
 import time
+import hashlib
 from pathlib import Path
 
 import pytest
@@ -69,6 +70,13 @@ def test_explicit_physics_cells_do_not_expand_to_cartesian_product(tmp_path):
     assert {(run.delta, run.c6) for run in runs} == {("1.25", "3"), ("2.00", "5")}
     assert sum(run.lane == "core" for run in runs) == 12
     assert sum(run.lane == "control" for run in runs) == 4
+
+
+def test_release_campaign_ledger_exactly_equals_frozen_campaign_manifest():
+    campaign = json.loads(Path("results_stage4f_r/frozen/campaign_manifest.json").read_text())
+    release = json.loads(Path("release_integrity/frozen_source_ledger.json").read_text())
+    assert release["source_ledger"] == campaign["protocol_identity"]["source_ledger"]
+    assert len(release["source_ledger"]) == 105
 
 
 def test_late_stale_worker_is_fenced(tmp_path):
@@ -161,6 +169,34 @@ def test_dry_run_worker_is_truthful_and_reconciled(tmp_path):
     assert validation.returncode == 0, validation.stdout + validation.stderr
     summary = json.loads((root / "stage4f1c_validation_summary.json").read_text())
     assert summary["validation"] == "PASS"
+
+
+def test_no_write_validation_preserves_campaign_bytes_and_mtimes(tmp_path):
+    cfg, path = one_run_config(tmp_path)
+    root = Path(cfg["campaign"]["output_root"])
+    env = dict(os.environ)
+    env["PYTHONPATH"] = "scripts:src"
+    for command in (
+        [sys.executable, "scripts/stage4f1c_campaign.py", "init", "--config", str(path)],
+        [sys.executable, "scripts/stage4f1c_worker.py", "--config", str(path), "--lane", "core", "--worker-id", "test", "--dry-run", "--max-runs", "1"],
+    ):
+        result = subprocess.run(command, text=True, capture_output=True, env=env)
+        assert result.returncode == 0, result.stdout + result.stderr
+
+    def snapshot() -> dict[str, tuple[str, int]]:
+        return {
+            str(item.relative_to(root)): (hashlib.sha256(item.read_bytes()).hexdigest(), item.stat().st_mtime_ns)
+            for item in root.rglob("*") if item.is_file()
+        }
+
+    before = snapshot()
+    validation = subprocess.run(
+        [sys.executable, "scripts/stage4f1c_campaign.py", "validate", "--campaign", str(root), "--require-complete", "--no-write"],
+        text=True, capture_output=True, env=env,
+    )
+    assert validation.returncode == 0, validation.stdout + validation.stderr
+    assert snapshot() == before
+    assert not (root / "stage4f1c_validation_summary.json").exists()
 
 
 def test_corrupt_checkpoint_is_rejected_even_when_manifest_matches(tmp_path):

@@ -1,0 +1,53 @@
+campaign:
+  name: stage4fr1b_second_host_replay
+  schema_version: stage4f-native-v1c
+  output_root: results_stage4fr1b/independent_replay
+  claim_boundary: preregistered 20-run independent Linux replay; reproducibility closure only, not new science
+
+physics:
+  n_sites: 10
+  omega: 1.0
+  cells:
+    - {delta: "1.25", c6: "3"}
+    - {delta: "2.00", c6: "5"}
+  boundaries: ["open", "periodic"]
+  seeds: [0]
+  samples: 4096
+  sr_shift: 0.1
+
+models:
+  rbf_radial_b32: {lane: core}
+  endpoint_full_b32: {lane: core}
+  endpoint_product_b32: {lane: core}
+  mlp_endpoint_large: {lane: core}
+  rbm_h32: {lane: control}
+
+base_configs:
+  open: configs/netket_stage4f_boundary_patch_open.yaml
+  periodic: configs/netket_stage4f_boundary_patch_periodic.yaml
+
+scheduler:
+  lease_seconds: 60
+  max_attempts: 3
+  backoff_seconds: 10
+
+completion_requirements:
+  checkpoint_format: jax-tree-leaves-npz-v1
+  require_complete_manifest_coverage: true
+  require_registry_filesystem_reconciliation: true
+  require_fenced_publication: true
+  expected_runs: 20
+  replay_source_campaign: results_stage4f_r/frozen
+  replay_source_protocol_hash: 327f66318ee93c3365f5a12ba4d64fddd20a29ee288cc30330d437f514328ff9
+  campaign_source_ledger: release_integrity/frozen_source_ledger.json
+  tolerance_table: release_integrity/stage4fr1b_replay_tolerances.json
+  replay_selection: two boundaries x two extreme cells x radial, endpoint-full, endpoint-product, MLP-large and RBM; seed 0
+  comparison_contract:
+    exact_model_energy: calibrated_from_five_seed_standard_deviation
+    site_density_vector: max-and-rms norms calibrated per cell/model
+    connected_correlation_matrix: max-and-rms norms calibrated per cell/model
+    health_flags: exact equality
+    parameter_count: exact equality
+    checkpoint_schema_and_shapes: exact equality
+    periodic_collapse: radial versus endpoint-full and endpoint-product at 1.0e-12
+

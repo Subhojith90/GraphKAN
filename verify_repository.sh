@@ -7,6 +7,7 @@ export PYTHONPATH="$ROOT/src${PYTHONPATH:+:$PYTHONPATH}"
 
 echo "[1/4] Verifying raw payload, completion, registry and frozen-source hashes"
 python scripts/verify_stage4fr1_release.py --root .
+python scripts/verify_campaign_ledger_identity.py --root .
 
 echo "[2/4] Validating the frozen 960-run campaign"
 python scripts/stage4f1c_campaign.py validate \
@@ -14,7 +15,8 @@ python scripts/stage4f1c_campaign.py validate \
   --strict-integrity \
   --reconcile-registry \
   --require-terminal \
-  --require-complete
+  --require-complete \
+  --no-write
 
 echo "[3/4] Verifying regenerated report checksums"
 if command -v sha256sum >/dev/null 2>&1; then
