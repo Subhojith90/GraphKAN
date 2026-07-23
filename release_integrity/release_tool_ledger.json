@@ -10,7 +10,7 @@
     "requirements/stage4fr1b-linux-py312.lock.txt": "365f18833a9029d2d0fe6d0f20a0c8f6af0de8b11c8e4b6dd8e06d0f83886556",
     "scripts/attest_stage4fr1b_environment.py": "280219cc423b088510d2865e8fa99944a0ce0f651d586366c63030aa0892305e",
     "scripts/build_stage4fr1_release.py": "48ef0b5d1c742cbefa9540799538bc988e11d01ebeebda83e4a3be5c7745c45f",
-    "scripts/build_stage4fr1b_composite_release.py": "da2304a441989050fe54492fbd39311e92fa98e2c52da8634683a79f1bffbd4a",
+    "scripts/build_stage4fr1b_composite_release.py": "7da11c9030eb6966500f241357a83448b4aa82699b7e6d9d0f870ec1e6d295d9",
     "scripts/calibrate_stage4fr1b_tolerances.py": "b0b05a7f5784e49b4367498b3b26ae283415c474d6b953e4c91722009160b22d",
     "scripts/compare_stage4fr1_replay.py": "90be354195b2fe2b8b48071d303781f0e9177d2f0bb6967a7d12d019530d993e",
     "scripts/compare_stage4fr1b_replay.py": "625a3d0c26b3dba0e4ded6589c8b8fab839b67a0701b211f76b23b782b09568c",

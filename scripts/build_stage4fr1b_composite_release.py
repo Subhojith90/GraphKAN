@@ -8,6 +8,8 @@ import json
 import shutil
 import stat
 import subprocess
+import sys
+import tarfile
 import tempfile
 import zipfile
 from datetime import datetime, timezone
@@ -97,6 +99,52 @@ def main() -> None:
         ]
         if forbidden:
             raise RuntimeError(f"source ZIP contains cache files: {forbidden[:5]}")
+    with tarfile.open(source_tar, "r:gz") as handle:
+        verifier = handle.getmember("verify_repository.sh")
+        if not verifier.mode & stat.S_IXUSR:
+            raise RuntimeError("source TAR does not preserve verify_repository.sh executable mode")
+        forbidden = [
+            member.name
+            for member in handle.getmembers()
+            if "__pycache__/" in member.name
+            or ".pytest_cache/" in member.name
+            or member.name.endswith((".pyc", ".pyo"))
+        ]
+        if forbidden:
+            raise RuntimeError(f"source TAR contains cache files: {forbidden[:5]}")
+
+    source_zip_sidecar = output / f"{source_zip.name}.sha256"
+    source_tar_sidecar = output / f"{source_tar.name}.sha256"
+    source_zip_sidecar.write_text(f"{sha256(source_zip)}  {source_zip.name}\n")
+    source_tar_sidecar.write_text(f"{sha256(source_tar)}  {source_tar.name}\n")
+
+    with tempfile.TemporaryDirectory(prefix="stage4fr1b-source-verify-") as verify_temporary:
+        extracted_source = Path(verify_temporary) / "source"
+        extracted_source.mkdir()
+        with zipfile.ZipFile(source_zip) as handle:
+            handle.extractall(extracted_source)
+        repository_verification = subprocess.run(
+            ["bash", "verify_repository.sh"],
+            cwd=extracted_source,
+            text=True,
+            capture_output=True,
+        )
+        repository_transcript = repository_verification.stdout + repository_verification.stderr
+        if repository_verification.returncode:
+            raise RuntimeError("clean source extraction failed full repository verification")
+        replay_verification = subprocess.run(
+            [
+                sys.executable,
+                "scripts/validate_stage4fr1b_replay.py",
+                "--strict",
+            ],
+            cwd=extracted_source,
+            text=True,
+            capture_output=True,
+        )
+        replay_transcript = replay_verification.stdout + replay_verification.stderr
+        if replay_verification.returncode:
+            raise RuntimeError("clean source extraction failed replay regression")
 
     assets = {
         campaign.name: sha256(campaign),
@@ -129,7 +177,9 @@ def main() -> None:
             root / "releases" / f"{REPLAY_ARCHIVE}.sha256",
             root / "releases/GraphKAN_Stage4FR1b_Independent_Linux_Replay.verification.json",
             source_zip,
+            source_zip_sidecar,
             source_tar,
+            source_tar_sidecar,
             root / "release_manifest.json",
             root / "release_integrity/commit_roles.json",
             root / "release_integrity/GraphKAN_Stage4FR1b.sbom.spdx.json",
@@ -140,6 +190,12 @@ def main() -> None:
             shutil.copy2(source, stage / source.name)
         (stage / "COMPOSITE_PROVENANCE.json").write_text(
             json.dumps(provenance, indent=2, sort_keys=True) + "\n"
+        )
+        (stage / "CLEAN_EXTRACTION_REPOSITORY_VERIFICATION.txt").write_text(
+            repository_transcript
+        )
+        (stage / "CLEAN_EXTRACTION_REPLAY_REGRESSION.txt").write_text(
+            replay_transcript
         )
         checksum_rows = [
             f"{sha256(path)}  {path.name}"
@@ -163,6 +219,8 @@ def main() -> None:
         "composite_archive_bytes": composite.stat().st_size,
         "composite_archive_sha256": sha256(composite),
         "source_tar_executable_mode": "PRESERVED",
+        "clean_extraction_replay_regression": "PASS",
+        "clean_extraction_repository_verification": "PASS",
         "source_zip_cache_hygiene": "PASS",
         "source_zip_executable_mode": "PRESERVED",
         "zip_structural_test": "PASS",
