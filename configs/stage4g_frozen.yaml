@@ -1,0 +1,85 @@
+protocol:
+  name: stage4g_finite_size_gauge_confirmation
+  schema_version: stage4g-protocol-v1
+  frozen_on: '2026-08-03'
+  output_root: results_stage4g
+  claim_boundary: focused confirmation of the accepted Stage 4F boundary-conditioned mechanism map
+
+prerequisites:
+  stage4f_campaign: results_stage4f_r/frozen
+  stage4f_release_verifier: verify_repository.sh
+  required_stage4f_runs: 960
+
+physics:
+  omega: 1.0
+  seeds: [0, 1, 2, 3, 4]
+  confirmation_n_sites: 12
+  confirmation_cells:
+    - {delta: 1.25, c6: 3, role: low_blockade}
+    - {delta: 1.50, c6: 4, role: central}
+    - {delta: 2.00, c6: 5, role: high_blockade}
+  calibration_n_sites: 10
+  calibration_seeds: [0, 1, 2]
+  calibration_cells:
+    - {delta: 1.25, c6: 5, role: calibration_a}
+    - {delta: 1.75, c6: 3, role: calibration_b}
+  boundaries: [open, periodic]
+
+models:
+  primary:
+    rbf_radial_b32: {kind: kan_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+    endpoint_full_b32: {kind: kan_endpoint_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+    endpoint_hybrid_b32: {kind: kan_endpoint_hybrid_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+  capacity_control:
+    nongeometric_b32_p3:
+      {kind: kan_nongeometric_control_jastrow, basis_family: rbf, n_basis: 32, hidden: 1,
+       nongeometric_seed: 20260803}
+  control_candidates:
+    mlp_b10_h5: {family: mlp, kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 10, hidden: 5}
+    mlp_b12_h7: {family: mlp, kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 12, hidden: 7}
+    mlp_b14_h9: {family: mlp, kind: mlp_endpoint_pair, basis_family: rbf, n_basis: 14, hidden: 9}
+    rbm_h16: {family: rbm, kind: rbm, basis_family: none, n_basis: 1, hidden: 16}
+    rbm_h32: {family: rbm, kind: rbm, basis_family: none, n_basis: 1, hidden: 32}
+    rbm_h48: {family: rbm, kind: rbm, basis_family: none, n_basis: 1, hidden: 48}
+
+training:
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  chunk_size: 50
+  stage4f_budget: 700
+  convergence_budget: 2100
+  exact_sentinel_steps: [700, 1400, 2100]
+
+selection:
+  calibration_outcomes:
+    - exact_model_abs_energy_error_to_ed
+    - exact_model_density_mae_to_ed
+    - exact_model_connected_correlation_mae_to_ed
+  rule: within each control family, minimise mean within-cell fractional rank summed over the three co-primary outcomes; break ties by parameter count then label
+  require_all_calibration_runs_complete: true
+  require_all_calibration_runs_exact_valid: false
+
+acceptance:
+  convergence:
+    max_relative_change_1400_to_2100: 0.05
+    absolute_floors: {energy: 1.0e-6, density: 1.0e-5, correlation: 1.0e-5}
+  finite_size:
+    minimum_open_cells_preserving_density_and_correlation_repair: 2
+    required_open_cells: 3
+    require_no_energy_superiority_claim: true
+  periodic:
+    require_endpoint_radial_checkpoint_identity: true
+    max_exact_observable_difference: 0.0
+  health:
+    max_abs_energy_error_to_ed: 0.5
+    max_density_mae_to_ed: 0.08
+    max_connected_correlation_mae_to_ed: 0.08
+
+deferred:
+  - broad Graph-KAN development
+  - two-dimensional transfer
+  - N >= 14 scaling

@@ -1,0 +1,36 @@
+profile: stage4g_smoke_open
+stage: Stage4G-SMOKE
+schema_version: stage4g-run-v1
+output_root: results_stage4g/smoke/open
+netket: {inverted_ordering: false}
+parameters:
+  omega: [1.0]
+  cells: [{delta: 1.5, c6: 4.0}]
+training:
+  seeds: [0]
+  n_samples: 256
+  n_chains: 16
+  n_discard_per_chain: 16
+  n_iter: 2
+  chunk_size: 1
+  exact_sentinel_steps: [1, 2]
+  learning_rate: 0.0008
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+  n_basis: 8
+  hidden: 1
+sample_health_gate:
+  min_energy_error: 0.0
+  min_unique_state_fraction: 0.0
+  max_abs_energy_error_to_ed: 100.0
+  max_density_mae_to_ed: 1.0
+  max_connected_correlation_mae_to_ed: 1.0
+exact_health_gate:
+  max_abs_energy_error_to_ed: 100.0
+  max_density_mae_to_ed: 1.0
+  max_connected_correlation_mae_to_ed: 1.0
+model_specs:
+  rbf_radial_b8: {kind: kan_jastrow, basis_family: rbf, n_basis: 8, hidden: 1, save_checkpoint: true}
+  endpoint_full_b8: {kind: kan_endpoint_jastrow, basis_family: rbf, n_basis: 8, hidden: 1, save_checkpoint: true}
+  nongeometric_b8_p3: {kind: kan_nongeometric_control_jastrow, basis_family: rbf, n_basis: 8, hidden: 1, save_checkpoint: true}
+geometry: {family: chain, n_sites: 6, spacing: 1.0}
