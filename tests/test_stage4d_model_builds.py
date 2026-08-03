@@ -47,3 +47,16 @@ def test_stage4d_n10_model_kind_builds(kind: str, n_basis: int, hidden: int) -> 
 
     assert "params" in params
     assert output.shape == (1,)
+
+
+def test_stage4g_nongeometric_control_matches_endpoint_full_parameter_count() -> None:
+    from graphkan_amo_nqs.models.stage4g_flax_nqs import build_flax_model as build_stage4g_model
+
+    positions = np.arange(12, dtype=np.float64)[:, None]
+    x = jnp.ones((1, 12), dtype=jnp.float64)
+    counts = []
+    for kind in ("kan_endpoint_jastrow", "kan_nongeometric_control_jastrow"):
+        model = build_stage4g_model(kind, positions, n_basis=32, hidden=1, basis_family="rbf")
+        params = model.init(jax.random.PRNGKey(0), x)["params"]
+        counts.append(sum(np.asarray(leaf).size for leaf in jax.tree_util.tree_leaves(params)))
+    assert counts == [47, 47]
