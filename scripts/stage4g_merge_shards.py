@@ -36,8 +36,18 @@ def artifact_identity(path: Path, phase: str) -> tuple[str, str]:
     return boundary, shard
 
 
+def resolve_protocol_directory(results: Path) -> Path:
+    """Resolve either the amended or original frozen protocol directory."""
+    candidates = (results / "g2b_protocol", results / "protocol")
+    for candidate in candidates:
+        if (candidate / "preselection_roster.csv").is_file():
+            return candidate
+    searched = ", ".join(str(path / "preselection_roster.csv") for path in candidates)
+    raise FileNotFoundError(f"no frozen Stage 4G roster found; searched: {searched}")
+
+
 def merge(input_root: Path, results: Path, phase: str) -> dict:
-    protocol = results / "protocol"
+    protocol = resolve_protocol_directory(results)
     roster_path = protocol / ("confirmation_roster.csv" if phase == "confirmation" else "preselection_roster.csv")
     roster = pd.read_csv(roster_path)
     roster = roster[roster.phase == phase].copy()
