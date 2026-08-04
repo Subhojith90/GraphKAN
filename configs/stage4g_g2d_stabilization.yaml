@@ -1,0 +1,44 @@
+amendment:
+  name: stage4g_g2d_checkpoint_stabilization_tail
+  schema_version: stage4g-g2d-stabilization-v1
+  frozen_on: '2026-08-05'
+  predecessor: stage4g-g2c-recovery-gate-v1
+  predecessor_result:
+    target_runs: 25
+    target_exact_health_passes: 25
+    target_group_passes: 10
+    target_group_comparisons: 15
+    composite_group_passes: 67
+    composite_group_comparisons: 72
+    endpoint_full_open_cells_passed: 2
+    periodic_alias_passes: 30
+
+execution:
+  resume_from_g2c_checkpoint: true
+  reset_optimizer_state: true
+  step_offset: 7000
+  additional_iterations: 3000
+  learning_rate: 0.000025
+  exact_sentinel_steps: [8000, 9000, 10000]
+  targets:
+    - {tag: open-radial-d2p00-c5, boundary: open, model: rbf_radial_b32, delta: 2.00, c6: 5}
+    - {tag: open-full-d2p00-c5, boundary: open, model: endpoint_full_b32, delta: 2.00, c6: 5}
+    - {tag: open-mlp-d2p00-c5, boundary: open, model: mlp_b12_h7, delta: 2.00, c6: 5}
+    - {tag: periodic-mlp-d1p25-c3, boundary: periodic, model: mlp_b12_h7, delta: 1.25, c6: 3}
+
+acceptance:
+  compare_steps: [9000, 10000]
+  target_group_comparisons: 12
+  maximum_absolute_change:
+    energy: 0.016505923696
+    density: 0.002038144719
+    correlation: 0.000371585150
+  endpoint_full_primary:
+    minimum_open_cells_with_positive_median_density_and_correlation_repair: 2
+  periodic_alias_required_passes: 30
+  endpoint_hybrid_status: retained_g2b_negative_diagnostic
+
+provenance:
+  g2b_and_g2c_failures_must_be_preserved: true
+  thresholds_unchanged_from_g2b: true
+  amendment_must_be_committed_before_execution: true

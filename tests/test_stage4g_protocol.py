@@ -15,11 +15,17 @@ from stage4g_g2c_protocol import (
     validate as validate_g2c,
     verify as verify_g2c,
 )
+from stage4g_g2d_protocol import (
+    freeze as freeze_g2d,
+    read_amendment as read_g2d_amendment,
+    validate as validate_g2d,
+    verify as verify_g2d,
+)
 from validate_stage4g_convergence import enrich_sentinel_metadata
 from validate_stage4g_g2b import validate as validate_g2b_results
 from validate_stage4g_g2c import validate as validate_g2c_results
 from validate_stage4g_periodic_alias import validate as validate_periodic_alias
-from run_stage4g import remove_run_rows
+from run_stage4g import remove_run_rows, restore_checkpoint
 from stage4g_merge_shards import merge, resolve_protocol_directory
 
 
@@ -296,3 +302,35 @@ def test_g2c_composite_gate_preserves_g2b_and_closes_targeted_groups(tmp_path: P
     assert result["target_group_passes"] == 15
     assert result["composite_group_passes"] == 72
     assert result["endpoint_full_open_cells_passed"] == 3
+
+
+def test_g2d_freeze_is_a_checkpoint_tail_with_unchanged_limits(tmp_path: Path):
+    base = read_config(Path("configs/stage4g_frozen.yaml"))
+    amendment = read_g2d_amendment(Path("configs/stage4g_g2d_stabilization.yaml"))
+    assert validate_g2d(base, amendment)["validation"] == "PASS"
+    manifest = freeze_g2d(base, amendment, tmp_path)
+    assert manifest["expected_target_runs"] == 20
+    runner = read_config(tmp_path / "runner_configs/convergence_g2d_open.yaml")
+    assert runner["training"]["step_offset"] == 7000
+    assert runner["training"]["n_iter"] == 3000
+    assert runner["training"]["learning_rate"] == 0.000025
+    assert runner["training"]["exact_sentinel_steps"] == [8000, 9000, 10000]
+    assert verify_g2d(base, amendment, tmp_path)["validation"] == "PASS"
+
+
+def test_restore_checkpoint_matches_prior_profile_by_identity_suffix(tmp_path: Path):
+    import hashlib
+    import jax.numpy as jnp
+
+    class State:
+        parameters = {"a": jnp.zeros((2,)), "b": jnp.zeros((1, 2))}
+
+    run_id = "new_profile:instance:model:samples4096:shift0.1:seed0"
+    source = tmp_path / "old_profile__instance__model__samples4096__shift0.1__seed0.npz"
+    np.savez_compressed(source, leaf_0000=np.array([1.0, 2.0]), leaf_0001=np.array([[3.0, 4.0]]))
+    state = State()
+    restored, digest = restore_checkpoint(tmp_path, run_id, state)
+    assert restored == source
+    assert digest == hashlib.sha256(source.read_bytes()).hexdigest()
+    assert np.array_equal(np.asarray(state.parameters["a"]), np.array([1.0, 2.0]))
+    assert np.array_equal(np.asarray(state.parameters["b"]), np.array([[3.0, 4.0]]))
