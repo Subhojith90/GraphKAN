@@ -198,3 +198,10 @@ def test_g2b_gate_checks_all_groups_conclusion_stability_and_periodic_collapse(t
     assert result["group_passes"] == 72
     assert result["conclusion_stability_passes"] == 4
     assert result["periodic_collapse_passes"] == 90
+    assert result["decision_class"] == "SCIENTIFIC_GATE_PASS"
+    assert result["failed_group_comparisons"] == []
+    assert result["conclusion_stability_by_model"] == {
+        "endpoint_full_b32": {"comparisons": 2, "passes": 2, "pass": True},
+        "endpoint_hybrid_b32": {"comparisons": 2, "passes": 2, "pass": True},
+    }
+    assert result["periodic_collapse_maximum_exact_error_difference"] == 0.0
