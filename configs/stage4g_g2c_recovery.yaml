@@ -1,0 +1,49 @@
+amendment:
+  name: stage4g_g2c_targeted_convergence_recovery
+  schema_version: stage4g-g2c-recovery-v1
+  frozen_on: '2026-08-04'
+  predecessor: stage4g-g2b-convergence-gate-v1
+  predecessor_result:
+    runs_complete: 120
+    exact_health_passes: 120
+    group_passes: 67
+    group_comparisons: 72
+    endpoint_full_stability_passes: 2
+    endpoint_hybrid_stability_passes: 0
+    periodic_independent_trajectory_collapse_passes: 45
+
+execution:
+  restart_from_seed: true
+  n_iter: 7000
+  learning_rate: 0.0002
+  exact_sentinel_steps: [5600, 6300, 7000]
+  targets:
+    - {tag: open-radial-d2p00-c5, boundary: open, model: rbf_radial_b32, delta: 2.00, c6: 5}
+    - {tag: open-full-d2p00-c5, boundary: open, model: endpoint_full_b32, delta: 2.00, c6: 5}
+    - {tag: open-mlp-d2p00-c5, boundary: open, model: mlp_b12_h7, delta: 2.00, c6: 5}
+    - {tag: periodic-mlp-d1p25-c3, boundary: periodic, model: mlp_b12_h7, delta: 1.25, c6: 3}
+    - {tag: periodic-mlp-d1p50-c4, boundary: periodic, model: mlp_b12_h7, delta: 1.50, c6: 4}
+
+acceptance:
+  compare_steps: [6300, 7000]
+  target_group_comparisons: 15
+  maximum_absolute_change:
+    # Unchanged from G2b. No threshold is estimated from the failed G2b rows.
+    energy: 0.016505923696
+    density: 0.002038144719
+    correlation: 0.000371585150
+  endpoint_full_primary:
+    minimum_open_cells_with_positive_median_density_and_correlation_repair: 2
+    required_open_cells: 3
+  endpoint_hybrid:
+    role: retained_diagnostic_negative_result
+    blocking: false
+  periodic_alias_invariance:
+    method: same_initial_parameters_all_1024_states
+    comparisons: 30
+    absolute_tolerance: 0.0
+
+provenance:
+  g2b_failure_must_be_preserved: true
+  g2c_must_not_relabel_g2b: true
+  amendment_must_be_committed_before_execution: true
