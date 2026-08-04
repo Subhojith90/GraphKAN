@@ -30,10 +30,10 @@ def artifact_identity(path: Path, phase: str) -> tuple[str, str]:
     prefix = f"stage4g-{phase}-"
     if not path.name.startswith(prefix):
         raise ValueError(f"unexpected artifact directory: {path.name}")
-    boundary, model = path.name[len(prefix):].split("-", 1)
+    boundary, shard = path.name[len(prefix):].split("-", 1)
     if boundary not in {"open", "periodic"}:
         raise ValueError(f"unexpected boundary in {path.name}")
-    return boundary, model
+    return boundary, shard
 
 
 def merge(input_root: Path, results: Path, phase: str) -> dict:
@@ -46,19 +46,21 @@ def merge(input_root: Path, results: Path, phase: str) -> dict:
     merged_counts: dict[str, int] = {}
     frames: dict[tuple[str, str], list[pd.DataFrame]] = {}
     for artifact in artifacts:
-        boundary, model = artifact_identity(artifact, phase)
+        boundary, shard = artifact_identity(artifact, phase)
         raw = artifact / "raw"
         for filename in TABLES:
             path = raw / filename
             if not path.is_file():
-                if filename == "stage4g_exact_sentinels.csv" and phase != "convergence":
+                if filename == "stage4g_exact_sentinels.csv" and not phase.startswith("convergence"):
                     continue
                 errors.append(f"missing {artifact.name}/raw/{filename}")
                 continue
             frame = pd.read_csv(path)
             frame["stage4g_boundary"] = boundary
-            if "model_label" in frame and set(frame.model_label.astype(str)) != {model}:
-                errors.append(f"foreign model row in {artifact.name}/{filename}")
+            if "model_label" in frame:
+                labels = set(frame.model_label.astype(str))
+                if len(labels) != 1 or not shard.startswith(next(iter(labels))):
+                    errors.append(f"foreign model row in {artifact.name}/{filename}")
             frames.setdefault((boundary, filename), []).append(frame)
         source_checkpoints = artifact / "checkpoints"
         target_checkpoints = results / phase / boundary / "checkpoints"
@@ -71,7 +73,7 @@ def merge(input_root: Path, results: Path, phase: str) -> dict:
                 shutil.copy2(source, target)
         source_environment = artifact / "environment"
         if source_environment.is_dir():
-            target_environment = results / phase / boundary / "environment" / "shards" / model
+            target_environment = results / phase / boundary / "environment" / "shards" / shard
             if target_environment.exists():
                 shutil.rmtree(target_environment)
             shutil.copytree(source_environment, target_environment)
@@ -109,7 +111,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--results", type=Path, default=ROOT / "results_stage4g")
-    parser.add_argument("--phase", choices=("convergence", "calibration", "confirmation"), required=True)
+    parser.add_argument("--phase", choices=("convergence", "convergence_g2b", "calibration", "confirmation"), required=True)
     args = parser.parse_args()
     result = merge(args.input, args.results, args.phase)
     print(json.dumps(result, indent=2, sort_keys=True))

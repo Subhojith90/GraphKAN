@@ -1,10 +1,16 @@
-name: Stage 4G finite-size and gauge-fixed confirmation
+name: Stage 4G G2b amended convergence and confirmation
 
 on:
   workflow_dispatch:
+    inputs:
+      predecessor_run_id:
+        description: "Failed Stage 4G run ID containing stage4g-convergence-merged"
+        required: true
+        type: string
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: stage4g-confirmation-${{ github.repository }}
@@ -15,6 +21,7 @@ env:
   PYTHONUNBUFFERED: "1"
   XLA_PYTHON_CLIENT_PREALLOCATE: "false"
   STAGE4G_CONFIG: configs/stage4g_frozen.yaml
+  STAGE4G_AMENDMENT: configs/stage4g_g2b_amendment.yaml
 
 jobs:
   preflight:
@@ -41,11 +48,36 @@ jobs:
         run: |
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           bash verify_repository.sh
-      - name: Freeze and verify Stage 4G protocol
+      - name: Freeze and verify the prospective G2b amendment
         run: |
           python scripts/stage4g_protocol.py validate
-          python scripts/stage4g_protocol.py freeze --output results_stage4g/protocol
-          python scripts/stage4g_protocol.py verify-freeze --output results_stage4g/protocol
+          python scripts/stage4g_g2b_protocol.py validate
+          python scripts/stage4g_g2b_protocol.py freeze --output results_stage4g/g2b_protocol
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
+      - name: Preserve the failed predecessor convergence evidence
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: stage4g-convergence-merged
+          path: results_stage4g/predecessor/convergence
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.predecessor_run_id }}
+      - name: Attest predecessor identity
+        run: |
+          printf '%s\n' "${{ inputs.predecessor_run_id }}" > results_stage4g/predecessor/github_run_id.txt
+          test -f results_stage4g/predecessor/convergence/merge_summary.json
+          if python scripts/validate_stage4g_convergence.py --results results_stage4g/predecessor; then
+            echo "The predecessor unexpectedly passed its original frozen gate" >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          gate=json.loads(Path('results_stage4g/predecessor/convergence/convergence_gate.json').read_text())
+          assert gate['validation']=='FAIL'
+          assert gate['runs']==120 and gate['sentinels']==360
+          assert gate['comparisons']==360 and gate['passes']==75
+          PY
       - name: Execute formal gauge and integration smoke gates
         run: |
           python scripts/stage4g_gauge.py
@@ -66,16 +98,20 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-  convergence:
+  convergence_g2b:
     needs: preflight
     runs-on: ubuntu-24.04
-    timeout-minutes: 330
+    timeout-minutes: 360
     strategy:
       fail-fast: false
-      max-parallel: 8
+      max-parallel: 20
       matrix:
         boundary: [open, periodic]
         model: [rbf_radial_b32, endpoint_full_b32, endpoint_hybrid_b32, mlp_b12_h7]
+        cell:
+          - {tag: d1p25_c3, delta: "1.25", c6: "3"}
+          - {tag: d1p50_c4, delta: "1.50", c6: "4"}
+          - {tag: d2p00_c5, delta: "2.00", c6: "5"}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with: {ref: "${{ github.sha }}", persist-credentials: false}
@@ -92,24 +128,26 @@ jobs:
       - name: Download frozen protocol
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with: {name: stage4g-preflight, path: results_stage4g}
-      - name: Verify protocol and run isolated convergence shard
+      - name: Verify amendment and run isolated fresh 4200-step shard
         run: |
-          python scripts/stage4g_protocol.py verify-freeze --output results_stage4g/protocol
-          timeout --signal=TERM 320m python -u scripts/run_stage4g.py \
-            --config "results_stage4g/protocol/runner_configs/convergence_${{ matrix.boundary }}.yaml" \
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
+          timeout --signal=TERM 350m python -u scripts/run_stage4g.py \
+            --config "results_stage4g/g2b_protocol/runner_configs/convergence_g2b_${{ matrix.boundary }}.yaml" \
             --only-models "${{ matrix.model }}" \
-            --output-root "results_stage4g/shards/convergence/${{ matrix.boundary }}/${{ matrix.model }}"
-      - name: Upload convergence shard
+            --only-deltas "${{ matrix.cell.delta }}" \
+            --only-c6 "${{ matrix.cell.c6 }}" \
+            --output-root "results_stage4g/shards/convergence_g2b/${{ matrix.boundary }}/${{ matrix.model }}/${{ matrix.cell.tag }}"
+      - name: Upload G2b convergence shard
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: stage4g-convergence-${{ matrix.boundary }}-${{ matrix.model }}
-          path: results_stage4g/shards/convergence/${{ matrix.boundary }}/${{ matrix.model }}
+          name: stage4g-convergence_g2b-${{ matrix.boundary }}-${{ matrix.model }}-${{ matrix.cell.tag }}
+          path: results_stage4g/shards/convergence_g2b/${{ matrix.boundary }}/${{ matrix.model }}/${{ matrix.cell.tag }}
           if-no-files-found: error
           retention-days: 90
 
-  convergence_gate:
-    needs: convergence
+  convergence_g2b_gate:
+    needs: convergence_g2b
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -129,23 +167,24 @@ jobs:
         with: {name: stage4g-preflight, path: results_stage4g}
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
-          pattern: stage4g-convergence-*
+          pattern: stage4g-convergence_g2b-*
           path: downloaded
-      - name: Merge all shards and enforce convergence gate
+      - name: Merge all shards and enforce the frozen G2b gate
         run: |
-          python scripts/stage4g_merge_shards.py --input downloaded --phase convergence
-          python scripts/validate_stage4g_convergence.py
-      - name: Upload merged convergence evidence
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
+          python scripts/stage4g_merge_shards.py --input downloaded --phase convergence_g2b
+          python scripts/validate_stage4g_g2b.py
+      - name: Upload merged G2b convergence evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: stage4g-convergence-merged
-          path: results_stage4g/convergence
+          name: stage4g-convergence-g2b-merged
+          path: results_stage4g/convergence_g2b
           if-no-files-found: error
           retention-days: 90
 
   calibration:
-    needs: convergence_gate
+    needs: convergence_g2b_gate
     runs-on: ubuntu-24.04
     timeout-minutes: 240
     strategy:
@@ -171,9 +210,9 @@ jobs:
         with: {name: stage4g-preflight, path: results_stage4g}
       - name: Run isolated calibration shard
         run: |
-          python scripts/stage4g_protocol.py verify-freeze --output results_stage4g/protocol
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
           timeout --signal=TERM 230m python -u scripts/run_stage4g.py \
-            --config "results_stage4g/protocol/runner_configs/calibration_${{ matrix.boundary }}.yaml" \
+            --config "results_stage4g/g2b_protocol/runner_configs/calibration_${{ matrix.boundary }}.yaml" \
             --only-models "${{ matrix.model }}" \
             --output-root "results_stage4g/shards/calibration/${{ matrix.boundary }}/${{ matrix.model }}"
       - name: Upload calibration shard
@@ -214,7 +253,7 @@ jobs:
         run: |
           python scripts/stage4g_merge_shards.py --input downloaded --phase calibration
           python scripts/stage4g_protocol.py select-controls \
-            --output results_stage4g/protocol \
+            --output results_stage4g/g2b_protocol \
             --metrics results_stage4g/calibration/open/raw/stage4g_metrics.csv results_stage4g/calibration/periodic/raw/stage4g_metrics.csv
       - name: Build confirmation matrix from frozen selection
         id: matrix
@@ -222,7 +261,7 @@ jobs:
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           from pathlib import Path
-          selected=json.loads(Path('results_stage4g/protocol/control_selection.json').read_text())['selected']
+          selected=json.loads(Path('results_stage4g/g2b_protocol/control_selection.json').read_text())['selected']
           models=['rbf_radial_b32','endpoint_full_b32','endpoint_hybrid_b32','nongeometric_b32_p3',selected['mlp'],selected['rbm']]
           print('value='+json.dumps({'include':[{'boundary':b,'model':m} for b in ['open','periodic'] for m in models]},separators=(',',':')))
           PY
@@ -231,7 +270,7 @@ jobs:
         with:
           name: stage4g-control-selection
           path: |
-            results_stage4g/protocol
+            results_stage4g/g2b_protocol
             results_stage4g/calibration
           if-no-files-found: error
           retention-days: 90
@@ -261,9 +300,9 @@ jobs:
         with: {name: stage4g-control-selection, path: results_stage4g}
       - name: Run isolated N=12 confirmation shard
         run: |
-          python scripts/stage4g_protocol.py verify-freeze --output results_stage4g/protocol
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
           timeout --signal=TERM 340m python -u scripts/run_stage4g.py \
-            --config "results_stage4g/protocol/runner_configs/confirmation_${{ matrix.boundary }}.yaml" \
+            --config "results_stage4g/g2b_protocol/runner_configs/confirmation_${{ matrix.boundary }}.yaml" \
             --only-models "${{ matrix.model }}" \
             --output-root "results_stage4g/shards/confirmation/${{ matrix.boundary }}/${{ matrix.model }}"
       - name: Upload confirmation shard
@@ -295,7 +334,7 @@ jobs:
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with: {name: stage4g-preflight, path: results_stage4g}
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with: {name: stage4g-convergence-merged, path: results_stage4g/convergence}
+        with: {name: stage4g-convergence-g2b-merged, path: results_stage4g/convergence_g2b}
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with: {name: stage4g-control-selection, path: results_stage4g}
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
@@ -304,9 +343,9 @@ jobs:
           path: downloaded
       - name: Merge confirmation and evaluate all final gates
         run: |
-          python scripts/stage4g_protocol.py verify-freeze --output results_stage4g/protocol
+          python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
           python scripts/stage4g_merge_shards.py --input downloaded --phase confirmation
-          python scripts/analyze_stage4g.py
+          python scripts/analyze_stage4g.py --convergence-phase convergence_g2b
           printf '%s\n' "$GITHUB_RUN_ID" > results_stage4g/environment/github_run_id.txt
       - name: Upload complete Stage 4G evidence
         id: evidence

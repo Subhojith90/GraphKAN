@@ -242,10 +242,12 @@ def main() -> None:
     sampled_gate = cfg.get("sample_health_gate", cfg.get("health_gate", {}))
     exact_gate = cfg.get("exact_health_gate", cfg.get("health_gate", {}))
     training = cfg["training"]
+    step_offset = int(training.get("step_offset", 0))
     sentinel_steps = sorted({int(step) for step in training.get("exact_sentinel_steps", [])})
-    if sentinel_steps and (sentinel_steps[0] <= 0 or sentinel_steps[-1] > int(training["n_iter"])):
-        raise SystemExit("exact_sentinel_steps must lie in [1, n_iter]")
-    if any(step % int(training["chunk_size"]) for step in sentinel_steps[:-1]):
+    final_step = step_offset + int(training["n_iter"])
+    if sentinel_steps and (sentinel_steps[0] <= step_offset or sentinel_steps[-1] > final_step):
+        raise SystemExit("exact_sentinel_steps must lie in (step_offset, step_offset + n_iter]")
+    if any((step - step_offset) % int(training["chunk_size"]) for step in sentinel_steps[:-1]):
         raise SystemExit("each non-final exact sentinel must align with chunk_size")
     specs = cfg["model_specs"]
     if args.only_models:
@@ -331,13 +333,13 @@ def main() -> None:
                                         "profile": profile,
                                         "model_label": label,
                                         "seed": seed,
-                                        "step": step + chunk,
+                                        "step": step_offset + step + chunk,
                                         "energy_mean": float(np.real(estimate.mean)),
                                         "energy_error": float(estimate.error_of_mean),
                                         "n_samples": n_samples,
                                         "diag_shift": diag_shift,
                                     })
-                                    completed_step = step + chunk
+                                    completed_step = step_offset + step + chunk
                                     if completed_step in sentinel_steps:
                                         _, sentinel_energy, sentinel_density, sentinel_corr = exact_model_observables(
                                             state, states, dense_h, inverted
@@ -348,7 +350,14 @@ def main() -> None:
                                             "stage": stage_label,
                                             "schema_version": schema_version,
                                             "model_label": label,
+                                            "model_kind": spec["kind"],
+                                            "boundary_condition": (geometry.metadata or {}).get("boundary_condition", "open"),
                                             "seed": seed,
+                                            "n_sites": geometry.n_sites,
+                                            "instance_id": instance_id(geometry, params),
+                                            "omega": params.omega,
+                                            "delta": params.delta,
+                                            "c6": params.c6,
                                             "step": completed_step,
                                             "exact_model_energy": sentinel_energy,
                                             "exact_model_abs_energy_error_to_ed": abs(sentinel_energy - e0),

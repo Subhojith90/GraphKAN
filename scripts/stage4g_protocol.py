@@ -133,7 +133,7 @@ def base_runner_config(
         },
         "stage4g_protocol_hash": sha256_bytes(canonical_bytes(cfg)),
     }
-    if phase == "convergence":
+    if phase.startswith("convergence"):
         result["training"]["exact_sentinel_steps"] = list(training["exact_sentinel_steps"])
     return result
 
