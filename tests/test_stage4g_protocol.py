@@ -9,8 +9,16 @@ from graphkan_amo_nqs.models.stage4g_flax_nqs import nongeometric_pair_features
 from stage4g_gauge import minimum_norm_gauge
 from stage4g_protocol import freeze, read_config, roster_rows, select_controls, validate_config, verify_freeze
 from stage4g_g2b_protocol import freeze as freeze_g2b, read_amendment, validate as validate_g2b, verify as verify_g2b
+from stage4g_g2c_protocol import (
+    freeze as freeze_g2c,
+    read_amendment as read_g2c_amendment,
+    validate as validate_g2c,
+    verify as verify_g2c,
+)
 from validate_stage4g_convergence import enrich_sentinel_metadata
 from validate_stage4g_g2b import validate as validate_g2b_results
+from validate_stage4g_g2c import validate as validate_g2c_results
+from validate_stage4g_periodic_alias import validate as validate_periodic_alias
 from run_stage4g import remove_run_rows
 from stage4g_merge_shards import merge, resolve_protocol_directory
 
@@ -205,3 +213,86 @@ def test_g2b_gate_checks_all_groups_conclusion_stability_and_periodic_collapse(t
         "endpoint_hybrid_b32": {"comparisons": 2, "passes": 2, "pass": True},
     }
     assert result["periodic_collapse_maximum_exact_error_difference"] == 0.0
+
+
+def test_g2c_recovery_is_frozen_without_relaxing_g2b_limits(tmp_path: Path):
+    base = read_config(Path("configs/stage4g_frozen.yaml"))
+    amendment = read_g2c_amendment(Path("configs/stage4g_g2c_recovery.yaml"))
+    assert validate_g2c(base, amendment)["validation"] == "PASS"
+    manifest = freeze_g2c(base, amendment, tmp_path)
+    assert manifest["expected_target_runs"] == 25
+    roster = pd.read_csv(tmp_path / "preselection_roster.csv")
+    assert len(roster) == 25
+    assert roster.groupby(["boundary", "delta", "c6", "model"]).ngroups == 5
+    assert verify_g2c(base, amendment, tmp_path)["validation"] == "PASS"
+
+
+def test_periodic_alias_gate_uses_common_parameters_and_all_states():
+    result = validate_periodic_alias()
+    assert result["validation"] == "PASS"
+    assert result["passes"] == result["comparisons"] == 30
+    assert {row["states_compared"] for row in result["rows"]} == {1024}
+    assert max(row["maximum_log_amplitude_difference"] for row in result["rows"]) == 0.0
+
+
+def test_g2c_composite_gate_preserves_g2b_and_closes_targeted_groups(tmp_path: Path):
+    import json
+
+    amendment = read_g2c_amendment(Path("configs/stage4g_g2c_recovery.yaml"))
+    g2b, g2c = tmp_path / "g2b", tmp_path / "g2c"
+    g2b.mkdir(); g2c.mkdir()
+    cells = [(1.25, 3.0), (1.50, 4.0), (2.00, 5.0)]
+    models = ["rbf_radial_b32", "endpoint_full_b32", "endpoint_hybrid_b32", "mlp_b12_h7"]
+    group_rows = []
+    for boundary in ("open", "periodic"):
+        for delta, c6 in cells:
+            for model in models:
+                for outcome in ("energy", "density", "correlation"):
+                    group_rows.append({
+                        "stage4g_boundary": boundary, "delta": delta, "c6": c6,
+                        "model_label": model, "outcome": outcome, "absolute_change": 0.0,
+                        "maximum_absolute_change": 1.0, "tolerance_utilisation": 0.0, "pass": True,
+                    })
+    pd.DataFrame(group_rows).to_csv(g2b / "convergence_g2b_group_gate.csv", index=False)
+    repair_rows = []
+    for delta, c6 in cells[:2]:
+        for seed in range(5):
+            repair_rows.append({
+                "stage4g_boundary": "open", "delta": delta, "c6": c6, "seed": seed,
+                "step": 4200, "model": "endpoint_full_b32", "repair_energy": 0.0,
+                "repair_density": 0.01, "repair_correlation": 0.005,
+            })
+    pd.DataFrame(repair_rows).to_csv(g2b / "convergence_g2b_endpoint_repairs.csv", index=False)
+    (g2b / "convergence_g2b_gate.json").write_text(json.dumps({"validation": "FAIL"}))
+
+    metric_frames, sentinel_frames = {"open": [], "periodic": []}, {"open": [], "periodic": []}
+    for target in amendment["execution"]["targets"]:
+        boundary = target["boundary"]
+        for seed in range(5):
+            run_id = f"{target['tag']}:{seed}"
+            metric_frames[boundary].append({
+                "run_id": run_id, "scientific_validity_exact": "VALID", "model_label": target["model"],
+                "delta": target["delta"], "c6": target["c6"], "seed": seed,
+            })
+            for step in (5600, 6300, 7000):
+                density = 0.01 if target["model"] == "endpoint_full_b32" else 0.02
+                corr = 0.005 if target["model"] == "endpoint_full_b32" else 0.01
+                sentinel_frames[boundary].append({
+                    "run_id": run_id, "model_label": target["model"], "delta": target["delta"],
+                    "c6": target["c6"], "seed": seed, "step": step,
+                    "exact_model_abs_energy_error_to_ed": 0.1,
+                    "exact_model_density_mae_to_ed": density,
+                    "exact_model_connected_correlation_mae_to_ed": corr,
+                })
+    for boundary in ("open", "periodic"):
+        raw = g2c / boundary / "raw"; raw.mkdir(parents=True)
+        pd.DataFrame(metric_frames[boundary]).to_csv(raw / "stage4g_metrics.csv", index=False)
+        pd.DataFrame(sentinel_frames[boundary]).to_csv(raw / "stage4g_exact_sentinels.csv", index=False)
+    alias = tmp_path / "alias.json"
+    alias.write_text(json.dumps({"validation": "PASS", "passes": 30}))
+    result = validate_g2c_results(amendment, g2b, g2c, alias)
+    assert result["validation"] == "PASS"
+    assert result["g2b_preserved_validation"] == "FAIL"
+    assert result["target_group_passes"] == 15
+    assert result["composite_group_passes"] == 72
+    assert result["endpoint_full_open_cells_passed"] == 3

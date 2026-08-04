@@ -36,9 +36,13 @@ def artifact_identity(path: Path, phase: str) -> tuple[str, str]:
     return boundary, shard
 
 
-def resolve_protocol_directory(results: Path) -> Path:
+def resolve_protocol_directory(results: Path, phase: str | None = None) -> Path:
     """Resolve either the amended or original frozen protocol directory."""
-    candidates = (results / "g2b_protocol", results / "protocol")
+    candidates = (
+        (results / "g2c_protocol",)
+        if phase == "convergence_g2c"
+        else (results / "g2b_protocol", results / "protocol")
+    )
     for candidate in candidates:
         if (candidate / "preselection_roster.csv").is_file():
             return candidate
@@ -47,7 +51,7 @@ def resolve_protocol_directory(results: Path) -> Path:
 
 
 def merge(input_root: Path, results: Path, phase: str) -> dict:
-    protocol = resolve_protocol_directory(results)
+    protocol = resolve_protocol_directory(results, phase)
     roster_path = protocol / ("confirmation_roster.csv" if phase == "confirmation" else "preselection_roster.csv")
     roster = pd.read_csv(roster_path)
     roster = roster[roster.phase == phase].copy()
@@ -121,7 +125,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--results", type=Path, default=ROOT / "results_stage4g")
-    parser.add_argument("--phase", choices=("convergence", "convergence_g2b", "calibration", "confirmation"), required=True)
+    parser.add_argument("--phase", choices=("convergence", "convergence_g2b", "convergence_g2c", "calibration", "confirmation"), required=True)
     args = parser.parse_args()
     result = merge(args.input, args.results, args.phase)
     print(json.dumps(result, indent=2, sort_keys=True))
