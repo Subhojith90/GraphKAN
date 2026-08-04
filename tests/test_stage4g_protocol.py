@@ -12,7 +12,7 @@ from stage4g_g2b_protocol import freeze as freeze_g2b, read_amendment, validate 
 from validate_stage4g_convergence import enrich_sentinel_metadata
 from validate_stage4g_g2b import validate as validate_g2b_results
 from run_stage4g import remove_run_rows
-from stage4g_merge_shards import merge
+from stage4g_merge_shards import merge, resolve_protocol_directory
 
 
 def test_nongeometric_capacity_features_are_frozen_centered_and_orthogonal():
@@ -128,6 +128,18 @@ def test_stage4g_workflow_uses_pinned_actions_and_dynamic_confirmation_matrix():
     assert "predecessor_run_id:" in text
     assert "--phase convergence_g2b" in text
     assert "stage4g-convergence-g2b-merged" in text
+    assert "g2b_artifact_run_id:" in text
+    assert "run-id: ${{ inputs.g2b_artifact_run_id }}" in text
+
+
+def test_shard_merge_prefers_the_amended_protocol_directory(tmp_path: Path):
+    amended = tmp_path / "g2b_protocol"
+    amended.mkdir()
+    (amended / "preselection_roster.csv").write_text("phase,run_id\n")
+    original = tmp_path / "protocol"
+    original.mkdir()
+    (original / "preselection_roster.csv").write_text("phase,run_id\n")
+    assert resolve_protocol_directory(tmp_path) == amended
 
 
 def test_g2b_amendment_is_bound_to_predecessor_and_freezes_120_fresh_runs(tmp_path: Path):

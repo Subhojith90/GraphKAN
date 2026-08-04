@@ -7,6 +7,11 @@ on:
         description: "Failed Stage 4G run ID containing stage4g-convergence-merged"
         required: true
         type: string
+      g2b_artifact_run_id:
+        description: "Optional prior run containing all 24 successful G2b shard artifacts"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: read
@@ -100,6 +105,7 @@ jobs:
 
   convergence_g2b:
     needs: preflight
+    if: ${{ inputs.g2b_artifact_run_id == '' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     strategy:
@@ -147,7 +153,10 @@ jobs:
           retention-days: 90
 
   convergence_g2b_gate:
-    needs: convergence_g2b
+    needs: [preflight, convergence_g2b]
+    if: >-
+      ${{ always() && needs.preflight.result == 'success' &&
+          (needs.convergence_g2b.result == 'success' || inputs.g2b_artifact_run_id != '') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -165,14 +174,26 @@ jobs:
           python -m pip install --no-deps -e .
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with: {name: stage4g-preflight, path: results_stage4g}
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+      - name: Download G2b shards produced by this run
+        if: ${{ inputs.g2b_artifact_run_id == '' }}
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           pattern: stage4g-convergence_g2b-*
           path: downloaded
+      - name: Reuse successful G2b shards from the supplied run
+        if: ${{ inputs.g2b_artifact_run_id != '' }}
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          pattern: stage4g-convergence_g2b-*
+          path: downloaded
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.g2b_artifact_run_id }}
       - name: Merge all shards and enforce the frozen G2b gate
         run: |
           python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
           python scripts/stage4g_merge_shards.py --input downloaded --phase convergence_g2b
+          printf '%s\n' "${{ inputs.g2b_artifact_run_id || github.run_id }}" > results_stage4g/convergence_g2b/source_g2b_run_id.txt
           python scripts/validate_stage4g_g2b.py
       - name: Upload merged G2b convergence evidence
         if: always()
