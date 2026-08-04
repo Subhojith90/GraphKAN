@@ -143,6 +143,24 @@ def validate(amendment: dict[str, Any], root: Path) -> dict[str, Any]:
         "conclusion_stability_passes": int(stability_gate["pass"].sum()) if len(stability_gate) else 0,
         "periodic_collapse_passes": int(periodic_gate["pass"].sum()) if len(periodic_gate) else 0,
         "maximum_tolerance_utilisation": float(group_gate.tolerance_utilisation.max()) if len(group_gate) else None,
+        "failed_group_comparisons": group_gate.loc[
+            ~group_gate["pass"],
+            [*group_keys, "outcome", "absolute_change", "maximum_absolute_change", "tolerance_utilisation"],
+        ].to_dict(orient="records"),
+        "conclusion_stability_by_model": {
+            str(model): {
+                "comparisons": int(len(group)),
+                "passes": int(group["pass"].sum()),
+                "pass": bool(group["pass"].all()),
+            }
+            for model, group in stability_gate.groupby("model", sort=True)
+        },
+        "periodic_collapse_maximum_exact_error_difference": (
+            float(periodic_gate.maximum_exact_error_difference.max()) if len(periodic_gate) else None
+        ),
+        "decision_class": (
+            "SCIENTIFIC_GATE_PASS" if not errors else "SCIENTIFIC_GATE_FAIL"
+        ),
     }
     (phase / "convergence_g2b_gate.json").write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n")
     return summary

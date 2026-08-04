@@ -189,11 +189,15 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           run-id: ${{ inputs.g2b_artifact_run_id }}
-      - name: Merge all shards and enforce the frozen G2b gate
+      - name: Merge all shards
         run: |
           python scripts/stage4g_g2b_protocol.py verify-freeze --output results_stage4g/g2b_protocol
           python scripts/stage4g_merge_shards.py --input downloaded --phase convergence_g2b
           printf '%s\n' "${{ inputs.g2b_artifact_run_id || github.run_id }}" > results_stage4g/convergence_g2b/source_g2b_run_id.txt
+      - name: Evaluate the frozen G2b scientific gate
+        id: g2b_gate
+        continue-on-error: true
+        run: |
           python scripts/validate_stage4g_g2b.py
       - name: Upload merged G2b convergence evidence
         if: always()
@@ -203,6 +207,46 @@ jobs:
           path: results_stage4g/convergence_g2b
           if-no-files-found: error
           retention-days: 90
+      - name: Publish the G2b decision summary
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+
+          path = Path("results_stage4g/convergence_g2b/convergence_g2b_gate.json")
+          if not path.is_file():
+              print("## Stage 4G G2b gate\n\nNo decision record was produced.")
+              raise SystemExit(0)
+          gate = json.loads(path.read_text())
+          print(f"## Stage 4G G2b: {gate['decision_class']}\n")
+          print(f"- Complete exact-health runs: {gate['exact_health_passes']}/{gate['runs']}")
+          print(f"- Effect-scale convergence: {gate['group_passes']}/{gate['group_comparisons']}")
+          print(f"- Open endpoint stability: {gate['conclusion_stability_passes']}/4")
+          print(f"- Periodic exact-error collapse: {gate['periodic_collapse_passes']}/90")
+          print(f"- Maximum tolerance utilisation: {gate['maximum_tolerance_utilisation']:.3f}x\n")
+          failed = gate.get("failed_group_comparisons", [])
+          if failed:
+              print("### Failed convergence comparisons\n")
+              print("| Boundary | Cell | Model | Outcome | Change | Limit | Utilisation |")
+              print("|---|---:|---|---|---:|---:|---:|")
+              for row in failed:
+                  print(
+                      f"| {row['stage4g_boundary']} | ({row['delta']:g}, {row['c6']:g}) | "
+                      f"{row['model_label']} | {row['outcome']} | {row['absolute_change']:.6g} | "
+                      f"{row['maximum_absolute_change']:.6g} | {row['tolerance_utilisation']:.3f}x |"
+                  )
+          if gate.get("blocking_errors"):
+              print("\n### Frozen blocking decisions\n")
+              for error in gate["blocking_errors"]:
+                  print(f"- {error}")
+          PY
+      - name: Enforce the frozen G2b decision
+        if: ${{ always() && steps.g2b_gate.outcome != 'success' }}
+        run: |
+          echo "The computation completed, but the prospectively frozen scientific gate did not pass." >&2
+          echo "The merged evidence artifact and decision summary were preserved." >&2
+          exit 1
 
   calibration:
     needs: convergence_g2b_gate
