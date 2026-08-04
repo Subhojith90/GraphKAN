@@ -39,6 +39,16 @@ def read_phase(root: Path, phase: str, filename: str) -> pd.DataFrame:
     return pd.concat(frames, ignore_index=True)
 
 
+def enrich_sentinel_metadata(sentinels: pd.DataFrame, metrics: pd.DataFrame) -> pd.DataFrame:
+    missing = [column for column in ("delta", "c6", "boundary_condition", "n_sites") if column not in sentinels]
+    if missing:
+        lookup = metrics[["run_id", *missing]].drop_duplicates("run_id")
+        sentinels = sentinels.merge(lookup, on="run_id", how="left", validate="many_to_one")
+    if sentinels[["delta", "c6"]].isna().any().any():
+        raise ValueError("sentinel metadata could not be reconstructed")
+    return sentinels
+
+
 def checkpoint_path(root: Path, phase: str, boundary: str, run_id: str) -> Path:
     safe = run_id.replace(":", "__").replace("/", "_")
     path = root / phase / boundary / "checkpoints" / f"{safe}.npz"
@@ -54,33 +64,46 @@ def arrays_identical(left: Path, right: Path) -> bool:
         return all(np.array_equal(np.asarray(a[name]), np.asarray(b[name])) for name in sorted(a.files))
 
 
-def analyse(cfg: dict[str, Any], root: Path, output: Path) -> dict[str, Any]:
+def analyse(cfg: dict[str, Any], root: Path, output: Path, convergence_phase: str = "convergence") -> dict[str, Any]:
     output.mkdir(parents=True, exist_ok=True)
     blocking: list[str] = []
 
-    convergence = read_phase(root, "convergence", "stage4g_exact_sentinels.csv")
-    expected_convergence = 120 * len(cfg["training"]["exact_sentinel_steps"])
+    convergence_metrics = read_phase(root, convergence_phase, "stage4g_metrics.csv")
+    convergence = enrich_sentinel_metadata(
+        read_phase(root, convergence_phase, "stage4g_exact_sentinels.csv"), convergence_metrics
+    )
+    if convergence_phase == "convergence_g2b":
+        gate_path = root / convergence_phase / "convergence_g2b_gate.json"
+        gate_summary = json.loads(gate_path.read_text()) if gate_path.is_file() else {"validation": "FAIL"}
+        expected_convergence = 360
+        convergence_gate = pd.read_csv(root / convergence_phase / "convergence_g2b_group_gate.csv")
+        if gate_summary.get("validation") != "PASS":
+            blocking.append("the amended G2b convergence gate does not pass")
+        convergence_gate.to_csv(output / "convergence_gate.csv", index=False)
+    else:
+        expected_convergence = 120 * len(cfg["training"]["exact_sentinel_steps"])
     if len(convergence) != expected_convergence:
         blocking.append(f"convergence sentinel rows {len(convergence)} != {expected_convergence}")
-    convergence_gate_rows = []
-    threshold = float(cfg["acceptance"]["convergence"]["max_relative_change_1400_to_2100"])
-    floors = cfg["acceptance"]["convergence"]["absolute_floors"]
-    group_columns = ["stage4g_boundary", "delta", "c6", "model_label", "seed"]
-    for keys, group in convergence.groupby(group_columns):
-        by_step = group.set_index("step")
-        if not {1400, 2100}.issubset(by_step.index):
-            continue
-        for outcome, column in ERRORS.items():
-            earlier, final = float(by_step.loc[1400, column]), float(by_step.loc[2100, column])
-            utilisation = abs(earlier - final) / max(abs(final), float(floors[outcome]))
-            convergence_gate_rows.append({
-                **dict(zip(group_columns, keys)), "outcome": outcome, "value_1400": earlier,
-                "value_2100": final, "relative_change": utilisation, "pass": utilisation <= threshold,
-            })
-    convergence_gate = pd.DataFrame(convergence_gate_rows)
-    if len(convergence_gate) != 360 or not bool(convergence_gate["pass"].all()):
-        blocking.append("not all 360 convergence/outcome comparisons pass")
-    convergence_gate.to_csv(output / "convergence_gate.csv", index=False)
+    if convergence_phase != "convergence_g2b":
+        convergence_gate_rows = []
+        threshold = float(cfg["acceptance"]["convergence"]["max_relative_change_1400_to_2100"])
+        floors = cfg["acceptance"]["convergence"]["absolute_floors"]
+        group_columns = ["stage4g_boundary", "delta", "c6", "model_label", "seed"]
+        for keys, group in convergence.groupby(group_columns):
+            by_step = group.set_index("step")
+            if not {1400, 2100}.issubset(by_step.index):
+                continue
+            for outcome, column in ERRORS.items():
+                earlier, final = float(by_step.loc[1400, column]), float(by_step.loc[2100, column])
+                utilisation = abs(earlier - final) / max(abs(final), float(floors[outcome]))
+                convergence_gate_rows.append({
+                    **dict(zip(group_columns, keys)), "outcome": outcome, "value_1400": earlier,
+                    "value_2100": final, "relative_change": utilisation, "pass": utilisation <= threshold,
+                })
+        convergence_gate = pd.DataFrame(convergence_gate_rows)
+        if len(convergence_gate) != 360 or not bool(convergence_gate["pass"].all()):
+            blocking.append("not all 360 convergence/outcome comparisons pass")
+        convergence_gate.to_csv(output / "convergence_gate.csv", index=False)
 
     metrics = read_phase(root, "confirmation", "stage4g_metrics.csv")
     sites = read_phase(root, "confirmation", "stage4g_site_observables.csv")
@@ -171,8 +194,9 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=ROOT / "configs" / "stage4g_frozen.yaml")
     parser.add_argument("--results", type=Path, default=ROOT / "results_stage4g")
     parser.add_argument("--output", type=Path, default=ROOT / "results_stage4g" / "analysis")
+    parser.add_argument("--convergence-phase", choices=("convergence", "convergence_g2b"), default="convergence")
     args = parser.parse_args()
-    result = analyse(load_yaml(args.config), args.results, args.output)
+    result = analyse(load_yaml(args.config), args.results, args.output, args.convergence_phase)
     print(json.dumps(result, indent=2, sort_keys=True))
     if result["validation"] != "PASS":
         raise SystemExit(1)

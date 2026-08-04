@@ -8,6 +8,9 @@ import pandas as pd
 from graphkan_amo_nqs.models.stage4g_flax_nqs import nongeometric_pair_features
 from stage4g_gauge import minimum_norm_gauge
 from stage4g_protocol import freeze, read_config, roster_rows, select_controls, validate_config, verify_freeze
+from stage4g_g2b_protocol import freeze as freeze_g2b, read_amendment, validate as validate_g2b, verify as verify_g2b
+from validate_stage4g_convergence import enrich_sentinel_metadata
+from validate_stage4g_g2b import validate as validate_g2b_results
 from run_stage4g import remove_run_rows
 from stage4g_merge_shards import merge
 
@@ -122,3 +125,64 @@ def test_stage4g_workflow_uses_pinned_actions_and_dynamic_confirmation_matrix():
     assert "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02" in text
     assert "matrix: ${{ fromJSON(needs.select_controls.outputs.matrix) }}" in text
     assert "cancel-in-progress: false" in text
+    assert "predecessor_run_id:" in text
+    assert "--phase convergence_g2b" in text
+    assert "stage4g-convergence-g2b-merged" in text
+
+
+def test_g2b_amendment_is_bound_to_predecessor_and_freezes_120_fresh_runs(tmp_path: Path):
+    base = read_config(Path("configs/stage4g_frozen.yaml"))
+    amendment = read_amendment(Path("configs/stage4g_g2b_amendment.yaml"))
+    assert validate_g2b(base, amendment)["validation"] == "PASS"
+    manifest = freeze_g2b(base, amendment, tmp_path)
+    assert manifest["expected_g2b_runs"] == 120
+    config = read_config(tmp_path / "runner_configs" / "convergence_g2b_open.yaml")
+    assert config["training"]["n_iter"] == 4200
+    assert config["training"]["exact_sentinel_steps"] == [2800, 3500, 4200]
+    roster = pd.read_csv(tmp_path / "preselection_roster.csv")
+    assert len(roster[roster.phase == "convergence_g2b"]) == 120
+    assert verify_g2b(base, amendment, tmp_path)["validation"] == "PASS"
+
+
+def test_legacy_sentinel_metadata_is_reconstructed_from_metrics():
+    metrics = pd.DataFrame([
+        {"run_id": "one", "delta": 1.25, "c6": 3.0, "boundary_condition": "open", "n_sites": 10}
+    ])
+    sentinels = pd.DataFrame([{"run_id": "one", "step": 700}])
+    enriched = enrich_sentinel_metadata(sentinels, metrics)
+    assert enriched.loc[0, "delta"] == 1.25
+    assert enriched.loc[0, "c6"] == 3.0
+
+
+def test_g2b_gate_checks_all_groups_conclusion_stability_and_periodic_collapse(tmp_path: Path):
+    amendment = read_amendment(Path("configs/stage4g_g2b_amendment.yaml"))
+    models = ["rbf_radial_b32", "endpoint_full_b32", "endpoint_hybrid_b32", "mlp_b12_h7"]
+    cells = [(1.25, 3.0), (1.50, 4.0), (2.00, 5.0)]
+    for boundary in ("open", "periodic"):
+        metrics, sentinels = [], []
+        for delta, c6 in cells:
+            for model in models:
+                for seed in range(5):
+                    run_id = f"{boundary}:{delta}:{c6}:{model}:{seed}"
+                    metrics.append({
+                        "run_id": run_id, "status": "COMPLETED", "scientific_validity_exact": "VALID",
+                        "boundary_condition": boundary, "delta": delta, "c6": c6,
+                        "model_label": model, "seed": seed, "n_sites": 10,
+                    })
+                    endpoint_repair = boundary == "open" and model.startswith("endpoint_")
+                    for step in (2800, 3500, 4200):
+                        sentinels.append({
+                            "run_id": run_id, "model_label": model, "seed": seed, "step": step,
+                            "exact_model_abs_energy_error_to_ed": 0.1,
+                            "exact_model_density_mae_to_ed": 0.01 if endpoint_repair else 0.02,
+                            "exact_model_connected_correlation_mae_to_ed": 0.005 if endpoint_repair else 0.01,
+                        })
+        raw = tmp_path / "convergence_g2b" / boundary / "raw"
+        raw.mkdir(parents=True)
+        pd.DataFrame(metrics).to_csv(raw / "stage4g_metrics.csv", index=False)
+        pd.DataFrame(sentinels).to_csv(raw / "stage4g_exact_sentinels.csv", index=False)
+    result = validate_g2b_results(amendment, tmp_path)
+    assert result["validation"] == "PASS"
+    assert result["group_passes"] == 72
+    assert result["conclusion_stability_passes"] == 4
+    assert result["periodic_collapse_passes"] == 90

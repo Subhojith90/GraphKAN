@@ -1,0 +1,47 @@
+amendment:
+  name: stage4g_g2b_convergence_extension
+  schema_version: stage4g-g2b-amendment-v1
+  frozen_on: '2026-08-04'
+  predecessor_protocol_sha256: 0d375041aef8842a95fdb18c5fdd29cb277afb9c5f00893bb8c89a0d1018212c
+  predecessor_phase: convergence
+  predecessor_result:
+    runs_complete: 120
+    exact_health_passes: 120
+    exact_sentinel_rows: 360
+    original_individual_relative_gate_passes: 75
+    original_individual_relative_gate_comparisons: 360
+  reason: >-
+    The original 2100-step campaign completed, but the predeclared per-run relative-change
+    rule failed and is ill-conditioned for observables close to zero. Preserve that failure
+    as evidence and conduct a fresh longer run under an effect-scale-anchored group gate.
+
+execution:
+  restart_from_seed: true
+  n_iter: 4200
+  exact_sentinel_steps: [2800, 3500, 4200]
+  shard_by_cell: true
+
+acceptance:
+  group_keys: [boundary, delta, c6, model_label]
+  compare_steps: [3500, 4200]
+  required_group_comparisons: 72
+  require_all_group_comparisons: true
+  maximum_absolute_change:
+    # Ten percent of the accepted Stage 4F open-chain endpoint-full/radial median effects.
+    # These anchors predate Stage 4G and are not estimated from the failed G2 trajectory.
+    energy: 0.016505923696
+    density: 0.002038144719
+    correlation: 0.000371585150
+  conclusion_stability:
+    endpoint_models: [endpoint_full_b32, endpoint_hybrid_b32]
+    outcomes: [density, correlation]
+    steps: [3500, 4200]
+    minimum_open_cells_with_positive_median_repair: 2
+    required_open_cells: 3
+  periodic_collapse:
+    require_exact_error_equality: true
+
+provenance:
+  predecessor_artifact: stage4g-convergence-merged
+  predecessor_is_evidence_only: true
+  amendment_must_be_committed_before_execution: true

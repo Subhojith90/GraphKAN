@@ -18,6 +18,22 @@ ERRORS = {
 }
 
 
+def enrich_sentinel_metadata(sentinels: pd.DataFrame, metrics: pd.DataFrame) -> pd.DataFrame:
+    """Backfill identity columns absent from the first Stage 4G shard schema."""
+    identity = ["run_id", "delta", "c6", "boundary_condition", "n_sites"]
+    available = [column for column in identity if column in metrics.columns]
+    lookup = metrics[available].drop_duplicates("run_id")
+    if lookup.run_id.duplicated().any():
+        raise ValueError("metrics contain ambiguous run_id metadata")
+    missing = [column for column in identity[1:] if column not in sentinels.columns]
+    if missing:
+        sentinels = sentinels.merge(lookup[["run_id", *missing]], on="run_id", how="left", validate="many_to_one")
+    required = ["delta", "c6"]
+    if sentinels[required].isna().any().any():
+        raise ValueError("sentinel identity metadata could not be reconstructed from metrics")
+    return sentinels
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=ROOT / "configs" / "stage4g_frozen.yaml")
@@ -32,6 +48,7 @@ def main() -> None:
         metric_frames.append(metric); sentinel_frames.append(sentinel)
     metrics = pd.concat(metric_frames, ignore_index=True)
     sentinels = pd.concat(sentinel_frames, ignore_index=True)
+    sentinels = enrich_sentinel_metadata(sentinels, metrics)
     errors = []
     if len(metrics) != 120 or metrics.run_id.nunique() != 120:
         errors.append(f"expected 120 unique metrics rows, found {len(metrics)}/{metrics.run_id.nunique()}")
