@@ -7,6 +7,7 @@ separately, without modifying the frozen Stage 4F runner or campaign.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 import sys
@@ -167,6 +168,32 @@ def save_checkpoint(path: Path, vstate: Any, metadata: dict[str, Any]) -> None:
     path.with_suffix(".json").write_text(json.dumps(sidecar, indent=2, sort_keys=True) + "\n")
 
 
+def restore_checkpoint(root: Path, run_id: str, vstate: Any) -> tuple[Path, str]:
+    """Restore parameters from a prior profile with the same run-identity suffix."""
+    import jax
+
+    suffix = run_id.split(":", 1)[1].replace(":", "__").replace("/", "_")
+    matches = sorted(root.rglob(f"*__{suffix}.npz"))
+    if len(matches) != 1:
+        raise ValueError(f"expected one initial checkpoint for {suffix}, found {len(matches)}")
+    source = matches[0]
+    current_leaves, treedef = jax.tree_util.tree_flatten(vstate.parameters)
+    with np.load(source, allow_pickle=False) as archive:
+        names = sorted(archive.files)
+        if names != [f"leaf_{index:04d}" for index in range(len(current_leaves))]:
+            raise ValueError(f"checkpoint leaf schema mismatch: {source}")
+        restored = [np.asarray(archive[name]) for name in names]
+    for index, (expected, actual) in enumerate(zip(current_leaves, restored)):
+        if np.asarray(expected).shape != actual.shape:
+            raise ValueError(f"checkpoint leaf {index} shape mismatch: {source}")
+    restored_device = [jax.device_put(value) for value in restored]
+    vstate.parameters = jax.tree_util.tree_unflatten(treedef, restored_device)
+    if callable(getattr(vstate, "reset", None)):
+        vstate.reset()
+    digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    return source, digest
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
@@ -177,6 +204,10 @@ def main() -> None:
     parser.add_argument("--only-c6", nargs="*", type=float, default=None, help="Optional C6 values to run.")
     parser.add_argument("--resume", action="store_true", help="Skip run IDs already present in the native metrics file.")
     parser.add_argument("--output-root", type=Path, default=None, help="Override output_root for an isolated shard.")
+    parser.add_argument(
+        "--initial-checkpoint-root", type=Path, default=None,
+        help="Restore each run from the unique prior-profile checkpoint with the same identity suffix.",
+    )
     args = parser.parse_args()
 
     cfg = load_config(args.config)
@@ -314,6 +345,13 @@ def main() -> None:
                                     n_discard_per_chain=int(training["n_discard_per_chain"]),
                                     seed=int(seed),
                                 )
+                                initial_checkpoint_path = ""
+                                initial_checkpoint_sha256 = ""
+                                if args.initial_checkpoint_root is not None:
+                                    source, initial_checkpoint_sha256 = restore_checkpoint(
+                                        args.initial_checkpoint_root, run_id, state
+                                    )
+                                    initial_checkpoint_path = str(source)
                                 optimiser = optax.chain(
                                     optax.clip_by_global_norm(float(training["grad_clip_norm"])),
                                     optax.adam(float(training["learning_rate"])),
@@ -421,6 +459,8 @@ def main() -> None:
                                     "operator_spectrum_max_abs_diff": spectrum_diff,
                                     "wall_seconds": time.perf_counter() - started,
                                     "config_hash": cfg_hash,
+                                    "initial_checkpoint_path": initial_checkpoint_path,
+                                    "initial_checkpoint_sha256": initial_checkpoint_sha256,
                                     **sample_diag,
                                 }
                                 metrics.append(row)
@@ -438,6 +478,8 @@ def main() -> None:
                                         "seed": int(seed),
                                         "n_parameters": row["n_parameters"],
                                         "config_hash": cfg_hash,
+                                        "initial_checkpoint_path": initial_checkpoint_path,
+                                        "initial_checkpoint_sha256": initial_checkpoint_sha256,
                                     })
 
                                 site_rows = []
