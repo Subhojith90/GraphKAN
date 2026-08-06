@@ -21,6 +21,8 @@ from stage4g_g2d_protocol import (
     validate as validate_g2d,
     verify as verify_g2d,
 )
+from stage4g_final_protocol import freeze as freeze_final, read_resume, validate as validate_final, verify as verify_final
+from analyze_stage4g_g2d_final import analyse as analyse_g2d_final
 from validate_stage4g_convergence import enrich_sentinel_metadata
 from validate_stage4g_g2b import validate as validate_g2b_results
 from validate_stage4g_g2c import validate as validate_g2c_results
@@ -334,3 +336,50 @@ def test_restore_checkpoint_matches_prior_profile_by_identity_suffix(tmp_path: P
     assert digest == hashlib.sha256(source.read_bytes()).hexdigest()
     assert np.array_equal(np.asarray(state.parameters["a"]), np.array([1.0, 2.0]))
     assert np.array_equal(np.asarray(state.parameters["b"]), np.array([[3.0, 4.0]]))
+
+
+def test_final_resume_freezes_calibration_and_n12_rosters(tmp_path: Path):
+    resume = read_resume(Path("configs/stage4g_final_resume.yaml"))
+    assert validate_final(resume)["validation"] == "PASS"
+    manifest = freeze_final(resume, tmp_path)
+    assert manifest["validation"] == "PASS"
+    roster = pd.read_csv(tmp_path / "preselection_roster.csv")
+    assert len(roster[roster.phase == "calibration"]) == 72
+    assert verify_final(resume, tmp_path)["validation"] == "PASS"
+
+
+def test_amended_final_gate_uses_endpoint_full_as_primary_and_retains_hybrid(tmp_path: Path):
+    import json
+
+    results, accepted, output = tmp_path / "results", tmp_path / "accepted", tmp_path / "analysis"
+    (accepted / "convergence_g2d").mkdir(parents=True)
+    (accepted / "convergence_g2d/convergence_g2d_gate.json").write_text(json.dumps({
+        "validation": "PASS", "composite_group_passes": 72,
+    }))
+    alias = tmp_path / "alias.json"
+    alias.write_text(json.dumps({"validation": "PASS", "passes": 30, "n_sites": 12}))
+    models = ["rbf_radial_b32", "endpoint_full_b32", "endpoint_hybrid_b32", "nongeometric_b32_p3", "mlp", "rbm"]
+    cells = [(1.25, 3.0), (1.5, 4.0), (2.0, 5.0)]
+    for boundary in ("open", "periodic"):
+        rows = []
+        for delta, c6 in cells:
+            for model in models:
+                for seed in range(5):
+                    density, corr = 0.02, 0.01
+                    if boundary == "open" and model == "endpoint_full_b32" and delta < 2.0:
+                        density, corr = 0.01, 0.005
+                    rows.append({
+                        "run_id": f"{boundary}:{delta}:{model}:{seed}", "model_label": model,
+                        "delta": delta, "c6": c6, "seed": seed, "n_sites": 12,
+                        "scientific_validity_exact": "VALID", "wall_seconds": 1.0, "n_parameters": 10,
+                        "exact_model_abs_energy_error_to_ed": 0.1,
+                        "exact_model_density_mae_to_ed": density,
+                        "exact_model_connected_correlation_mae_to_ed": corr,
+                    })
+        raw = results / "confirmation" / boundary / "raw"; raw.mkdir(parents=True)
+        pd.DataFrame(rows).to_csv(raw / "stage4g_metrics.csv", index=False)
+    decision = analyse_g2d_final(results, output, accepted, alias)
+    assert decision["validation"] == "PASS"
+    assert decision["decision_class"] == "STAGE4G_COMPLETE"
+    assert decision["endpoint_full_open_cells_passed"] == 2
+    assert decision["endpoint_hybrid_open_cells_passed"] == 0

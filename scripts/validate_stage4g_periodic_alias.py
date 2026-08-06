@@ -24,11 +24,12 @@ KINDS = {
 jax.config.update("jax_enable_x64", True)
 
 
-def validate() -> dict:
-    geometry = make_periodic_chain_geometry(10)
+def validate(n_sites: int = 10) -> dict:
+    n_sites = int(n_sites)
+    geometry = make_periodic_chain_geometry(n_sites)
     distances = geometry_distance_matrix(geometry)
     states = np.asarray(
-        [[1.0 if (value >> site) & 1 else -1.0 for site in range(10)] for value in range(1 << 10)],
+        [[1.0 if (value >> site) & 1 else -1.0 for site in range(n_sites)] for value in range(1 << n_sites)],
         dtype=np.float64,
     )
     rows = []
@@ -73,6 +74,7 @@ def validate() -> dict:
         "blocking_errors": errors,
         "comparisons": len(rows),
         "passes": sum(bool(row["pass"]) for row in rows),
+        "n_sites": n_sites,
         "rows": rows,
     }
 
@@ -80,8 +82,9 @@ def validate() -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--n-sites", type=int, default=10)
     args = parser.parse_args()
-    result = validate()
+    result = validate(args.n_sites)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
