@@ -1,0 +1,25 @@
+resume:
+  name: stage4g_post_g2d_calibration_and_n12_confirmation
+  schema_version: stage4g-final-resume-v1
+  frozen_on: '2026-08-06'
+  accepted_convergence_schema: stage4g-g2d-stabilization-gate-v1
+  accepted_convergence_requirements:
+    validation: PASS
+    composite_group_passes: 72
+    checkpoint_attestations: 20
+    periodic_alias_passes: 30
+
+execution:
+  calibration_runs: 72
+  confirmation_runs: 180
+  confirmation_n_sites: 12
+  reuse_completed_convergence: true
+  rerun_convergence: false
+
+acceptance:
+  require_all_confirmation_runs_exact_healthy: true
+  endpoint_full_minimum_open_cells_repairing_density_and_correlation: 2
+  endpoint_hybrid_role: diagnostic_nonblocking
+  periodic_alias_method: same_initial_parameters_all_states
+  periodic_alias_required_passes: 30
+  co_primary_outcomes: [energy, density, correlation]
