@@ -1,0 +1,67 @@
+protocol:
+  name: stage4h_radial_warmstart_optimisation_discriminator
+  schema_version: stage4h-warmstart-v1
+  frozen_on: '2026-08-07'
+  claim_boundary: optimisation-controlled N12 open-chain endpoint discrimination
+  predecessor: Stage 4G complete evidence, scientific negative gate
+
+physics:
+  n_sites: 12
+  boundary: open
+  omega: 1.0
+  cells:
+    - {tag: d1p25-c3, delta: 1.25, c6: 3.0, role: low_blockade}
+    - {tag: d1p50-c4, delta: 1.50, c6: 4.0, role: central}
+    - {tag: d2p00-c5, delta: 2.00, c6: 5.0, role: high_blockade}
+  seeds: [0, 1, 2, 3, 4]
+
+arms:
+  radial_continuation:
+    {kind: kan_jastrow, basis_family: rbf, n_basis: 32, hidden: 1, extra_parameter: null}
+  endpoint_full_warmstart:
+    {kind: kan_endpoint_jastrow, basis_family: rbf, n_basis: 32, hidden: 1, extra_parameter: endpoint_coeff}
+  endpoint_hybrid_warmstart:
+    {kind: kan_endpoint_hybrid_jastrow, basis_family: rbf, n_basis: 32, hidden: 1, extra_parameter: endpoint_coeff}
+  nongeometric_warmstart:
+    {kind: kan_nongeometric_control_jastrow, basis_family: rbf, n_basis: 32, hidden: 1, extra_parameter: control_coeff}
+
+training:
+  additional_iterations: 6000
+  exact_sentinel_steps: [3000, 6000]
+  immutable_checkpoint_interval: 250
+  chunk_size: 50
+  n_samples: 4096
+  n_chains: 64
+  n_discard_per_chain: 256
+  learning_rate: 2.5e-5
+  diag_shift: 0.1
+  grad_clip_norm: 2.0
+
+health:
+  max_abs_energy_error_to_ed: 0.5
+  max_density_mae_to_ed: 0.08
+  max_connected_correlation_mae_to_ed: 0.08
+
+acceptance:
+  transplant_max_log_amplitude_difference: 1.0e-12
+  transplant_max_exact_energy_difference: 1.0e-12
+  transplant_max_density_difference: 1.0e-12
+  transplant_max_correlation_difference: 1.0e-12
+  energy_safety_margin: 1.0e-4
+  energy_safety_minimum_pairs: 14
+  paired_seed_sign_minimum: 4
+  scientific_rescue_minimum_cells: 2
+  required_cells: 3
+  periodic_alias_required_passes: 30
+
+execution:
+  output_root: results_stage4h
+  shard_axis: cell_and_arm
+  expected_shards: 12
+  expected_runs: 60
+  allow_failed_runs_to_remain_visible: true
+
+deferred:
+  - N >= 14 scaling
+  - Graph-KAN development
+  - two-dimensional transfer

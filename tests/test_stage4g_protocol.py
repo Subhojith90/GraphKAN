@@ -236,6 +236,10 @@ def test_g2c_recovery_is_frozen_without_relaxing_g2b_limits(tmp_path: Path):
 
 
 def test_periodic_alias_gate_uses_common_parameters_and_all_states():
+    import importlib.util
+    import pytest
+    if importlib.util.find_spec("jax") is None or importlib.util.find_spec("flax") is None:
+        pytest.skip("Stage 4G periodic-alias execution requires the optional NQS profile")
     result = validate_periodic_alias()
     assert result["validation"] == "PASS"
     assert result["passes"] == result["comparisons"] == 30
