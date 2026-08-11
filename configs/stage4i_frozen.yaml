@@ -1,0 +1,78 @@
+protocol:
+  name: stage4i_failure_boundary_and_manuscript_closure
+  schema_version: stage4i-frozen-v1
+  frozen_on: '2026-08-10'
+  predecessor_decision: NEGATIVE_CLOSURE_PASS
+  claim_boundary: conditioning-controlled N12 hard-cell endpoint counterfactual
+
+inputs:
+  stage4f_n10_root: results_stage4f_r/frozen
+  stage4g_n12_root: results_stage4g/final_local_20260807/confirmation/open
+  stage4h_root: results_stage4h/local_campaign_20260807/merged
+
+gauge:
+  sizes: [10, 12]
+  cells:
+    - {tag: d1p25-c3, delta: 1.25, c6: 3.0}
+    - {tag: d1p50-c4, delta: 1.50, c6: 4.0}
+    - {tag: d2p00-c5, delta: 2.00, c6: 5.0}
+  arms: [endpoint_full, endpoint_hybrid]
+  seeds: [0, 1, 2, 3, 4]
+  pair_environment_measure: uniform_unordered_pairs
+  gauge: full_boolean_minimum_norm
+  centre: weighted_pair_mean
+  normalise: weighted_rms
+  sign_alignment: positive_seed0_inner_product
+  confidence_interval: percentile_95_across_seeds
+  held_out_cell_min_abs_spearman: 0.70
+  held_out_size_max_normalised_rmse: 0.35
+
+counterfactual:
+  n_sites: 12
+  boundary: open
+  omega: 1.0
+  cell: {tag: d2p00-c5, delta: 2.00, c6: 5.0}
+  seeds: [0, 1, 2, 3, 4]
+  arms:
+    stage4i_radial: {kind: kan_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+    stage4i_endpoint_full_raw: {kind: kan_endpoint_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+    stage4i_endpoint_full_orthogonal: {kind: kan_endpoint_orthogonal_jastrow, basis_family: rbf, n_basis: 32, hidden: 1}
+  training:
+    additional_iterations: 6000
+    exact_sentinel_steps: [3000, 6000]
+    immutable_checkpoint_interval: 250
+    chunk_size: 50
+    n_samples: 4096
+    n_chains: 64
+    n_discard_per_chain: 256
+    learning_rate: 2.5e-5
+    diag_shift: 0.1
+    grad_clip_norm: 2.0
+  acceptance:
+    transplant_tolerance: 1.0e-12
+    energy_safety_margin: 1.0e-4
+    energy_safe_seeds_required: 5
+    correlation_positive_seeds_required: 4
+    maximum_density_degradation: 1.0e-4
+    negative_closure_correlation_worse_seeds: 4
+
+execution:
+  output_root: results_stage4i
+  expected_shards: 3
+  expected_runs: 15
+  local_only: true
+  maximum_local_workers: 2
+
+conditional_g3:
+  authorised_only_after: [G0_release_test_parity, G1_gauge_scale_linkage, G2_orthogonalised_counterfactual]
+  status: NOT_LAUNCHED
+  n_sites: 14
+  reference: DMRG
+
+forbidden:
+  - Graph-KAN rescue
+  - broad two-dimensional transfer
+  - N >= 16 campaign
+  - general KAN superiority
+  - quantum advantage
+  - hardware validation

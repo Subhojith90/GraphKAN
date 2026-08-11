@@ -37,4 +37,9 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-q"
+addopts = ""
+markers = [
+  "nqs: requires the full JAX/Flax/Optax/NetKet execution profile",
+  "slow: bounded historical process or integration test",
+  "optional: optional third-party cross-check outside the NQS profile",
+]

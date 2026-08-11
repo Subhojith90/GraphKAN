@@ -8,6 +8,7 @@ The fixed phase below implements that exact gauge convention, while every
 trainable model learns only the real log-amplitude.  This removes an artificial
 positive-amplitude restriction present in Stage 2.4.
 """
+
 from __future__ import annotations
 import hashlib
 import numpy as np
@@ -34,13 +35,19 @@ def nongeometric_pair_features(
     pair_i = np.asarray(pair_i, dtype=np.int32)
     pair_j = np.asarray(pair_j, dtype=np.int32)
     if pair_i.shape != pair_j.shape or pair_i.ndim != 1:
-        raise ValueError("pair_i and pair_j must be one-dimensional arrays with equal shape")
+        raise ValueError(
+            "pair_i and pair_j must be one-dimensional arrays with equal shape"
+        )
     if n_features < 1 or n_features >= len(pair_i):
-        raise ValueError("n_features must be positive and smaller than the number of pairs")
+        raise ValueError(
+            "n_features must be positive and smaller than the number of pairs"
+        )
     raw = np.empty((len(pair_i), int(n_features)), dtype=np.float64)
     for row, (i, j) in enumerate(zip(pair_i.tolist(), pair_j.tolist())):
         for column in range(int(n_features)):
-            digest = hashlib.sha256(f"{int(seed)}:{i}:{j}:{column}".encode("ascii")).digest()
+            digest = hashlib.sha256(
+                f"{int(seed)}:{i}:{j}:{column}".encode("ascii")
+            ).digest()
             integer = int.from_bytes(digest[:8], byteorder="big", signed=False)
             raw[row, column] = (integer + 0.5) / float(2**64) - 0.5
     raw -= raw.mean(axis=0, keepdims=True)
@@ -57,22 +64,43 @@ def require_flax():
     try:
         import jax.numpy as jnp
         import flax.linen as nn
+
         return jnp, nn
     except Exception as exc:
         from graphkan_amo_nqs.exceptions import DependencyUnavailable
-        raise DependencyUnavailable("Flax/JAX are required for trainable NQS models. Install `.[nqs]`.") from exc
+
+        raise DependencyUnavailable(
+            "Flax/JAX are required for trainable NQS models. Install `.[nqs]`."
+        ) from exc
 
 
-def pair_feature_arrays(positions: np.ndarray, n_basis: int = 8, family: str = "sine", r_scale: float = 1.0, *, distance_matrix: np.ndarray | None = None):
+def pair_feature_arrays(
+    positions: np.ndarray,
+    n_basis: int = 8,
+    family: str = "sine",
+    r_scale: float = 1.0,
+    *,
+    distance_matrix: np.ndarray | None = None,
+):
     positions = np.asarray(positions, dtype=float)
     i, j = np.triu_indices(len(positions), k=1)
-    distances = np.asarray(distance_matrix, dtype=float) if distance_matrix is not None else None
+    distances = (
+        np.asarray(distance_matrix, dtype=float)
+        if distance_matrix is not None
+        else None
+    )
     if distances is not None and distances.shape != (len(positions), len(positions)):
         raise ValueError("distance_matrix shape does not match positions")
-    r = (distances[i, j] if distances is not None else np.linalg.norm(positions[i] - positions[j], axis=1)) / max(float(r_scale), 1e-12)
+    r = (
+        distances[i, j]
+        if distances is not None
+        else np.linalg.norm(positions[i] - positions[j], axis=1)
+    ) / max(float(r_scale), 1e-12)
     if family == "sine":
         scale = max(float(r.max()), 1e-12)
-        B = np.stack([np.sin((k + 1) * np.pi * r / scale) for k in range(n_basis)], axis=1)
+        B = np.stack(
+            [np.sin((k + 1) * np.pi * r / scale) for k in range(n_basis)], axis=1
+        )
     elif family == "rbf":
         centers = np.linspace(float(r.min()), float(r.max()), n_basis)
         width = max(float(np.ptp(centers)) / max(n_basis - 1, 1), 1e-6)
@@ -96,6 +124,7 @@ def resolve_basis_family(kind: str, basis_family: str | None = None) -> str:
         "kan_jastrow": "sine",
         "kan_boundary_jastrow": "sine",
         "kan_endpoint_jastrow": "sine",
+        "kan_endpoint_orthogonal_jastrow": "sine",
         "kan_endpoint_sum_jastrow": "sine",
         "kan_endpoint_diff_jastrow": "sine",
         "kan_endpoint_product_jastrow": "sine",
@@ -112,8 +141,20 @@ def resolve_basis_family(kind: str, basis_family: str | None = None) -> str:
     return selected
 
 
-def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidden: int = 16,
-                     r_scale: float = 1.0, omega: float = 1.0, inverted_ordering: bool = False, basis_family: str | None = None, distance_matrix: np.ndarray | None = None, endpoint_features_enabled: bool = True):
+def build_flax_model(
+    kind: str,
+    positions: np.ndarray,
+    *,
+    n_basis: int = 8,
+    hidden: int = 16,
+    r_scale: float = 1.0,
+    omega: float = 1.0,
+    inverted_ordering: bool = False,
+    basis_family: str | None = None,
+    distance_matrix: np.ndarray | None = None,
+    endpoint_features_enabled: bool = True,
+    endpoint_orthogonalisation: dict[str, np.ndarray] | None = None,
+):
     """Construct a phase-aware NQS.
 
     The parity phase is activated for positive omega.  For omega < 0, the
@@ -126,6 +167,7 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
     selected_basis_family = resolve_basis_family(kind, basis_family)
     boundary_order = max(1, int(hidden))
     endpoint_features_enabled = bool(endpoint_features_enabled)
+    orthogonal_endpoint = endpoint_orthogonalisation is not None
 
     # RBM is a global visible-hidden model. It has no radial pair basis and
     # should not construct unused pair, boundary, or endpoint feature arrays.
@@ -180,6 +222,27 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
     boundary_basis = jnp.asarray(boundary_np, dtype=jnp.float64)
     endpoint_basis = jnp.asarray(endpoint_np, dtype=jnp.float64)
     nongeometric_basis = jnp.asarray(nongeometric_np, dtype=jnp.float64)
+    if orthogonal_endpoint:
+        if kind != "kan_endpoint_orthogonal_jastrow":
+            raise ValueError(
+                "endpoint_orthogonalisation is valid only for "
+                "kan_endpoint_orthogonal_jastrow"
+            )
+        one_body_projection_np = np.asarray(
+            endpoint_orthogonalisation["one_body_projection"], dtype=np.float64
+        )
+        radial_projection_np = np.asarray(
+            endpoint_orthogonalisation["radial_projection"], dtype=np.float64
+        )
+        if one_body_projection_np.shape != (n_sites, 3):
+            raise ValueError("one_body_projection must have shape (n_sites, 3)")
+        if radial_projection_np.shape != (n_basis, 3):
+            raise ValueError("radial_projection must have shape (n_basis, 3)")
+        one_body_projection = jnp.asarray(one_body_projection_np, dtype=jnp.float64)
+        radial_projection = jnp.asarray(radial_projection_np, dtype=jnp.float64)
+    else:
+        one_body_projection = jnp.zeros((n_sites, 3), dtype=jnp.float64)
+        radial_projection = jnp.zeros((n_basis, 3), dtype=jnp.float64)
     phase_sign = 1.0 if float(omega) > 0.0 else 0.0
     if not endpoint_features_enabled:
         if kind.startswith("kan_endpoint"):
@@ -205,42 +268,81 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
             occ = occupation_from_sigma(sigma)
             # Open chains should not be forced to have a translation-invariant
             # product amplitude. One field per site is the minimal baseline.
-            site_bias = self.param("site_bias", nn.initializers.zeros, (n_sites,), jnp.float64)
+            site_bias = self.param(
+                "site_bias", nn.initializers.zeros, (n_sites,), jnp.float64
+            )
             amp = jnp.sum(occ * site_bias, axis=-1)
             return amp.astype(jnp.complex128) + parity_phase(occ)
 
     class PairJastrow(nn.Module):
         mode: str
+
         @nn.compact
         def __call__(self, sigma):
             occ = occupation_from_sigma(sigma)
             pair_occ = occ[..., pair_i] * occ[..., pair_j]
-            site_bias = self.param("site_bias", nn.initializers.zeros, (n_sites,), jnp.float64)
+            site_bias = self.param(
+                "site_bias", nn.initializers.zeros, (n_sites,), jnp.float64
+            )
             amp = jnp.sum(occ * site_bias, axis=-1)
             if self.mode == "smooth":
-                coeff = self.param("pair_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
+                coeff = self.param(
+                    "pair_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
                 edge = basis @ coeff
             elif self.mode == "smooth_endpoint_sum":
-                coeff = self.param("pair_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
-                endpoint_coeff = self.param("endpoint_coeff", nn.initializers.zeros, (1,), jnp.float64)
+                coeff = self.param(
+                    "pair_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
+                endpoint_coeff = self.param(
+                    "endpoint_coeff", nn.initializers.zeros, (1,), jnp.float64
+                )
                 edge = basis @ coeff + endpoint_basis[:, 0] * endpoint_coeff[0]
             elif self.mode == "kan":
                 # Learnable univariate Fourier mixture. The exported curve is
                 # interpretable as edge(r) = B(r) dot coeff.
-                coeff = self.param("kan_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
+                coeff = self.param(
+                    "kan_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
                 edge = basis @ coeff
             elif self.mode == "kan_boundary":
                 # Radial KAN plus a reflection-symmetric open-boundary correction.
                 # This is not Graph-KAN: it is a controlled pair-centre ablation.
-                coeff = self.param("kan_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
-                boundary_coeff = self.param("boundary_coeff", nn.initializers.zeros, (boundary_basis.shape[-1],), jnp.float64)
+                coeff = self.param(
+                    "kan_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
+                boundary_coeff = self.param(
+                    "boundary_coeff",
+                    nn.initializers.zeros,
+                    (boundary_basis.shape[-1],),
+                    jnp.float64,
+                )
                 edge = basis @ coeff + boundary_basis @ boundary_coeff
             elif self.mode.startswith("kan_endpoint"):
                 # Explicit ablations of reflection-symmetric endpoint features.
                 # "full" uses [d_i+d_j, |d_i-d_j|, d_i d_j]; the single-feature
                 # variants retain exactly one term while preserving the selected radial basis family.
-                coeff = self.param("kan_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
-                if self.mode == "kan_endpoint_sum":
+                coeff = self.param(
+                    "kan_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
+                if self.mode == "kan_endpoint_orthogonal":
+                    feat = endpoint_basis
+                elif self.mode == "kan_endpoint_sum":
                     feat = endpoint_basis[:, :1]
                 elif self.mode == "kan_endpoint_diff":
                     feat = endpoint_basis[:, 1:2]
@@ -251,21 +353,61 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
                     feat = endpoint_basis[:, [0, 2]]
                 else:
                     feat = endpoint_basis
-                endpoint_coeff = self.param("endpoint_coeff", nn.initializers.zeros, (feat.shape[-1],), jnp.float64)
-                edge = basis @ coeff + feat @ endpoint_coeff
+                endpoint_coeff = self.param(
+                    "endpoint_coeff",
+                    nn.initializers.zeros,
+                    (feat.shape[-1],),
+                    jnp.float64,
+                )
+                if self.mode == "kan_endpoint_orthogonal":
+                    # Z_perp = Z_endpoint - X_base P, where X_base contains
+                    # the one-body and radial sufficient statistics evaluated
+                    # over the complete Boolean basis.  Because Z_endpoint =
+                    # Z_perp + X_base P, [X_base, Z_perp] and
+                    # [X_base, Z_endpoint] have exactly the same column span.
+                    endpoint_stat = jnp.sum(pair_occ[..., :, None] * feat, axis=-2)
+                    correction = occ @ one_body_projection + jnp.sum(
+                        pair_occ[..., :, None] * (basis @ radial_projection),
+                        axis=-2,
+                    )
+                    amp = amp + jnp.sum(
+                        (endpoint_stat - correction) * endpoint_coeff, axis=-1
+                    )
+                    edge = basis @ coeff
+                else:
+                    edge = basis @ coeff + feat @ endpoint_coeff
             elif self.mode == "kan_nongeometric_control":
-                coeff = self.param("kan_coeff", nn.initializers.normal(0.005), (basis.shape[-1],), jnp.float64)
-                control_coeff = self.param("control_coeff", nn.initializers.zeros, (3,), jnp.float64)
+                coeff = self.param(
+                    "kan_coeff",
+                    nn.initializers.normal(0.005),
+                    (basis.shape[-1],),
+                    jnp.float64,
+                )
+                control_coeff = self.param(
+                    "control_coeff", nn.initializers.zeros, (3,), jnp.float64
+                )
                 edge = basis @ coeff + nongeometric_basis @ control_coeff
             elif self.mode in {"mlp", "mlp_endpoint"}:
-                features = basis if self.mode == "mlp" else jnp.concatenate([basis, endpoint_basis], axis=-1)
-                edge = nn.Dense(hidden, dtype=jnp.float64, param_dtype=jnp.float64,
-                                kernel_init=nn.initializers.lecun_normal(),
-                                name="edge_dense_1")(features)
+                features = (
+                    basis
+                    if self.mode == "mlp"
+                    else jnp.concatenate([basis, endpoint_basis], axis=-1)
+                )
+                edge = nn.Dense(
+                    hidden,
+                    dtype=jnp.float64,
+                    param_dtype=jnp.float64,
+                    kernel_init=nn.initializers.lecun_normal(),
+                    name="edge_dense_1",
+                )(features)
                 edge = nn.tanh(edge)
-                edge = nn.Dense(1, dtype=jnp.float64, param_dtype=jnp.float64,
-                                kernel_init=nn.initializers.zeros,
-                                name="edge_dense_2")(edge)[..., 0]
+                edge = nn.Dense(
+                    1,
+                    dtype=jnp.float64,
+                    param_dtype=jnp.float64,
+                    kernel_init=nn.initializers.zeros,
+                    name="edge_dense_2",
+                )(edge)[..., 0]
             else:
                 raise ValueError(self.mode)
             amp = amp + jnp.sum(pair_occ * edge, axis=-1)
@@ -276,10 +418,21 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
         def __call__(self, sigma):
             # Standard real RBM amplitude with the same fixed parity phase.
             occ = occupation_from_sigma(sigma)
-            visible = self.param("visible_bias", nn.initializers.zeros, (n_sites,), jnp.float64)
-            W = self.param("weights", nn.initializers.normal(0.01), (n_sites, max(1, hidden)), jnp.float64)
-            hb = self.param("hidden_bias", nn.initializers.zeros, (max(1, hidden),), jnp.float64)
-            amp = jnp.sum(occ * visible, axis=-1) + jnp.sum(jnp.logaddexp(0.0, occ @ W + hb), axis=-1)
+            visible = self.param(
+                "visible_bias", nn.initializers.zeros, (n_sites,), jnp.float64
+            )
+            W = self.param(
+                "weights",
+                nn.initializers.normal(0.01),
+                (n_sites, max(1, hidden)),
+                jnp.float64,
+            )
+            hb = self.param(
+                "hidden_bias", nn.initializers.zeros, (max(1, hidden),), jnp.float64
+            )
+            amp = jnp.sum(occ * visible, axis=-1) + jnp.sum(
+                jnp.logaddexp(0.0, occ @ W + hb), axis=-1
+            )
             return amp.astype(jnp.complex128) + parity_phase(occ)
 
     kind = kind.lower()
@@ -295,6 +448,8 @@ def build_flax_model(kind: str, positions: np.ndarray, *, n_basis: int = 8, hidd
         return PairJastrow(mode="kan_boundary")
     if kind == "kan_endpoint_jastrow":
         return PairJastrow(mode="kan_endpoint_full")
+    if kind == "kan_endpoint_orthogonal_jastrow":
+        return PairJastrow(mode="kan_endpoint_orthogonal")
     if kind == "kan_endpoint_sum_jastrow":
         return PairJastrow(mode="kan_endpoint_sum")
     if kind == "kan_endpoint_diff_jastrow":

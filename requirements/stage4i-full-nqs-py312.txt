@@ -1,0 +1,7 @@
+-r stage4i-base-py312.txt
+# Full NQS execution stack used for the Stage 4G/4H campaigns.
+jax==0.7.1
+jaxlib==0.7.1
+flax==0.12.0
+optax==0.2.8
+netket==3.22.3

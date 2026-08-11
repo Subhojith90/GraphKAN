@@ -22,6 +22,10 @@ EXPANSION_KEYS = {
     "endpoint_full_warmstart": "endpoint_coeff",
     "endpoint_hybrid_warmstart": "endpoint_coeff",
     "nongeometric_warmstart": "control_coeff",
+    # Stage 4I aliases reuse the exact, audited Stage 4H transplant semantics.
+    "stage4i_radial": None,
+    "stage4i_endpoint_full_raw": "endpoint_coeff",
+    "stage4i_endpoint_full_orthogonal": "endpoint_coeff",
 }
 
 
