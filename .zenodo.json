@@ -1,0 +1,48 @@
+{
+  "title": "GraphKAN AMO NQS: Boundary Conditioned Pair Jastrow Benchmark and Reproducibility Release",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "version": "1.0.0",
+  "publication_date": "2026-11-05",
+  "language": "eng",
+  "description": "GraphKAN AMO NQS is a reproducibility release for boundary conditioned pair Jastrow neural quantum state benchmarks in one dimensional Rydberg chains. The release contains the frozen ten site campaign, independent Linux replay, twelve site continuation, gauge and counterfactual analyses, source code, configurations, tests, checksums, and complete reviewer evidence. The results define an observable dependent and protocol dependent representation effect rather than general KAN or Graph KAN superiority.",
+  "creators": [
+    {
+      "name": "Halder, Subhojit",
+      "affiliation": "University of Bristol, Bristol, United Kingdom",
+      "orcid": "0000-0002-9875-0357"
+    },
+    {
+      "name": "Ganguly, Shreyosha",
+      "affiliation": "Universidad Politécnica de Madrid, Madrid, Spain"
+    },
+    {
+      "name": "Masta, Apoorv Kumar",
+      "affiliation": "Universidad Internacional Menéndez Pelayo, Madrid, Spain"
+    },
+    {
+      "name": "Devendrababu, Shalini",
+      "affiliation": "Quantum AI Lab, Fractal Analytics, Gurugram, India 122003",
+      "orcid": "0009-0007-2856-953X"
+    },
+    {
+      "name": "Riaz, Farina",
+      "affiliation": "CSIRO, Eveleigh, Australia"
+    },
+    {
+      "name": "Ganguly, Srinjoy",
+      "affiliation": "Department of Physics and Astronomy, University College London, Gower Street, London WC1E 6BT, United Kingdom",
+      "orcid": "0000-0003-4401-2903"
+    }
+  ],
+  "keywords": [
+    "neural quantum states",
+    "Rydberg chains",
+    "pair Jastrow states",
+    "variational Monte Carlo",
+    "boundary conditions",
+    "reproducibility",
+    "negative results"
+  ]
+}

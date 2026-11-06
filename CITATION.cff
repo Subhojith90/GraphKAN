@@ -1,9 +1,47 @@
 cff-version: 1.2.0
-title: "graphkan-amo-nqs-real"
-message: "If you use this benchmark, cite the repository and the accompanying technical report."
+message: "If you use this software or benchmark, please cite this release."
 type: software
-authors:
-  - family-names: "GraphKAN AMO NQS contributors"
-version: "0.1.0"
-date-released: "2026-06-20"
+title: "GraphKAN AMO NQS: Boundary Conditioned Pair Jastrow Benchmark and Reproducibility Release"
+version: 1.0.0
+date-released: 2026-11-05
 license: MIT
+repository-code: "https://github.com/Subhojith90/GraphKAN"
+url: "https://github.com/Subhojith90/GraphKAN"
+abstract: >-
+  Reproducibility release for boundary conditioned pair Jastrow neural quantum
+  state benchmarks in one dimensional Rydberg chains. The release contains the
+  frozen ten site campaign, independent Linux replay, twelve site continuation,
+  gauge and counterfactual analyses, source code, configurations, tests,
+  checksums, and complete reviewer evidence. The results define an observable
+  dependent and protocol dependent representation effect rather than general
+  KAN or Graph KAN superiority.
+authors:
+  - family-names: Halder
+    given-names: Subhojit
+    affiliation: "University of Bristol, Bristol, United Kingdom"
+    orcid: "https://orcid.org/0000-0002-9875-0357"
+  - family-names: Ganguly
+    given-names: Shreyosha
+    affiliation: "Universidad Politécnica de Madrid, Madrid, Spain"
+  - family-names: Masta
+    given-names: Apoorv Kumar
+    affiliation: "Universidad Internacional Menéndez Pelayo, Madrid, Spain"
+  - family-names: Devendrababu
+    given-names: Shalini
+    affiliation: "Quantum AI Lab, Fractal Analytics, Gurugram, India 122003"
+    orcid: "https://orcid.org/0009-0007-2856-953X"
+  - family-names: Riaz
+    given-names: Farina
+    affiliation: "CSIRO, Eveleigh, Australia"
+  - family-names: Ganguly
+    given-names: Srinjoy
+    affiliation: "Department of Physics and Astronomy, University College London, Gower Street, London WC1E 6BT, United Kingdom"
+    orcid: "https://orcid.org/0000-0003-4401-2903"
+keywords:
+  - neural quantum states
+  - Rydberg chains
+  - pair Jastrow states
+  - variational Monte Carlo
+  - boundary conditions
+  - reproducibility
+  - negative results
