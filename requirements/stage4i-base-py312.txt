@@ -1,0 +1,8 @@
+# Stage 4I base profile, frozen against the accepted macOS/Python 3.12 host.
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.2
+PyYAML==6.0.1
+matplotlib==3.9.2
+pytest==7.4.4
+tqdm==4.66.5
